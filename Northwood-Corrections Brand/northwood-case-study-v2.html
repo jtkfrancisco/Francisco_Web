@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northwood Corrections Culinary Services | Justin Francisco</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 10pt;
+    }
+    
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 15mm;
+      margin: 0 auto;
+      background: white;
+      page-break-after: always;
+      position: relative;
+    }
+    
+    .page:last-child {
+      page-break-after: auto;
+    }
+    
+    /* Cover Page */
+    .cover {
+      background: linear-gradient(145deg, #1B4D3E 0%, #2D5A4A 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20mm;
+    }
+    
+    .cover-badge {
+      display: inline-block;
+      background: white;
+      color: #1B4D3E;
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 0.5rem 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .cover-title {
+      font-size: 38pt;
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .cover-subtitle {
+      font-size: 14pt;
+      font-weight: 300;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2rem;
+      max-width: 80%;
+    }
+    
+    .cover-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: auto;
+    }
+    
+    .meta-item {
+      border-left: 3px solid white;
+      padding-left: 1rem;
+    }
+    
+    .meta-label {
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.2rem;
+    }
+    
+    .meta-value {
+      font-size: 11pt;
+      font-weight: 500;
+    }
+    
+    /* Section Headers */
+    .section-label {
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #1B4D3E;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+    
+    .section-title {
+      font-size: 22pt;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+      letter-spacing: -0.01em;
+    }
+    
+    .section-intro {
+      font-size: 11pt;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 1.5rem;
+      max-width: 90%;
+    }
+    
+    /* Content Styles */
+    h3 {
+      font-size: 12pt;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1a1a1a;
+    }
+    
+    p {
+      margin-bottom: 0.75rem;
+      color: #444;
+      font-size: 10pt;
+      line-height: 1.6;
+    }
+    
+    .highlight-box {
+      background: #f0f7f4;
+      border-left: 3px solid #1B4D3E;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+    
+    .highlight-box p {
+      margin: 0;
+      font-size: 10pt;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 1rem 0.5rem;
+      background: #f0f7f4;
+      border-radius: 4px;
+    }
+    
+    .stat-number {
+      font-size: 24pt;
+      font-weight: 700;
+      color: #1B4D3E;
+      line-height: 1;
+    }
+    
+    .stat-label {
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+    
+    /* Image containers */
+    .image-full {
+      width: 100%;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+    
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    .image-grid img {
+      width: 100%;
+      border-radius: 3px;
+    }
+    
+    .image-caption {
+      font-size: 8pt;
+      color: #888;
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+    
+    /* Two column layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    
+    /* Challenge/Solution boxes */
+    .cs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .cs-box {
+      padding: 1rem;
+      border-radius: 4px;
+    }
+    
+    .cs-box.challenge {
+      background: #fef6f6;
+      border: 1px solid #f5d5d5;
+    }
+    
+    .cs-box.solution {
+      background: #f0f7f4;
+      border: 1px solid #c5e0d5;
+    }
+    
+    .cs-title {
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .cs-box.challenge .cs-title { color: #c44; }
+    .cs-box.solution .cs-title { color: #1B4D3E; }
+    
+    .cs-box p {
+      font-size: 9pt;
+      margin: 0;
+    }
+    
+    /* Footer */
+    .page-footer {
+      position: absolute;
+      bottom: 12mm;
+      left: 15mm;
+      right: 15mm;
+      padding-top: 0.75rem;
+      border-top: 1px solid #eee;
+      font-size: 8pt;
+      color: #999;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    /* Deliverables list */
+    .deliverables {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.4rem;
+      margin: 0.75rem 0;
+    }
+    
+    .deliverable {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 9pt;
+    }
+    
+    .deliverable::before {
+      content: "✓";
+      color: #1B4D3E;
+      font-weight: bold;
+      font-size: 10pt;
+    }
+    
+    /* Detail callout */
+    .detail-callout {
+      background: #1B4D3E;
+      color: white;
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+    
+    .detail-callout h4 {
+      color: rgba(255,255,255,0.7);
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    
+    .detail-callout p {
+      color: rgba(255,255,255,0.9);
+      font-size: 9pt;
+      margin: 0;
+    }
+    
+    /* Constraint box */
+    .constraint-box {
+      background: #fff8e6;
+      border: 1px solid #f0d080;
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+    
+    .constraint-box h4 {
+      color: #8a6d00;
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    
+    .constraint-box p {
+      font-size: 9pt;
+      margin: 0;
+      color: #5a4800;
+    }
+    
+    /* Spacers */
+    .spacer-sm { height: 0.5rem; }
+    .spacer-md { height: 1rem; }
+    .spacer-lg { height: 1.5rem; }
+    
+    /* Small naming grid for low-res images */
+    .naming-grid-small {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    
+    .naming-option-small {
+      padding: 0.5rem;
+      background: #f8f8f8;
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .naming-option-small img {
+      max-width: 80px;
+      height: 24px;
+      object-fit: contain;
+      margin: 0 auto 0.25rem;
+      display: block;
+    }
+    
+    .naming-option-small .naming-name {
+      font-size: 7pt;
+      font-weight: 600;
+      color: #666;
+    }
+    
+    /* Icon explanation */
+    .icon-breakdown {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 4px;
+    }
+    
+    .icon-breakdown img {
+      width: 100%;
+    }
+    
+    .icon-features {
+      display: grid;
+      gap: 0.5rem;
+    }
+    
+    .icon-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 9pt;
+    }
+    
+    .icon-feature strong {
+      color: #1B4D3E;
+      min-width: 80px;
+    }
+    
+    /* Comparison boxes */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .compare-box {
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .compare-box.winner {
+      border-color: #1B4D3E;
+      border-width: 2px;
+    }
+    
+    .compare-header {
+      background: #f8f8f8;
+      padding: 0.5rem 0.75rem;
+      font-weight: 700;
+      font-size: 10pt;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .compare-box.winner .compare-header {
+      background: #1B4D3E;
+      color: white;
+    }
+    
+    .compare-tag {
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: white;
+      color: #1B4D3E;
+      padding: 0.15rem 0.4rem;
+      border-radius: 2px;
+    }
+    
+    .compare-body {
+      padding: 0.75rem;
+    }
+    
+    .compare-body p {
+      font-size: 9pt;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER -->
+  <div class="page cover">
+    <div>
+      <div class="cover-badge">Case Study</div>
+      <h1 class="cover-title">Northwood<br>Corrections Culinary Services</h1>
+      <p class="cover-subtitle">A strategic rebrand for Canada's corrections foodservice sector — balancing strength with humanity in a sensitive industry</p>
+    </div>
+    
+    <div class="cover-meta">
+      <div class="meta-item">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">Compass Group Canada</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Market Size</div>
+        <div class="meta-value">~$150-250M / year</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Role</div>
+        <div class="meta-value">Lead Designer (Sole Creative)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Timeline</div>
+        <div class="meta-value">Sept 2025 – Jan 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: OVERVIEW -->
+  <div class="page">
+    <div class="section-label">Overview</div>
+    <h2 class="section-title">The Challenge</h2>
+    
+    <p class="section-intro">
+      Compass Group Canada needed a new brand identity for their corrections foodservice sector — one that could stand alongside their other business units while respecting the unique sensitivities of the industry.
+    </p>
+    
+    <div class="cs-grid">
+      <div class="cs-box challenge">
+        <div class="cs-title">The Problem</div>
+        <p>The existing "Eurest Correctional Services" identity was dated and didn't align with Compass's broader brand portfolio. The sector needed an identity that could project trust and reliability to government clients while honoring the humanity of everyone involved — including the ~30,000-40,000 inmates served daily across Canada.</p>
+      </div>
+      <div class="cs-box solution">
+        <div class="cs-title">The Solution</div>
+        <p>A bold, nature-inspired identity called "Northwood" that communicates growth, direction, and stability. The brand balances strength with approachability — serious enough for government contracts, human enough to reflect Compass's values of dignity and care.</p>
+      </div>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">~35K</div>
+        <div class="stat-label">Inmates Served Daily</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">$200M</div>
+        <div class="stat-label">Est. Annual Market</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">~1,000</div>
+        <div class="stat-label">Staff Nationwide</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4+</div>
+        <div class="stat-label">Months Duration</div>
+      </div>
+    </div>
+    
+    <h3>Stakeholder Complexity</h3>
+    <p>This project required alignment across multiple internal teams with different priorities:</p>
+    <div class="deliverables">
+      <div class="deliverable">DEI team review & approval</div>
+      <div class="deliverable">Legal compliance review</div>
+      <div class="deliverable">Senior leadership alignment</div>
+      <div class="deliverable">Operations team input</div>
+      <div class="deliverable">Sales & BD requirements</div>
+      <div class="deliverable">Marketing integration</div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Northwood Corrections Culinary Services</span>
+    </div>
+  </div>
+
+  <!-- PAGE 3: RESEARCH -->
+  <div class="page">
+    <div class="section-label">Research</div>
+    <h2 class="section-title">Understanding the Landscape</h2>
+    
+    <p class="section-intro">
+      Before designing anything, I needed to understand the unique tensions in this space. The corrections industry faces media scrutiny and public perception challenges — the brand needed to be bold enough to stand alongside those challenges, not hide from them.
+    </p>
+    
+    <img src="sector11_page-6.png" class="image-full" alt="Language research and word cloud analysis">
+    
+    <div class="two-col">
+      <div>
+        <h3>Key Insight: Language Matters</h3>
+        <p>Research revealed a core tension: How do we refer to the people we serve? "Inmates" is legally accurate but feels cold. "Residents" felt too soft for the realities of the environment.</p>
+        <p><strong>The solution:</strong> A dual-language approach — use "inmates" where legally required, adopt "residents" in branding to demonstrate Compass's values.</p>
+      </div>
+      <div>
+        <h3>Brand Values from Research</h3>
+        <p>Word cloud analysis from stakeholder input revealed the qualities that mattered most:</p>
+        <p><strong>Primary:</strong> Safety, Trust, Human, Service, Feel</p>
+        <p><strong>Secondary:</strong> Comfort, Consistency, Flexibility, Experience, Warm</p>
+      </div>
+    </div>
+    
+    <div class="constraint-box">
+      <h4>Key Constraint</h4>
+      <p><strong>No "Compass" in the name.</strong> Senior leadership wanted the corrections sector to have its own distinct identity — aligned with Compass's other sub-brands (Canteen, Foodbuy, Marquise) but not explicitly tied to the parent name.</p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Northwood Corrections Culinary Services</span>
+    </div>
+  </div>
+
+  <!-- PAGE 4: CONCEPT 1 - SECTOR 11 -->
+  <div class="page">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">Concept 01: Sector 11</h2>
+    
+    <p class="section-intro">
+      My first concept leveraged internal positioning — Corrections is Compass's 11th business sector. "Sector 11" created instant internal recognition while projecting a modern, confident identity.
+    </p>
+    
+    <img src="sector11_page-7.png" class="image-full" alt="Sector 11 concept with uniform and business card mockups">
+    
+    <div class="detail-callout">
+      <h4>Custom Typography</h4>
+      <p>I custom-designed the Sector 11 wordmark — bold condensed letterforms that communicate authority and seriousness while remaining approachable. The geometric forms signal precision and reliability. This level of typographic craft was essential to establishing credibility in a sector where trust is paramount.</p>
+    </div>
+    
+    <div class="two-col">
+      <div>
+        <h3>Strengths</h3>
+        <p>Clean, professional, modern. The name positions Corrections as a distinct but aligned identity within Compass's portfolio. "Nourishing Better Futures" tagline balanced strength with hope. "Secure Site Services" descriptor provided clarity.</p>
+      </div>
+      <div>
+        <h3>Considerations</h3>
+        <p>The name felt abstract for external audiences — strong for internal alignment but required storytelling for government clients. Stakeholders wanted something more immediately communicative of the food service mission.</p>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Northwood Corrections Culinary Services</span>
+    </div>
+  </div>
+
+  <!-- PAGE 5: CONCEPT 2 - CORRECTIONS -->
+  <div class="page">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">Concept 02: Corrections</h2>
+    
+    <p class="section-intro">
+      The second direction took a more direct approach — keeping "Corrections" in the name for immediate clarity, paired with an orange arc suggesting completeness and forward motion.
+    </p>
+    
+    <img src="concept02_page-5.png" class="image-full" alt="Corrections concept with orange arc and Teams background">
+    
+    <div class="two-col">
+      <div>
+        <h3>Strengths</h3>
+        <p>Immediately clear what the sector is. "Feeding Brighter Horizons" tagline balanced safety, expertise, and food service in plain language — ideal for RFPs and external clients. The orange arc added visual energy and suggested forward momentum.</p>
+      </div>
+      <div>
+        <h3>Considerations</h3>
+        <p>Retaining "Corrections" in the name felt heavy for some stakeholders — the word carries public stigma. There was appetite to explore naming that could reframe the sector's perception while remaining honest about the work.</p>
+      </div>
+    </div>
+    
+    <div class="highlight-box">
+      <p><strong>Decision Point:</strong> Both Sector 11 and Corrections had merit, but neither fully satisfied all stakeholders. We decided to step back and explore new naming territories that could better thread the needle between strength, clarity, and humanity.</p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Northwood Corrections Culinary Services</span>
+    </div>
+  </div>
+
+  <!-- PAGE 6: NAMING EXPLORATION -->
+  <div class="page">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">Naming Exploration</h2>
+    
+    <p class="section-intro">
+      With the constraint of no "Compass" in the name, I explored naming directions that could communicate the sector's values through metaphor and meaning.
+    </p>
+    
+    <div class="naming-grid-small">
+      <div class="naming-option-small">
+        <img src="Asset_1_2x.png" alt="Sojourn">
+        <div class="naming-name">Sojourn</div>
+      </div>
+      <div class="naming-option-small">
+        <img src="Asset_2_2x.png" alt="Holdfast">
+        <div class="naming-name">Holdfast</div>
+      </div>
+      <div class="naming-option-small">
+        <img src="Asset_3_2x.png" alt="Rootstone">
+        <div class="naming-name">Rootstone</div>
+      </div>
+      <div class="naming-option-small">
+        <img src="Asset_4_2x.png" alt="Surepath Eats">
+        <div class="naming-name">Surepath Eats</div>
+      </div>
+    </div>
+    
+    <div class="two-col">
+      <div>
+        <p><strong>Sojourn:</strong> A temporary stay, journey. Suggests transition and hope — but felt too abstract for government clients.</p>
+        <p><strong>Holdfast:</strong> Steadfast, reliable, anchored. Strong but potentially too rigid and defensive in tone.</p>
+      </div>
+      <div>
+        <p><strong>Rootstone:</strong> Foundation, grounded. Signals stability and trust. A strong contender that made it to final rounds.</p>
+        <p><strong>Surepath Eats:</strong> Direction, certainty. Food-forward positioning but "Eats" felt too casual for the sector.</p>
+      </div>
+    </div>
+    
+    <div class="spacer-md"></div>
+    
+    <h3>Evaluation Criteria</h3>
+    <div class="two-col">
+      <div>
+        <p><strong>Clarity:</strong> Can external audiences understand what we do?</p>
+        <p><strong>Tone:</strong> Does it balance strength with humanity?</p>
+      </div>
+      <div>
+        <p><strong>Distinctiveness:</strong> Does it stand out in the Compass portfolio?</p>
+        <p><strong>Scalability:</strong> Does it work across all applications?</p>
+      </div>
+    </div>
+    
+    <div class="highlight-box">
+      <p><strong>Two finalists emerged:</strong> Rootstone and Northwood both scored highest on the evaluation criteria. Both communicated stability and strength. The final decision came down to which felt more aligned with food service versus institutional services.</p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Northwood Corrections Culinary Services</span>
+    </div>
+  </div>
+
+  <!-- PAGE 7: ROOTSTONE VS NORTHWOOD -->
+  <div class="page">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">The Final Decision</h2>
+    
+    <p class="section-intro">
+      Rootstone and Northwood both made it to the final presentation. Each had distinct strengths — the decision came down to which better balanced the institutional context with culinary excellence.
+    </p>
+    
+    <img src="corrections_page-1.png" class="image-full" alt="Rootstone vs Northwood comparison">
+    
+    <div class="compare-grid">
+      <div class="compare-box">
+        <div class="compare-header">
+          Rootstone
+          <span style="font-size: 8pt; color: #888; font-weight: normal;">Runner-up</span>
+        </div>
+        <div class="compare-body">
+          <p><strong>Strengths:</strong> Safety and trust. Bold, geometric wordmark communicates leadership and operational security. "Root" + "stone" embodies dependability.</p>
+          <p style="margin-top: 0.5rem;"><strong>Consideration:</strong> Felt more institutional than food service. The name leaned toward security/facilities rather than culinary excellence.</p>
+        </div>
+      </div>
+      <div class="compare-box winner">
+        <div class="compare-header">
+          Northwood
+          <span class="compare-tag">Selected</span>
+        </div>
+        <div class="compare-body">
+          <p><strong>Strengths:</strong> Direction, growth, renewal. The tree/fork icon merges culinary service with upward progress. Green palette conveys stability while feeling alive.</p>
+          <p style="margin-top: 0.5rem;"><strong>Why it won:</strong> Better balanced the institutional context with food service identity. "North" + "wood" felt more nourishing and forward-looking.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="detail-callout">
+      <h4>The Deciding Factor</h4>
+      <p>Rootstone communicated trust and stability brilliantly — but it felt more like a security company than a food service provider. Northwood achieved the same sense of reliability while keeping culinary excellence at the forefront. The tree metaphor (growth, nourishment, roots) aligned more naturally with feeding people.</p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Northwood Corrections Culinary Services</span>
+    </div>
+  </div>
+
+  <!-- PAGE 8: COLOR REFINEMENT -->
+  <div class="page">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">Color Refinement</h2>
+    
+    <p class="section-intro">
+      With the naming and icon direction approved, I moved into color refinement — testing saturation and brightness levels to find the right balance of authority and approachability.
+    </p>
+    
+    <img src="northwood_page-1.png" class="image-full" alt="Color testing variations">
+    
+    <div class="highlight-box">
+      <p><strong>Final Selection:</strong> The middle-saturation green was selected — vibrant enough to feel alive and forward-looking, but deep enough to communicate stability and trust. The structured green palette conveys safety and reliability within an environment of control and order.</p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Northwood Corrections Culinary Services</span>
+    </div>
+  </div>
+
+  <!-- PAGE 9: FINAL IDENTITY -->
+  <div class="page">
+    <div class="section-label">Solution</div>
+    <h2 class="section-title">Final Identity</h2>
+    
+    <p class="section-intro">
+      The approved Northwood identity combines custom typography with the tree/fork icon — a mark that communicates growth, direction, and culinary excellence in a single, scalable system.
+    </p>
+    
+    <img src="Final_Logo.png" class="image-full" alt="Final Northwood logo">
+    
+    <div class="icon-breakdown">
+      <img src="Final_Logo.png" alt="Icon detail">
+      <div class="icon-features">
+        <div class="icon-feature">
+          <strong>Tree Form:</strong>
+          <span>Abstracted pine tree communicates growth, renewal, and northern Canadian identity</span>
+        </div>
+        <div class="icon-feature">
+          <strong>Fork Integration:</strong>
+          <span>Culinary service embedded in the trunk — food as the foundation of what we do</span>
+        </div>
+        <div class="icon-feature">
+          <strong>Upward Direction:</strong>
+          <span>Vertical emphasis signals progress, aspiration, and forward motion</span>
+        </div>
+        <div class="icon-feature">
+          <strong>Green Palette:</strong>
+          <span>Stability, safety, trust — strength within an environment of control</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Northwood Corrections Culinary Services</span>
+    </div>
+  </div>
+
+  <!-- PAGE 10: BRAND FAMILY -->
+  <div class="page">
+    <div class="section-label">Context</div>
+    <h2 class="section-title">Compass Brand Portfolio</h2>
+    
+    <p class="section-intro">
+      Northwood now sits alongside Compass Group's other sub-brands — each with distinct identity while sharing a family resemblance in quality and professionalism.
+    </p>
+    
+    <img src="concept02_page-6.png" class="image-full" alt="Compass brand family">
+    
+    <div class="highlight-box">
+      <p><strong>Portfolio Positioning:</strong> Northwood joins Canteen, Foodbuy, Marquise Hospitality, Compass One Healthcare, and others as a distinct sector brand. The identity is strong enough to stand alone in RFPs and client presentations while clearly belonging to the Compass family.</p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Northwood Corrections Culinary Services</span>
+    </div>
+  </div>
+
+  <!-- PAGE 11: RESULTS -->
+  <div class="page">
+    <div class="section-label">Results</div>
+    <h2 class="section-title">Impact & Outcome</h2>
+    
+    <p class="section-intro">
+      The Northwood identity was approved after 4+ months of stakeholder alignment, DEI review, and legal compliance — and is now pending national rollout across Compass Group Canada's corrections operations.
+    </p>
+    
+    <div class="highlight-box">
+      <p><strong>Status:</strong> Approved and pending rollout. The brand will be implemented across all corrections sector touchpoints — from RFP materials to staff uniforms to facility signage.</p>
+    </div>
+    
+    <div class="spacer-md"></div>
+    
+    <h3>What I Delivered</h3>
+    <div class="deliverables">
+      <div class="deliverable">Complete naming strategy & exploration</div>
+      <div class="deliverable">Custom typography (Sector 11)</div>
+      <div class="deliverable">Original tree/fork icon design</div>
+      <div class="deliverable">Multiple concept directions</div>
+      <div class="deliverable">Color system development</div>
+      <div class="deliverable">Stakeholder presentations</div>
+      <div class="deliverable">Teams background templates</div>
+      <div class="deliverable">Brand rationale documentation</div>
+    </div>
+    
+    <div class="spacer-md"></div>
+    
+    <div class="two-col">
+      <div>
+        <h3>The Challenge</h3>
+        <p>Navigating DEI, legal, and multi-level management approval while maintaining creative vision. This wasn't about making something look good — it was about building consensus across teams with different priorities while honoring the sensitivity of the corrections environment.</p>
+      </div>
+      <div>
+        <h3>The Achievement</h3>
+        <p>A brand identity that stands boldly alongside the brave men and women who work in this sector. Not hiding from the reality of corrections, but reframing the conversation around growth, nourishment, and human dignity.</p>
+      </div>
+    </div>
+    
+    <div class="spacer-lg"></div>
+    
+    <div style="padding-top: 1.5rem; border-top: 2px solid #1B4D3E;">
+      <h3>Justin Francisco</h3>
+      <p style="margin-bottom: 0.2rem;">Senior Graphic Designer</p>
+      <p style="margin-bottom: 0.2rem; color: #666;">Compass Group Canada | Toronto</p>
+      <p style="margin-bottom: 0.2rem;"><strong>noform.design</strong></p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Northwood Corrections Culinary Services</span>
+    </div>
+  </div>
+
+</body>
+</html>

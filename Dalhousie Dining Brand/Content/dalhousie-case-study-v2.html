@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dalhousie University Hospitality Brand System | Justin Francisco</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 10pt;
+    }
+    
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 15mm;
+      margin: 0 auto;
+      background: white;
+      page-break-after: always;
+      position: relative;
+    }
+    
+    .page:last-child {
+      page-break-after: auto;
+    }
+    
+    /* Cover Page */
+    .cover {
+      background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20mm;
+    }
+    
+    .cover-badge {
+      display: inline-block;
+      background: #FFD100;
+      color: #1a1a1a;
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 0.5rem 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .cover-title {
+      font-size: 38pt;
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .cover-subtitle {
+      font-size: 14pt;
+      font-weight: 300;
+      color: #b0b0b0;
+      margin-bottom: 2rem;
+      max-width: 80%;
+    }
+    
+    .cover-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: auto;
+    }
+    
+    .meta-item {
+      border-left: 3px solid #FFD100;
+      padding-left: 1rem;
+    }
+    
+    .meta-label {
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #777;
+      margin-bottom: 0.2rem;
+    }
+    
+    .meta-value {
+      font-size: 11pt;
+      font-weight: 500;
+    }
+    
+    /* Section Headers */
+    .section-label {
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #FFD100;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+    
+    .section-title {
+      font-size: 22pt;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+      letter-spacing: -0.01em;
+    }
+    
+    .section-intro {
+      font-size: 11pt;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 1.5rem;
+      max-width: 90%;
+    }
+    
+    /* Content Styles */
+    h3 {
+      font-size: 12pt;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1a1a1a;
+    }
+    
+    p {
+      margin-bottom: 0.75rem;
+      color: #444;
+      font-size: 10pt;
+      line-height: 1.6;
+    }
+    
+    .highlight-box {
+      background: #f8f8f8;
+      border-left: 3px solid #FFD100;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+    
+    .highlight-box p {
+      margin: 0;
+      font-size: 10pt;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 1rem 0.5rem;
+      background: #f8f8f8;
+      border-radius: 4px;
+    }
+    
+    .stat-number {
+      font-size: 24pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1;
+    }
+    
+    .stat-label {
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+    
+    /* Image containers */
+    .image-full {
+      width: 100%;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+    
+    .image-hero {
+      width: 100%;
+      margin: 0 -15mm;
+      width: calc(100% + 30mm);
+    }
+    
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    .image-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    .image-grid img {
+      width: 100%;
+      border-radius: 3px;
+    }
+    
+    .image-caption {
+      font-size: 8pt;
+      color: #888;
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+    
+    /* Two column layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+    
+    /* Challenge/Solution boxes */
+    .cs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .cs-box {
+      padding: 1rem;
+      border-radius: 4px;
+    }
+    
+    .cs-box.challenge {
+      background: #fef6f6;
+      border: 1px solid #f5d5d5;
+    }
+    
+    .cs-box.solution {
+      background: #f6fef6;
+      border: 1px solid #d5f5d5;
+    }
+    
+    .cs-title {
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .cs-box.challenge .cs-title { color: #c44; }
+    .cs-box.solution .cs-title { color: #4a4; }
+    
+    .cs-box p {
+      font-size: 9pt;
+      margin: 0;
+    }
+    
+    /* Brand hierarchy visual */
+    .hierarchy {
+      background: #f8f8f8;
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+    
+    .hierarchy-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .hierarchy-row:last-child {
+      border-bottom: none;
+    }
+    
+    .hierarchy-dot {
+      width: 10px;
+      height: 10px;
+      background: #FFD100;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    
+    .hierarchy-label {
+      font-weight: 600;
+      font-size: 10pt;
+      min-width: 100px;
+    }
+    
+    .hierarchy-desc {
+      font-size: 9pt;
+      color: #666;
+    }
+    
+    /* Footer */
+    .page-footer {
+      position: absolute;
+      bottom: 12mm;
+      left: 15mm;
+      right: 15mm;
+      padding-top: 0.75rem;
+      border-top: 1px solid #eee;
+      font-size: 8pt;
+      color: #999;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    /* Deliverables list */
+    .deliverables {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.4rem;
+      margin: 0.75rem 0;
+    }
+    
+    .deliverable {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 9pt;
+    }
+    
+    .deliverable::before {
+      content: "✓";
+      color: #FFD100;
+      font-weight: bold;
+      font-size: 10pt;
+    }
+    
+    /* Detail callout */
+    .detail-callout {
+      background: #1a1a1a;
+      color: white;
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+    
+    .detail-callout h4 {
+      color: #FFD100;
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    
+    .detail-callout p {
+      color: #ccc;
+      font-size: 9pt;
+      margin: 0;
+    }
+    
+    /* Concept comparison */
+    .concept-header {
+      background: #1a1a1a;
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 4px 4px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .concept-name {
+      font-weight: 700;
+      font-size: 11pt;
+    }
+    
+    .concept-tag {
+      background: #FFD100;
+      color: #1a1a1a;
+      font-size: 7pt;
+      font-weight: 700;
+      padding: 0.25rem 0.5rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .concept-body {
+      border: 1px solid #e0e0e0;
+      border-top: none;
+      padding: 1rem;
+      border-radius: 0 0 4px 4px;
+    }
+    
+    /* Icon grid for halls */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    
+    .icon-item {
+      text-align: center;
+      padding: 0.5rem;
+      background: #f8f8f8;
+      border-radius: 4px;
+    }
+    
+    .icon-item img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.25rem;
+    }
+    
+    .icon-name {
+      font-size: 8pt;
+      font-weight: 600;
+    }
+    
+    .icon-desc {
+      font-size: 7pt;
+      color: #888;
+    }
+    
+    /* Quote block */
+    .quote-block {
+      border-left: 3px solid #FFD100;
+      padding-left: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .quote-block p {
+      font-size: 11pt;
+      font-style: italic;
+      color: #333;
+      margin-bottom: 0.25rem;
+    }
+    
+    .quote-block cite {
+      font-size: 9pt;
+      color: #888;
+      font-style: normal;
+    }
+    
+    /* Spacer */
+    .spacer-sm { height: 0.5rem; }
+    .spacer-md { height: 1rem; }
+    .spacer-lg { height: 1.5rem; }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER -->
+  <div class="page cover">
+    <div>
+      <div class="cover-badge">Case Study</div>
+      <h1 class="cover-title">Dalhousie University<br>Hospitality Brand System</h1>
+      <p class="cover-subtitle">A comprehensive brand architecture unifying 13+ dining locations across Canada's leading maritime university</p>
+    </div>
+    
+    <div class="cover-meta">
+      <div class="meta-item">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">Dalhousie University</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Project Value</div>
+        <div class="meta-value">$180M RFP</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Role</div>
+        <div class="meta-value">Lead Designer (Sole Creative)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Timeline</div>
+        <div class="meta-value">4 Weeks</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: OVERVIEW -->
+  <div class="page">
+    <div class="section-label">Overview</div>
+    <h2 class="section-title">The Challenge</h2>
+    
+    <p class="section-intro">
+      Dalhousie University needed a unified hospitality brand system spanning 5 dining halls and 8+ retail cafés across multiple campuses — while honoring the institution's 200-year heritage and connecting with today's students.
+    </p>
+    
+    <div class="cs-grid">
+      <div class="cs-box challenge">
+        <div class="cs-title">The Problem</div>
+        <p>The existing dining program lacked cohesive visual identity. Each location operated with inconsistent branding, making wayfinding difficult and diluting the overall campus dining experience.</p>
+      </div>
+      <div class="cs-box solution">
+        <div class="cs-title">The Solution</div>
+        <p>A three-tier brand architecture that unifies all dining touchpoints under a master brand, while giving each dining hall and café its own distinct personality that scales from signage to digital menus.</p>
+      </div>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Dining Halls</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8+</div>
+        <div class="stat-label">Retail Cafés</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Campuses</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Weeks</div>
+      </div>
+    </div>
+    
+    <h3>Deliverables</h3>
+    <div class="deliverables">
+      <div class="deliverable">Complete brand architecture strategy</div>
+      <div class="deliverable">Master brand identity system</div>
+      <div class="deliverable">5 dining hall sub-brand identities</div>
+      <div class="deliverable">8+ café/retail brand identities</div>
+      <div class="deliverable">Environmental design mockups</div>
+      <div class="deliverable">Digital menu board templates</div>
+      <div class="deliverable">Multiple concept directions</div>
+      <div class="deliverable">Client presentation deck</div>
+    </div>
+    
+    <div class="hierarchy">
+      <div class="hierarchy-row">
+        <div class="hierarchy-dot"></div>
+        <div class="hierarchy-label">Master Brand</div>
+        <div class="hierarchy-desc">Dalhousie Hospitality — anchors the entire system</div>
+      </div>
+      <div class="hierarchy-row">
+        <div class="hierarchy-dot" style="margin-left: 15px;"></div>
+        <div class="hierarchy-label">Dining Halls</div>
+        <div class="hierarchy-desc">Risley, Howe, Shireff, O'Brien, Jenkins — each with unique identity</div>
+      </div>
+      <div class="hierarchy-row">
+        <div class="hierarchy-dot" style="margin-left: 30px;"></div>
+        <div class="hierarchy-label">Retail Cafés</div>
+        <div class="hierarchy-desc">Ground Zero, Green Cafe, Topio's, Cox, Brief Break, Frederic's, and more</div>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+  <!-- PAGE 3: RESEARCH & STRATEGY -->
+  <div class="page">
+    <div class="section-label">Research</div>
+    <h2 class="section-title">Deconstructing the Brand DNA</h2>
+    
+    <p class="section-intro">
+      Before designing a single logo, I conducted deep research into Dalhousie's existing brand system. The goal: create a hospitality identity that feels like a natural extension of the university, not an external addition.
+    </p>
+    
+    <img src="pres_page-3.png" class="image-full" alt="Brand deconstruction showing the Dalcon element">
+    
+    <div class="detail-callout">
+      <h4>Key Discovery: The "Dalcon"</h4>
+      <p>I identified a distinctive design element in Dalhousie's eagle crest — an abstracted beak/wing form I termed the "Dalcon." This shape became a unifying motif throughout my brand system, creating subtle visual connections back to the university's heritage.</p>
+    </div>
+    
+    <div class="two-col">
+      <div>
+        <h3>Brand Positioning</h3>
+        <p><strong>Master Idea:</strong> Dining as a hub of belonging, wellness, and ambition.</p>
+        <p><strong>Promise:</strong> Every meal embodies Dalhousie's values — infinite ambition, global impact — interpreted through food, community, and sustainability.</p>
+      </div>
+      <div>
+        <h3>Design Principles</h3>
+        <p><strong>Tone:</strong> Confident, modern, inclusive, human. Friendly but aspirational.</p>
+        <p><strong>Form Language:</strong> Geometric, symmetrical, high-contrast, authoritative — modernized heritage that speaks to students while respecting tradition.</p>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+  <!-- PAGE 4: EXPLORATION -->
+  <div class="page">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">Exploration & Ideation</h2>
+    
+    <p class="section-intro">
+      I explored multiple concept territories — from laurel wreaths to shield systems to typographic solutions — testing which visual language could best scale across the entire hospitality ecosystem.
+    </p>
+    
+    <img src="process_page-03.png" class="image-full" alt="Logo ideation exploration">
+    
+    <div class="highlight-box">
+      <p><strong>Why Laurels?</strong> Laurels are deeply embedded in academic tradition — the word "laureate" comes from this symbolism. A wreath made of leaves/grain also ties naturally to harvest, abundance, and community. The central circle is flexible: it can symbolize the table, the plate, the sun, or unity.</p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+  <!-- PAGE 5: FURTHER EXPLORATION -->
+  <div class="page">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">Testing Visual Systems</h2>
+    
+    <p class="section-intro">
+      Beyond the master brand, I explored how iconography, color systems, and naming conventions could work together to differentiate locations while maintaining family resemblance.
+    </p>
+    
+    <img src="process_page-06.png" class="image-full" alt="Further explorations showing cups, wheat, naming systems">
+    
+    <div class="two-col">
+      <div>
+        <h3>Icon Explorations</h3>
+        <p>Coffee cups, wheat stalks, leaves, and geometric forms were tested as potential icon systems. The line-based illustrations drew from Dalhousie's existing design language.</p>
+      </div>
+      <div>
+        <h3>Naming Concepts</h3>
+        <p>Alternative naming systems like "The Commons," "Hearthstone," and "Exchangeway" were explored before deciding to retain existing hall names for student familiarity.</p>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+  <!-- PAGE 6: FINAL DIRECTION 1 -->
+  <div class="page">
+    <div class="section-label">Final Direction</div>
+    <h2 class="section-title">Concept 01: Circle System</h2>
+    
+    <p class="section-intro">
+      The recommended direction uses the circle as the unifying design element — a laurel-framed "D" anchors the master brand while each dining hall receives a unique circular icon reflecting its personality.
+    </p>
+    
+    <img src="Final_V1.png" class="image-full" alt="Circle concept final system">
+    
+    <div class="highlight-box">
+      <p><strong>System Logic:</strong> The master brand uses a laurel-framed circle with the "D" monogram. Dining halls each get a distinctive circular icon within a yellow ring. Cafés extend the system through color-coded divided circles for easy wayfinding.</p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+  <!-- PAGE 7: DINING HALL RATIONALE -->
+  <div class="page">
+    <div class="section-label">Final Direction</div>
+    <h2 class="section-title">Dining Hall Identities</h2>
+    
+    <p class="section-intro">
+      Each dining hall received a unique identity based on its history, student community, and campus location — while maintaining visual cohesion through the shared circular icon system.
+    </p>
+    
+    <img src="pres_page-7.png" class="image-full" alt="Dining hall rationale">
+    
+    <div class="detail-callout">
+      <h4>Strategic Icon Selection</h4>
+      <p>Each icon was chosen to reflect the hall's unique character: Risley's coffee cup signals social energy. Howe's flame represents tradition and gathering. Jenkins' seed sprout connects to the Agricultural Campus. Shireff's bowl evokes comfort and home cooking. O'Brien's concentric circles speak to engineering precision.</p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+  <!-- PAGE 8: FINAL DIRECTION 2 -->
+  <div class="page">
+    <div class="section-label">Alternate Direction</div>
+    <h2 class="section-title">Concept 02: Woodblock System</h2>
+    
+    <p class="section-intro">
+      The second direction takes a bolder, more graphic approach — using the "DalU Eats" naming with shield-based architecture that connects every level of dining directly back to Dalhousie's main identity.
+    </p>
+    
+    <img src="Final_V2.png" class="image-full" alt="Woodblock concept final system">
+    
+    <div class="two-col">
+      <div>
+        <h3>Master Brand</h3>
+        <p>The "DalU Eats" mark combines an abstracted eagle head (derived from the Dalcon) with a shield frame, directly tying food to Dalhousie's crest identity.</p>
+      </div>
+      <div>
+        <h3>Sub-brands</h3>
+        <p>Dining halls receive squared icons with feather-like details. Cafés use rounded icons in brand colors. The system offers stronger environmental presence.</p>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+  <!-- PAGE 9: ENVIRONMENTAL MOCKUPS -->
+  <div class="page">
+    <div class="section-label">Application</div>
+    <h2 class="section-title">Environmental Design</h2>
+    
+    <p class="section-intro">
+      The brand system extends to physical environments — from interior signage to digital menu boards to retail kiosk design. Each touchpoint reinforces the cohesive identity.
+    </p>
+    
+    <img src="pres_page-6.png" class="image-full" alt="Howe Hall environmental mockup">
+    <p class="image-caption">Howe Hall dining signage mockup showing brand application in real environment</p>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+  <!-- PAGE 10: CAFÉ MOCKUPS -->
+  <div class="page">
+    <div class="section-label">Application</div>
+    <h2 class="section-title">Retail Café Concepts</h2>
+    
+    <p class="section-intro">
+      Beyond the core dining program, I developed complete environmental identities for retail café locations — each with distinct personality while remaining part of the Dalhousie family.
+    </p>
+    
+    <div class="image-grid">
+      <div>
+        <img src="BriefBreak_2x.png" alt="Brief Break Café">
+        <p class="image-caption">Brief Break Café — Starbucks partnership concept</p>
+      </div>
+      <div>
+        <img src="Frederics_2x.png" alt="Frederic's Café">
+        <p class="image-caption">Frederic's Coffee & More — Artisanal café</p>
+      </div>
+    </div>
+    
+    <div class="image-grid">
+      <div>
+        <img src="GreenCafe_2x.png" alt="Green Café">
+        <p class="image-caption">Green Café — Health-forward, sustainability focus</p>
+      </div>
+      <div>
+        <img src="CyberCafe_2x.png" alt="Cyber Café">
+        <p class="image-caption">Cyber Café — Tech-forward coffee concept</p>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+  <!-- PAGE 11: BOBA TEA HOUSE -->
+  <div class="page">
+    <div class="section-label">Application</div>
+    <h2 class="section-title">Retail Concept: Boba Tea House</h2>
+    
+    <p class="section-intro">
+      A complete retail concept featuring custom character illustration, branded menu systems, signage, and promotional materials — transforming a food court kiosk into a destination.
+    </p>
+    
+    <img src="BobaTeaHouse_2x.png" class="image-full" alt="Boba Tea House complete mockup">
+    
+    <div class="detail-callout">
+      <h4>The Details</h4>
+      <p>Custom mascot character, illustrated menu items, branded roll-up banner, digital menu boards, and cohesive environmental graphics. The playful aesthetic differentiates this concept while the form language keeps it connected to the broader system.</p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+  <!-- PAGE 12: RESULTS -->
+  <div class="page">
+    <div class="section-label">Results</div>
+    <h2 class="section-title">Impact & Outcome</h2>
+    
+    <p class="section-intro">
+      This comprehensive brand system was developed as part of Compass Group Canada's $180M RFP response to Dalhousie University. The work represents a complete, implementation-ready identity system.
+    </p>
+    
+    <div class="highlight-box">
+      <p><strong>Status:</strong> RFP submitted. Results pending. The proposal demonstrates how a unified hospitality identity can transform campus dining — from wayfinding to student engagement to brand perception.</p>
+    </div>
+    
+    <div class="spacer-md"></div>
+    
+    <h3>What I Delivered</h3>
+    <div class="deliverables">
+      <div class="deliverable">Complete brand architecture strategy</div>
+      <div class="deliverable">2 fully-developed concept directions</div>
+      <div class="deliverable">Master brand with multiple lock-ups</div>
+      <div class="deliverable">5 dining hall sub-brand identities</div>
+      <div class="deliverable">8+ café/retail brand identities</div>
+      <div class="deliverable">Full environmental design mockups</div>
+      <div class="deliverable">Digital menu board templates</div>
+      <div class="deliverable">24-page client presentation</div>
+    </div>
+    
+    <div class="spacer-md"></div>
+    
+    <div class="two-col">
+      <div>
+        <h3>Timeline</h3>
+        <p>Completed in <strong>4 weeks</strong> as sole designer — from initial research and strategy through final deliverables and presentation.</p>
+      </div>
+      <div>
+        <h3>Scope</h3>
+        <p>Enterprise-scale brand system spanning <strong>13+ locations</strong> across 2 campuses, serving thousands of students daily.</p>
+      </div>
+    </div>
+    
+    <div class="spacer-lg"></div>
+    
+    <div style="padding-top: 1.5rem; border-top: 2px solid #FFD100;">
+      <h3>Justin Francisco</h3>
+      <p style="margin-bottom: 0.2rem;">Senior Graphic Designer</p>
+      <p style="margin-bottom: 0.2rem; color: #666;">Compass Group Canada | Toronto</p>
+      <p style="margin-bottom: 0.2rem;"><strong>noform.design</strong></p>
+    </div>
+    
+    <div class="page-footer">
+      <span>Justin Francisco / Compass Group Canada</span>
+      <span>Dalhousie University Hospitality Brand System</span>
+    </div>
+  </div>
+
+</body>
+</html>
