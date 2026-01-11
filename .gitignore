@@ -1,3 +1,6 @@
 
 *.ai
 *.tmp
+
+.DS_Store
+._*
