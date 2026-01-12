@@ -14,9 +14,10 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: #000;
-    background-color: #f2f0ed;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #111;
+    background-color: #f4f2ee;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -42,20 +43,28 @@ a:hover {
    =================================== */
 
 :root {
-    --color-bg-primary: #f2f0ed;
+    --color-bg-primary: #f4f2ee;
     --color-bg-secondary: #ffffff;
-    --color-bg-dark: #000000;
-    --color-text-primary: #000000;
+    --color-bg-dark: #0f0f10;
+    --color-text-primary: #111111;
+    --color-text-muted: #4b4b4b;
     --color-text-light: #ffffff;
 
-    --spacing-xs: 20px;
-    --spacing-sm: 40px;
-    --spacing-md: 60px;
-    --spacing-lg: 80px;
-    --spacing-xl: 120px;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+    --space-9: 96px;
+    --space-10: 128px;
 
-    --max-width: 1400px;
-    --header-height: 100px;
+    --gutter: clamp(20px, 6vw, 120px);
+    --container-max: 1240px;
+    --header-height: 88px;
+    --radius-sm: 10px;
 
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s ease;
@@ -71,9 +80,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    margin-bottom: 1.2em;
+    margin-bottom: 1.1em;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.site-container {
+    width: min(100%, var(--container-max));
+    margin: 0 auto;
+    padding: 0 var(--gutter);
 }
 
 /* ===================================
@@ -87,20 +109,19 @@ p {
     right: 0;
     background-color: var(--color-bg-primary);
     z-index: 1000;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--space-5) 0;
     transition: var(--transition-smooth);
 }
 
 .header-content {
-    max-width: var(--max-width);
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--space-6);
 }
 
 .logo img {
-    height: 50px;
+    height: 44px;
     width: auto;
     transition: var(--transition-fast);
 }
@@ -112,13 +133,13 @@ p {
 
 .main-nav {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: var(--space-6);
 }
 
 .nav-link {
     font-size: 12px;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     position: relative;
 }
@@ -148,7 +169,7 @@ p {
 
 .project-card {
     background-color: var(--color-bg-primary);
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--space-8) 0;
     transition: var(--transition-smooth);
     opacity: 0;
     transform: translateY(40px);
@@ -169,14 +190,12 @@ p {
 
 .project-link {
     display: block;
-    max-width: var(--max-width);
-    margin: 0 auto;
 }
 
 .project-images {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--space-6);
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 }
 
 .project-image {
@@ -190,7 +209,7 @@ p {
 }
 
 .liberty-logo {
-    padding: var(--spacing-lg) 0;
+    padding: var(--space-7) 0;
 }
 
 .project-info {
@@ -200,10 +219,10 @@ p {
 .project-title {
     font-size: 11px;
     font-weight: 500;
-    letter-spacing: 2.5px;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--color-text-primary);
-    margin-top: var(--spacing-xs);
+    margin-top: var(--space-4);
 }
 
 .project-title-light {
@@ -217,7 +236,7 @@ p {
 .dalhousie-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: var(--space-5);
 }
 
 .dalhousie-logo {
@@ -227,13 +246,13 @@ p {
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    padding: var(--spacing-md);
+    padding: var(--space-6);
 }
 
 .dalhousie-photos {
     grid-column: 2 / 3;
     display: flex;
-    gap: 20px;
+    gap: var(--space-5);
 }
 
 .dalhousie-photos img {
@@ -254,9 +273,7 @@ p {
 }
 
 .hero {
-    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
-    max-width: var(--max-width);
-    margin: 0 auto;
+    padding: var(--space-9) 0 var(--space-7);
     opacity: 0;
     transform: translateY(40px);
     transition: var(--transition-smooth);
@@ -268,16 +285,22 @@ p {
 }
 
 .project-hero-title {
-    font-size: clamp(48px, 6vw, 72px);
+    font-size: clamp(40px, 5vw, 72px);
     font-weight: 800;
     line-height: 1.1;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--space-5);
     letter-spacing: -1px;
+}
+
+.hero-summary {
+    font-size: clamp(18px, 2vw, 22px);
+    color: var(--color-text-muted);
+    max-width: 720px;
 }
 
 .hero-image {
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 }
 
 .hero-image img {
@@ -290,15 +313,13 @@ p {
    =================================== */
 
 .content-wrapper {
-    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
 }
 
 .content-section {
     display: grid;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
+    gap: var(--space-7);
+    margin-bottom: var(--space-9);
     align-items: center;
     opacity: 0;
     transform: translateY(40px);
@@ -319,30 +340,30 @@ p {
 }
 
 .content-text {
-    padding-right: var(--spacing-sm);
+    padding-right: var(--space-6);
 }
 
 .layout-image-text .content-text {
     padding-right: 0;
-    padding-left: var(--spacing-sm);
+    padding-left: var(--space-6);
 }
 
 .section-header {
-    font-size: 28px;
+    font-size: clamp(24px, 2.6vw, 32px);
     font-weight: 700;
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: var(--space-4);
     letter-spacing: -0.5px;
 }
 
 .content-text p {
     font-size: 16px;
     line-height: 1.75;
-    color: #333;
+    color: var(--color-text-muted);
 }
 
 .content-image {
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 }
 
 .content-image img {
@@ -355,13 +376,87 @@ p {
     transform: scale(1.02);
 }
 
+.proof-block {
+    padding: 0 0 var(--space-9);
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+    padding: var(--space-6);
+}
+
+.proof-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.proof-label {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.proof-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.proof-list {
+    list-style: none;
+    display: grid;
+    gap: var(--space-3);
+    color: var(--color-text-muted);
+    padding: 0;
+}
+
+.proof-list li strong {
+    color: var(--color-text-primary);
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-5);
+    margin: var(--space-6) 0;
+}
+
+.stat-number {
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700;
+    color: #e31837;
+    margin-bottom: var(--space-2);
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.section-note {
+    margin-top: var(--space-6);
+}
+
+.figure-caption {
+    margin-top: var(--space-3);
+    font-size: 14px;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
 /* ===================================
    FOOTER
    =================================== */
 
 .main-footer {
     background-color: var(--color-bg-primary);
-    padding: var(--spacing-md);
+    padding: var(--space-7) 0;
     text-align: center;
     font-size: 12px;
     color: #666;
@@ -393,7 +488,7 @@ p {
 
 @media (max-width: 768px) {
     .header-content {
-        padding: var(--spacing-xs);
+        padding: 0;
     }
 
     .logo img {
@@ -401,7 +496,7 @@ p {
     }
 
     .main-nav {
-        gap: var(--spacing-xs);
+        gap: var(--space-4);
     }
 
     .nav-link {
@@ -409,7 +504,7 @@ p {
     }
 
     .project-card {
-        padding: var(--spacing-sm) var(--spacing-xs);
+        padding: var(--space-6) 0;
     }
 
     .layout-text-image,
@@ -420,10 +515,14 @@ p {
     .content-text,
     .layout-image-text .content-text {
         padding: 0;
-        margin-bottom: var(--spacing-sm);
+        margin-bottom: var(--space-6);
     }
 
     .project-hero-title {
         font-size: 36px;
+    }
+
+    .proof-grid {
+        grid-template-columns: 1fr;
     }
 }
