@@ -434,15 +434,30 @@ em {
     order: 1;
 }
 
-/* Logo Display: Simple Stack */
-.logo-display {
-    margin-bottom: var(--space-lg);
+/* Logo Display: Side-by-Side (Logo Left, Text Right) */
+.logo-section {
+    max-width: var(--content-max-width);
+    margin: 0 auto var(--space-2xl);
+    padding: 0 var(--bleed-margin);
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    gap: var(--space-lg);
+    align-items: start;
 }
 
-.logo-display img {
-    width: 35%;
-    max-width: 500px;
+.logo-section .logo-image {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.logo-section .logo-image img {
+    width: 100%;
     height: auto;
+}
+
+.logo-section .logo-text h2 {
+    margin-bottom: var(--space-md);
 }
 
 /* Metrics Display */
@@ -510,8 +525,13 @@ em {
         order: 2;
     }
 
-    .logo-display img {
-        width: 50%;
+    .logo-section {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .logo-section .logo-image {
+        justify-content: center;
     }
 
     .proof-grid {
