@@ -434,6 +434,38 @@ em {
     order: 1;
 }
 
+/* Logo Layout: Text Left, Logo Right */
+.logo-section {
+    max-width: var(--content-max-width);
+    margin: 0 auto var(--space-2xl);
+    padding: 0 var(--bleed-margin);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.logo-section .logo-text {
+    max-width: 560px;
+}
+
+.logo-section .logo-text h2 {
+    margin-bottom: var(--space-md);
+}
+
+.logo-section .logo-image {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo-section .logo-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
 /* Metrics Display */
 .metrics {
     display: grid;
@@ -497,6 +529,16 @@ em {
 
     .section-split.reverse .split-image {
         order: 2;
+    }
+
+    .logo-section {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .logo-section .logo-image {
+        justify-content: center;
+        margin-top: var(--space-md);
     }
 
     .proof-grid {
