@@ -60,7 +60,7 @@
                         <li><strong>Won competitive RFP</strong></li>
                         <li>55,000+ students served daily</li>
                         <li>70+ dining locations</li>
-                        <li>Live since Fall 2022 (3+ years)</li>
+                        <li>Live since Fall 2022 (<span id="years-proof">3+ years</span>)</li>
                     </ul>
                 </div>
                 <div class="proof-item">
@@ -214,7 +214,7 @@
                         <div class="metric-label">Dining locations on campus</div>
                     </div>
                     <div class="metric-item">
-                        <div class="metric-number">3+ Years</div>
+                        <div class="metric-number" id="years-in-market">3+ Years</div>
                         <div class="metric-label">Contract renewed—brand still in market</div>
                     </div>
                 </div>
@@ -236,6 +236,27 @@
     <footer class="main-footer">
         <p>&copy; 2026 Francisco Designs. All rights reserved.</p>
     </footer>
+
+    <!-- Auto-calculate years in market -->
+    <script>
+        (function() {
+            const launchYear = 2022;
+            const currentYear = new Date().getFullYear();
+            const yearsInMarket = currentYear - launchYear;
+
+            // Update main metrics
+            const yearsElement = document.getElementById('years-in-market');
+            if (yearsElement && yearsInMarket > 0) {
+                yearsElement.textContent = yearsInMarket + '+ Years';
+            }
+
+            // Update proof strip
+            const yearsProof = document.getElementById('years-proof');
+            if (yearsProof && yearsInMarket > 0) {
+                yearsProof.textContent = yearsInMarket + '+ years';
+            }
+        })();
+    </script>
 
 </body>
 </html>
