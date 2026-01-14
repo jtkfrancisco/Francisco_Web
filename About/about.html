@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Justin Francisco | Senior Designer & Creative Director</title>
+    <meta name="description" content="Senior designer building systems across brand, product, and physical space. Ten years experience with Compass Group Canada and Chestnut Park.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            margin-top: 120px;
+            max-width: var(--content-max-width);
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 var(--bleed-margin);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: var(--space-xl);
+            align-items: start;
+        }
+
+        .about-image-wrapper {
+            position: sticky;
+            top: 160px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content {
+            padding-top: var(--space-sm);
+        }
+
+        .about-intro {
+            font-size: clamp(var(--font-size-2xl), 3.5vw, 42px);
+            font-weight: 600;
+            line-height: var(--line-height-tight);
+            letter-spacing: -0.02em;
+            color: var(--color-text);
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-experience {
+            font-size: var(--font-size-lg);
+            line-height: var(--line-height-relaxed);
+            color: var(--color-text-medium);
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-experience strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .about-section {
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-section-title {
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: var(--space-md);
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-list li {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            color: var(--color-text-medium);
+            padding-left: 1.5em;
+            position: relative;
+            margin-bottom: 0.4em;
+        }
+
+        .about-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .about-goal {
+            background-color: rgba(0, 0, 0, 0.02);
+            border-left: 3px solid var(--color-accent);
+            padding: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .about-goal-title {
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: var(--space-sm);
+        }
+
+        .about-goal-text {
+            font-size: var(--font-size-xl);
+            line-height: var(--line-height-base);
+            color: var(--color-text);
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .about-image-wrapper {
+                position: relative;
+                top: 0;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .about-hero {
+                margin-bottom: var(--space-xl);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                margin-top: 96px;
+                padding: 0 var(--space-md);
+            }
+
+            .about-intro {
+                font-size: var(--font-size-2xl);
+            }
+
+            .about-experience,
+            .about-list li {
+                font-size: var(--font-size-base);
+            }
+
+            .about-goal {
+                padding: var(--space-md);
+            }
+
+            .about-goal-text {
+                font-size: var(--font-size-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../MainFranciscoLogo.png" alt="Francisco Designs">
+            </a>
+            <nav class="main-nav">
+                <a href="../contact.html" class="nav-link">CONTACT</a>
+                <a href="about.html" class="nav-link">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <main class="about-hero">
+        <div class="about-grid">
+            <!-- Portrait Image -->
+            <div class="about-image-wrapper">
+                <img src="Justin Francisco Suit.png"
+                     alt="Justin Francisco, Senior Graphic Designer and Creative Director"
+                     class="about-image">
+            </div>
+
+            <!-- Content -->
+            <div class="about-content">
+                <h1 class="about-intro">I design systems that work across brand, product, and physical space.</h1>
+
+                <div class="about-experience">
+                    <strong>Ten years</strong> building visual identities, environmental design, motion, web, and 3D for clients like <strong>Compass Group Canada</strong> and <strong>Chestnut Park</strong>. Led a full venue rebrand in two weeks. Built frameworks that scale across teams and touchpoints.
+                </div>
+
+                <div class="about-experience">
+                    I think in systems, execute across disciplines, and use AI to move faster without compromising quality. I code enough to prototype and automate. I art direct across any medium.
+                </div>
+
+                <!-- What I Do -->
+                <div class="about-section">
+                    <h2 class="about-section-title">What I Do</h2>
+                    <ul class="about-list">
+                        <li>Brand systems and creative direction</li>
+                        <li>Environmental and experiential design</li>
+                        <li>Illustration, motion, 3D, web</li>
+                        <li>AI-accelerated design workflows</li>
+                    </ul>
+                </div>
+
+                <!-- What I Want -->
+                <div class="about-goal">
+                    <h2 class="about-goal-title">What I Want</h2>
+                    <p class="about-goal-text">Remote creative leadership at a US product company or agency. I want to set direction, build systems, and work on projects that perform.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Column 1: About/Contact Info -->
+            <div class="footer-column footer-about">
+                <h3 class="footer-heading">Francisco Designs</h3>
+                <p class="footer-text">
+                    Award-winning graphic designer specializing in brand identity,
+                    hospitality design, and creative direction.
+                </p>
+                <p class="footer-text">
+                    <a href="mailto:jtkfrancisco@gmail.com" class="footer-email">
+                        jtkfrancisco@gmail.com
+                    </a>
+                </p>
+            </div>
+
+            <!-- Column 2: Social Links -->
+            <div class="footer-column footer-social">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jtkfrancisco/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="LinkedIn"
+                       class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/justinfranciscodesigns"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram"
+                       class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/elonmusk"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="X (Twitter)"
+                       class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 3: Quick Navigation -->
+            <div class="footer-column footer-nav">
+                <h3 class="footer-heading">Navigation</h3>
+                <nav class="footer-nav-links">
+                    <a href="../index.html" class="footer-nav-link">Home</a>
+                    <a href="about.html" class="footer-nav-link">About</a>
+                    <a href="../contact.html" class="footer-nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Francisco Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
