@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco Designs – Senior Graphic Designer</title>
-    <meta name="description" content="Award-winning brand identity design and creative direction for hospitality, entertainment, and institutional clients.">
+    <title>Contact – Francisco Designs</title>
+    <meta name="description" content="Get in touch with Francisco Designs for brand identity and creative direction projects.">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -21,100 +21,63 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="homepage">
-
-        <!-- York U Project -->
-        <section class="project-section">
-            <a href="york-u.html" class="project-link">
-                <div class="project-image-wrapper">
-                    <img src="York%20U%20Mobile%20Odering%20App%20Brand/YorkApp_Cover@2x.png"
-                         alt="York U Eats mobile app interface design"
-                         class="project-image">
-                </div>
-                <p class="project-caption">YORK U HOSPITALITY BRAND & MOBILE APP</p>
-            </a>
-        </section>
-
-        <!-- Sarnia Arena Project -->
-        <section class="project-section">
-            <a href="sarnia-arena.html" class="project-link">
-                <div class="project-image-wrapper">
-                    <img src="sarnia-arena-rebrand/Sarnia_Cover@2x.png"
-                         alt="Sarnia Arena premium suite environmental design"
-                         class="project-image">
-                </div>
-                <p class="project-caption">SARNIA ARENA ENVIRONMENTAL DESIGN</p>
-            </a>
-        </section>
-
-        <!-- Dalhousie Dining Brand -->
-        <section class="project-section">
-            <a href="dalhousie.html" class="project-link">
-                <div class="project-image-wrapper">
-                    <img src="Dalhousie%20Dining%20Brand/DalU_Cover@2x.png"
-                         alt="Dalhousie University multi-venue hospitality brand system"
-                         class="project-image">
-                </div>
-                <p class="project-caption">DALHOUSIE U HOSPITALITY BRAND SYSTEM</p>
-            </a>
-        </section>
-
-        <!-- Liberty Entertainment -->
-        <section class="project-section">
-            <a href="liberty.html" class="project-link">
-                <div class="project-image-wrapper" style="background-color: #000;">
-                    <img src="Liberty Entertainment Logo/Content/Finals/Final_Liberty-White@2x.png"
-                         alt="Liberty Entertainment Group logo design"
-                         class="project-image"
-                         style="padding: 64px 0;">
-                </div>
-                <p class="project-caption">LIBERTY ENTERTAINMENT GROUP LOGO</p>
-            </a>
-        </section>
-
-    </main>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <!-- Contact Form Section -->
+    <main class="contact-page" style="margin-top: 120px;">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="section-text">
-                I'm always interested in hearing about new projects and opportunities.
-            </p>
-            <div class="contact-info">
-                <p>
-                    <a href="mailto:jtkfrancisco@gmail.com" class="contact-email">
+            <section class="section-text">
+                <h1>Get In Touch</h1>
+                <p>I'm always interested in hearing about new projects and opportunities. Fill out the form below and I'll get back to you soon.</p>
+            </section>
+
+            <form class="contact-form" method="POST" action="#">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name *</label>
+                    <input type="text"
+                           id="name"
+                           name="name"
+                           class="form-input"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           class="form-input"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text"
+                           id="subject"
+                           name="subject"
+                           class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-label">Message *</label>
+                    <textarea id="message"
+                              name="message"
+                              class="form-textarea"
+                              rows="8"
+                              required></textarea>
+                </div>
+
+                <button type="submit" class="form-button">Send Message</button>
+            </form>
+
+            <div class="contact-alternate" style="margin-top: var(--space-xl); text-align: center;">
+                <p style="color: var(--color-text-medium);">
+                    Or email me directly at
+                    <a href="mailto:jtkfrancisco@gmail.com" style="color: var(--color-text); font-weight: 500;">
                         jtkfrancisco@gmail.com
                     </a>
                 </p>
-                <div class="contact-social">
-                    <a href="https://www.linkedin.com/in/jtkfrancisco/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="LinkedIn"
-                       class="social-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                            <rect x="2" y="9" width="4" height="12"/>
-                            <circle cx="4" cy="4" r="2"/>
-                        </svg>
-                    </a>
-                    <a href="https://instagram.com/justinfranciscodesigns"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="Instagram"
-                       class="social-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                        </svg>
-                    </a>
-                </div>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="main-footer">

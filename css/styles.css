@@ -466,13 +466,256 @@ em {
 
 .main-footer {
     background-color: var(--color-bg);
-    padding: var(--space-lg) var(--space-md);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin-top: var(--space-2xl);
+    padding: var(--space-xl) var(--space-md) var(--space-lg);
+}
+
+.footer-content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.footer-heading {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+}
+
+.footer-text {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-medium);
+    margin-bottom: var(--space-xs);
+}
+
+.footer-email {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity var(--transition-base);
+}
+
+.footer-email:hover {
+    opacity: 0.6;
+}
+
+.footer-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.footer-nav-link {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-medium);
+    text-decoration: none;
+    transition: color var(--transition-base);
+    width: fit-content;
+}
+
+.footer-nav-link:hover {
+    color: var(--color-text);
+    opacity: 1;
+}
+
+.footer-bottom {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
     text-align: center;
+}
+
+.footer-copyright {
     font-size: var(--font-size-xs);
     color: var(--color-text-light);
     letter-spacing: 0.05em;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    margin-top: var(--space-2xl);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--color-text-medium);
+    transition: color var(--transition-base);
+}
+
+.social-icon:hover {
+    color: var(--color-text);
+    opacity: 1;
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* ===================================
+   CONTACT SECTION
+   =================================== */
+
+.contact-section {
+    max-width: var(--text-max-width);
+    margin: var(--space-2xl) auto;
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-sm);
+}
+
+.contact-section .section-text {
+    color: var(--color-text-medium);
+    margin-bottom: var(--space-lg);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.contact-email {
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity var(--transition-base);
+}
+
+.contact-email:hover {
+    opacity: 0.6;
+}
+
+.contact-social {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+}
+
+/* ===================================
+   CONTACT FORM
+   =================================== */
+
+.contact-page {
+    max-width: var(--text-max-width);
+    margin: 0 auto;
+    padding: var(--space-md);
+}
+
+.contact-form {
+    margin-top: var(--space-lg);
+}
+
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+.form-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+    letter-spacing: 0.02em;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    color: var(--color-text);
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-text);
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.05);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 160px;
+    line-height: var(--line-height-relaxed);
+}
+
+.form-button {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    font-family: inherit;
+    color: var(--color-bg);
+    background-color: var(--color-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity var(--transition-base), transform var(--transition-base);
+    letter-spacing: 0.02em;
+}
+
+.form-button:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.form-button:active {
+    transform: translateY(0);
+}
+
+.contact-alternate {
+    margin-top: var(--space-xl);
+    text-align: center;
+}
+
+.contact-alternate p {
+    color: var(--color-text-medium);
+    font-size: var(--font-size-sm);
+}
+
+.contact-alternate a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity var(--transition-base);
+}
+
+.contact-alternate a:hover {
+    opacity: 0.6;
 }
 
 /* ===================================
@@ -501,6 +744,15 @@ em {
 
     .proof-grid {
         grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg) var(--space-md);
+    }
+
+    .footer-about {
+        grid-column: 1 / -1;
     }
 }
 
@@ -533,6 +785,15 @@ em {
     .metrics {
         grid-template-columns: 1fr;
         gap: var(--space-md);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .footer-about {
+        grid-column: auto;
     }
 }
 
