@@ -227,7 +227,7 @@ em {
    =================================== */
 
 .homepage {
-    margin-top: 120px; /* Account for fixed header */
+    margin-top: 180px; /* Account for fixed header */
     padding-left: var(--space-md);
     padding-right: var(--space-md);
 }
@@ -249,9 +249,10 @@ em {
 }
 
 .project-image {
-    width: 100%;
+    width: 70%;
     height: auto;
     transition: transform var(--transition-slow);
+    margin: 0 auto;
 }
 
 .project-link:hover .project-image {
