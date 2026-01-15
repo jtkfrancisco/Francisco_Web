@@ -22,21 +22,23 @@
     </header>
 
     <!-- Contact Form Section -->
-    <main class="contact-page" style="margin-top: 120px;">
+    <main class="contact-page" role="main" style="margin-top: 120px;">
         <div class="container">
             <section class="section-text">
-                <h1>Get In Touch</h1>
-                <p>I'm always interested in hearing about new projects and opportunities. Fill out the form below and I'll get back to you soon.</p>
+                <h1>Let's Work Together</h1>
+                <p>I'm currently available for creative leadership roles and select freelance projects. Whether you're exploring a potential hire or need strategic design work, I'd love to hear from you. I typically respond within 24 hours.</p>
             </section>
 
-            <form class="contact-form" method="POST" action="#">
+            <form class="contact-form" method="POST" action="https://formspree.io/f/mreebrgv" id="contactForm">
                 <div class="form-group">
                     <label for="name" class="form-label">Name *</label>
                     <input type="text"
                            id="name"
                            name="name"
                            class="form-input"
-                           required>
+                           required
+                           aria-required="true">
+                    <span class="form-error" id="name-error"></span>
                 </div>
 
                 <div class="form-group">
@@ -45,32 +47,69 @@
                            id="email"
                            name="email"
                            class="form-input"
-                           required>
+                           required
+                           aria-required="true">
+                    <span class="form-error" id="email-error"></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="subject" class="form-label">Subject</label>
+                    <label for="company" class="form-label">Company / Organization</label>
                     <input type="text"
-                           id="subject"
-                           name="subject"
+                           id="company"
+                           name="company"
                            class="form-input">
                 </div>
 
                 <div class="form-group">
-                    <label for="message" class="form-label">Message *</label>
+                    <label for="project-type" class="form-label">What are you looking for?</label>
+                    <select id="project-type" name="project-type" class="form-input">
+                        <option value="">Select...</option>
+                        <option value="full-time">Full-Time Creative Leadership Role</option>
+                        <option value="contract">Contract / Freelance Project</option>
+                        <option value="consultation">Design Consultation</option>
+                        <option value="collaboration">Collaboration / Partnership</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeline" class="form-label">Timeline</label>
+                    <input type="text"
+                           id="timeline"
+                           name="timeline"
+                           class="form-input"
+                           placeholder="e.g., ASAP, 2-3 months, exploring options">
+                </div>
+
+                <div class="form-group">
+                    <label for="budget" class="form-label">Budget Range (for freelance projects)</label>
+                    <input type="text"
+                           id="budget"
+                           name="budget"
+                           class="form-input"
+                           placeholder="e.g., $5-10K, $20K+, or TBD">
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-label">Tell me about your project or role *</label>
                     <textarea id="message"
                               name="message"
                               class="form-textarea"
                               rows="8"
-                              required></textarea>
+                              required
+                              aria-required="true"
+                              placeholder="What problem are you solving? What kind of work are you looking for?"></textarea>
+                    <span class="form-error" id="message-error"></span>
                 </div>
 
-                <button type="submit" class="form-button">Send Message</button>
+                <button type="submit" class="form-button" id="submitBtn">Send Message</button>
+
+                <div class="form-status" id="formStatus" style="display: none;"></div>
             </form>
 
             <div class="contact-alternate" style="margin-top: var(--space-xl); text-align: center;">
                 <p style="color: var(--color-text-medium);">
-                    Or email me directly at
+                    Prefer email?
                     <a href="mailto:jtkfrancisco@gmail.com" style="color: var(--color-text); font-weight: 500;">
                         jtkfrancisco@gmail.com
                     </a>

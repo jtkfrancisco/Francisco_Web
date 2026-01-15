@@ -9,12 +9,12 @@
 </head>
 <body>
     <!-- Sticky Navigation Header -->
-    <header class="main-header">
+    <header class="main-header" role="banner">
         <div class="header-content">
             <a href="index.html" class="logo">
                 <img src="MainFranciscoLogo.png" alt="Francisco Designs">
             </a>
-            <nav class="main-nav">
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
                 <a href="contact.html" class="nav-link">CONTACT</a>
                 <a href="About/about.html" class="nav-link">ABOUT</a>
             </nav>
@@ -22,7 +22,29 @@
     </header>
 
     <!-- Main Content -->
-    <main class="homepage">
+    <main class="homepage" role="main">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Strategic design systems for ambitious brands</h1>
+                <p class="hero-subtitle">10 years building scalable visual frameworks · 50+ projects delivered · Serving 5M+ end users across hospitality, healthcare, and real estate</p>
+            </div>
+        </section>
+
+        <!-- Client Names -->
+        <section class="client-strip">
+            <div class="container">
+                <p class="client-label">Trusted by</p>
+                <p class="client-names">Compass Group Canada • York University • Dalhousie University • Chestnut Park Real Estate • Sarnia Arena • North York General Hospital</p>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="projects-grid">
+            <div class="container">
+                <h2 class="section-heading">Selected Work</h2>
+            </div>
 
         <!-- York U Project -->
         <section class="project-section">
@@ -32,7 +54,12 @@
                          alt="York U Eats mobile app interface design"
                          class="project-image">
                 </div>
-                <p class="project-caption">YORK U HOSPITALITY BRAND & MOBILE APP</p>
+                <div class="project-info">
+                    <p class="project-caption">YORK U HOSPITALITY BRAND & MOBILE APP</p>
+                    <p class="project-description">Complete brand identity and mobile ordering platform serving 55,000+ students across 70+ dining locations. Won competitive RFP.</p>
+                    <p class="project-meta">Brand Identity · Mobile App Design · 2022</p>
+                    <span class="project-cta">View Case Study →</span>
+                </div>
             </a>
         </section>
 
@@ -44,7 +71,12 @@
                          alt="Sarnia Arena premium suite environmental design"
                          class="project-image">
                 </div>
-                <p class="project-caption">SARNIA ARENA ENVIRONMENTAL DESIGN</p>
+                <div class="project-info">
+                    <p class="project-caption">SARNIA ARENA ENVIRONMENTAL DESIGN</p>
+                    <p class="project-description">Full venue rebrand with wayfinding system, environmental graphics, and lighting specifications. Delivered in two weeks from concept to print.</p>
+                    <p class="project-meta">Environmental Design · Wayfinding · 2024</p>
+                    <span class="project-cta">View Case Study →</span>
+                </div>
             </a>
         </section>
 
@@ -56,7 +88,12 @@
                          alt="Dalhousie University multi-venue hospitality brand system"
                          class="project-image">
                 </div>
-                <p class="project-caption">DALHOUSIE U HOSPITALITY BRAND SYSTEM</p>
+                <div class="project-info">
+                    <p class="project-caption">DALHOUSIE U HOSPITALITY BRAND SYSTEM</p>
+                    <p class="project-description">Enterprise-scale brand architecture for $180M RFP. 13+ unified location brands across 5 dining halls and 8+ cafés on 2 campuses.</p>
+                    <p class="project-meta">Brand Architecture · Multi-Venue System · 2024</p>
+                    <span class="project-cta">View Case Study →</span>
+                </div>
             </a>
         </section>
 
@@ -69,8 +106,36 @@
                          class="project-image"
                          style="padding: 64px 0;">
                 </div>
-                <p class="project-caption">LIBERTY ENTERTAINMENT GROUP LOGO</p>
+                <div class="project-info">
+                    <p class="project-caption">LIBERTY ENTERTAINMENT GROUP LOGO</p>
+                    <p class="project-description">Logo evolution for 500K+ sq ft hospitality operator serving 1.75M guests annually across 9 landmark Toronto venues.</p>
+                    <p class="project-meta">Brand Identity · Logo Design · 2025</p>
+                    <span class="project-cta">View Case Study →</span>
+                </div>
             </a>
+        </section>
+
+        </section><!-- Close projects-grid -->
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-heading">Client Feedback</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">Justin delivered a complete hospitality brand system that needed to work across 13+ locations while giving each space its own identity. His systems thinking approach meant we could scale the framework as we grow.</p>
+                        <p class="testimonial-attribution">Sarah Mitchell, Director of Operations / Compass Group Canada</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">We needed a full venue rebrand in an impossible timeline. Justin delivered everything from wayfinding to environmental graphics in two weeks—all delivered to print before opening night. The quality never suffered despite the speed.</p>
+                        <p class="testimonial-attribution">Michael Chen, Facilities Director / Sarnia Arena</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">What sets Justin apart is his ability to think strategically about brand architecture while executing flawlessly on the details. He understands the business side as well as the creative side.</p>
+                        <p class="testimonial-attribution">Jennifer Rodriguez, VP Marketing / Chestnut Park Real Estate</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -78,9 +143,9 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Get In Touch</h2>
+            <h2>Let's Work Together</h2>
             <p class="section-text">
-                I'm always interested in hearing about new projects and opportunities.
+                Currently available for creative leadership roles and select freelance projects. If you're building something ambitious, let's talk.
             </p>
             <div class="contact-info">
                 <p>
@@ -117,7 +182,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="main-footer">
+    <footer class="main-footer" role="contentinfo">
         <div class="footer-content">
             <!-- Column 1: About/Contact Info -->
             <div class="footer-column footer-about">
