@@ -146,6 +146,48 @@ class LazyImageLoad {
 }
 
 // ===================================
+// DISCIPLINE CYCLING ANIMATION (ABOUT PAGE)
+// ===================================
+
+class DisciplineCycle {
+    constructor() {
+        this.elements = document.querySelectorAll('.discipline-cycle');
+        if (this.elements.length > 0) {
+            this.init();
+        }
+    }
+
+    init() {
+        this.elements.forEach(element => {
+            const disciplinesAttr = element.getAttribute('data-disciplines');
+            if (!disciplinesAttr) return;
+
+            const disciplines = disciplinesAttr.split(',').map(d => d.trim());
+            let currentIndex = 0;
+
+            // Start cycling after 1 second
+            setTimeout(() => {
+                setInterval(() => {
+                    currentIndex = (currentIndex + 1) % disciplines.length;
+
+                    // Fade out
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(-10px)';
+
+                    // Change text and fade in
+                    setTimeout(() => {
+                        element.textContent = disciplines[currentIndex];
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, 250);
+
+                }, 1500); // Change every 1.5 seconds (faster)
+            }, 1000);
+        });
+    }
+}
+
+// ===================================
 // INITIALIZE ALL MODULES
 // ===================================
 
@@ -154,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new HeaderScroll();
     new PageTransition();
     new LazyImageLoad();
+    new DisciplineCycle();
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

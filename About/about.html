@@ -27,20 +27,31 @@
         .about-image-wrapper {
             position: sticky;
             top: 160px;
+            padding-top: calc(var(--space-sm) + 96px); /* Align with text block top */
         }
 
         .about-image {
-            width: 100%;
+            width: 70%; /* 30% smaller */
             height: auto;
             display: block;
+            margin: 0 auto; /* Center the smaller image */
         }
 
         .about-content {
-            padding-top: var(--space-sm);
+            padding-top: calc(var(--space-sm) + 96px); /* Move content down by ~2 inches */
         }
 
-        .about-intro {
-            font-size: clamp(var(--font-size-2xl), 3.5vw, 42px);
+        /* New hierarchy: name, tagline, intro text, disciplines */
+        .about-name {
+            font-size: var(--font-size-base); /* 16px - smaller */
+            font-weight: 500;
+            color: var(--color-text-medium);
+            margin-bottom: var(--space-xs);
+            letter-spacing: 0;
+        }
+
+        .about-tagline {
+            font-size: clamp(var(--font-size-2xl), 3.5vw, 42px); /* larger - main headline */
             font-weight: 600;
             line-height: var(--line-height-tight);
             letter-spacing: -0.02em;
@@ -48,16 +59,48 @@
             margin-bottom: var(--space-lg);
         }
 
-        .about-experience {
+        .about-intro-text {
             font-size: var(--font-size-lg);
             line-height: var(--line-height-relaxed);
             color: var(--color-text-medium);
+            margin-bottom: var(--space-sm);
+        }
+
+        .about-disciplines {
+            font-size: clamp(var(--font-size-xl), 2.5vw, 32px); /* medium-large */
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: var(--space-md); /* Tighter spacing to experience text */
+            min-height: 2em; /* prevent layout shift during animation */
+        }
+
+        .discipline-cycle {
+            display: inline-block;
+            color: var(--color-accent);
+            font-weight: 600;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .about-experience {
             margin-bottom: var(--space-xl);
+        }
+
+        .about-experience p {
+            font-size: var(--font-size-lg);
+            line-height: var(--line-height-relaxed);
+            color: var(--color-text-medium);
+            margin-bottom: 1.5em;
         }
 
         .about-experience strong {
             color: var(--color-text);
             font-weight: 600;
+        }
+
+        .about-experience em {
+            color: var(--color-text-medium); /* Match body copy color */
+            font-style: normal; /* Remove italic */
+            font-weight: 400;
         }
 
         .about-section {
@@ -71,6 +114,14 @@
             text-transform: uppercase;
             color: var(--color-text-light);
             margin-bottom: var(--space-md);
+        }
+
+        .about-section-title-large {
+            font-size: var(--font-size-xl); /* 24px - larger than current */
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.01em;
         }
 
         .about-list {
@@ -111,6 +162,14 @@
             margin-bottom: var(--space-sm);
         }
 
+        .about-goal-title-large {
+            font-size: var(--font-size-xl); /* 24px - larger */
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.01em;
+        }
+
         .about-goal-text {
             font-size: var(--font-size-xl);
             line-height: var(--line-height-base);
@@ -144,11 +203,15 @@
                 padding: 0 var(--space-md);
             }
 
-            .about-intro {
+            .about-tagline {
                 font-size: var(--font-size-2xl);
             }
 
-            .about-experience,
+            .about-disciplines {
+                font-size: var(--font-size-xl);
+            }
+
+            .about-experience p,
             .about-list li {
                 font-size: var(--font-size-base);
             }
@@ -189,30 +252,43 @@
 
             <!-- Content -->
             <div class="about-content">
-                <h1 class="about-intro">I design systems that work across brand, product, and physical space.</h1>
+                <h1 class="about-name">Hi, I am Justin Francisco.</h1>
+
+                <p class="about-tagline">I'm a visual logician; a designer who thinks in systems first, styles second.</p>
+
+                <p class="about-intro-text">I build from first principles, so ideas hold up across every expression:</p>
+
+                <p class="about-disciplines">
+                    <span class="discipline-cycle" data-disciplines="logos,signage,screens,apps,websites,videos,animations,3D models,environmental design">logos</span>
+                </p>
 
                 <div class="about-experience">
-                    <strong>Ten years</strong> building visual identities, environmental design, motion, web, and 3D for clients like <strong>Compass Group Canada</strong> and <strong>Chestnut Park</strong>. Led a full venue rebrand in two weeks. Built frameworks that scale across teams and touchpoints.
-                </div>
+                    <p><em>Ten years of experience building strategic visuals and branding for major clients across diverse sectors. (Chefs Hall, York U, Kitchener Arena, Compass Corrections, North York General Hospital).</em></p>
 
-                <div class="about-experience">
-                    I think in systems, execute across disciplines, and use AI to move faster without compromising quality. I code enough to prototype and automate. I art direct across any medium.
+                    <p>My systems-first approach and interdisciplinary fluency let me turn around large projects on tight deadlines: I designed a full visual system (branding, wayfinding, multiple venues) for Sarnia Arena in two weeks, delivered to print before they opened for the season.</p>
+
+                    <p>My goal is to create scalable frameworks that work across platforms and adapt to different contexts. Design should be functional, increasing ease and efficiency for end users, not just looking good on a mood board.</p>
+
+                    <p>Unlike most designers, I have real working knowledge in code: enough to prototype web and app interfaces with complex 3D visuals and animations, and to collaborate with engineers without needing a translator. I use AI as leverage, accelerating workflows without compromising originality.</p>
+
+                    <p>I direct across disciplines (photographers, videographers, junior designers) and often work in both English and French.</p>
                 </div>
 
                 <!-- What I Do -->
                 <div class="about-section">
-                    <h2 class="about-section-title">What I Do</h2>
+                    <h2 class="about-section-title-large">What I do:</h2>
                     <ul class="about-list">
-                        <li>Brand systems and creative direction</li>
+                        <li>Strategic brand systems and assets</li>
+                        <li>Creative direction across disciplines</li>
                         <li>Environmental and experiential design</li>
-                        <li>Illustration, motion, 3D, web</li>
+                        <li>Illustration, video, animation, 3D, UI</li>
                         <li>AI-accelerated design workflows</li>
                     </ul>
                 </div>
 
                 <!-- What I Want -->
                 <div class="about-goal">
-                    <h2 class="about-goal-title">What I Want</h2>
+                    <h2 class="about-goal-title-large">What I want:</h2>
                     <p class="about-goal-text">Remote creative leadership at a US product company or agency. I want to set direction, build systems, and work on projects that perform.</p>
                 </div>
             </div>
