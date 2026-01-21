@@ -319,6 +319,16 @@ document.addEventListener('DOMContentLoaded', () => {
     new DisciplineCycle();
     new ContactForm();
 
+    // Initialize magnetic hero text (desktop only)
+    if (window.innerWidth > 1024 &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        new MagneticHeroText('.hero-title', {
+            maxDistance: 200,
+            maxDisplacement: 25,
+            springEasing: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
+        });
+    }
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
