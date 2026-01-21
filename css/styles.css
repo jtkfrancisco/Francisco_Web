@@ -13,6 +13,43 @@
     box-sizing: border-box;
 }
 
+/* ===================================
+   ACCESSIBILITY - Skip Link
+   =================================== */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: var(--color-text);
+    color: var(--color-bg);
+    padding: 12px 24px;
+    z-index: 10000;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 16px;
+    outline: none;
+}
+
+/* ===================================
+   ACCESSIBILITY - Focus States
+   =================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
 html {
     scroll-behavior: smooth;
 }
