@@ -47,7 +47,7 @@
         <div class="container">
             <section class="section-text">
                 <h1>Let's Work Together</h1>
-                <p>I'm currently available for creative leadership roles, design partnerships, and AI workflow integration projects. Whether you're an agency looking to accelerate delivery, a growing company building your first design system, or exploring a potential hire who ships 2–3x faster — I'd love to hear from you. I typically respond within 24 hours.</p>
+                <p>I'm currently looking for a full-time senior design role — ideally remote, with a growing team that needs someone who can lead brand systems, creative direction, and AI-accelerated workflows from day one. I'm also open to contract partnerships and consulting. I typically respond within 24 hours.</p>
             </section>
 
             <form class="contact-form" method="POST" action="https://formspree.io/f/mreebrgv" id="contactForm">
@@ -83,7 +83,7 @@
 
                 <div class="form-group">
                     <label for="project-type" class="form-label">What are you looking for?</label>
-                    <select id="project-type" name="project-type" class="form-input">
+                    <select id="project-type" name="project-type" class="form-input" aria-label="What are you looking for">
                         <option value="">Select...</option>
                         <option value="full-time">Full-Time Creative Leadership Role</option>
                         <option value="contract">Contract / Freelance Project</option>
@@ -126,7 +126,7 @@
 
                 <button type="submit" class="form-button" id="submitBtn">Send Message</button>
 
-                <div class="form-status" id="formStatus" style="display: none;"></div>
+                <div class="form-status" id="formStatus" style="display: none;" aria-live="polite"></div>
             </form>
 
             <div class="contact-alternate" style="margin-top: var(--space-xl); text-align: center;">
@@ -203,6 +203,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
