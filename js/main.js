@@ -91,11 +91,12 @@ class PageTransition {
     init() {
         // Fade in on page load
         document.body.style.opacity = '0';
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.transition = 'opacity 0.4s ease';
+        // Use rAF to ensure the opacity:0 is painted before transitioning to 1
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
                 document.body.style.opacity = '1';
-            }, 100);
+            });
         });
 
         // Smooth transitions for internal links
@@ -158,6 +159,7 @@ class DisciplineCycle {
     }
 
     init() {
+        this.intervals = [];
         this.elements.forEach(element => {
             const disciplinesAttr = element.getAttribute('data-disciplines');
             if (!disciplinesAttr) return;
@@ -167,7 +169,7 @@ class DisciplineCycle {
 
             // Start cycling after 1 second
             setTimeout(() => {
-                setInterval(() => {
+                const intervalId = setInterval(() => {
                     currentIndex = (currentIndex + 1) % disciplines.length;
 
                     // Fade out
@@ -181,9 +183,15 @@ class DisciplineCycle {
                         element.style.transform = 'translateY(0)';
                     }, 250);
 
-                }, 1500); // Change every 1.5 seconds (faster)
+                }, 1500);
+                this.intervals.push(intervalId);
             }, 1000);
         });
+    }
+
+    destroy() {
+        this.intervals.forEach(id => clearInterval(id));
+        this.intervals = [];
     }
 }
 
