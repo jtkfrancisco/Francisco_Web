@@ -89,14 +89,12 @@ class PageTransition {
     }
 
     init() {
-        // Fade in on page load
-        document.body.style.opacity = '0';
-        document.body.style.transition = 'opacity 0.4s ease';
-        // Use rAF to ensure the opacity:0 is painted before transitioning to 1
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                document.body.style.opacity = '1';
-            });
+        // Ensure page is visible (clear any stale transition state)
+        document.body.classList.remove('page-leaving');
+        document.body.removeAttribute('style');
+        window.addEventListener('pageshow', () => {
+            document.body.classList.remove('page-leaving');
+            document.body.removeAttribute('style');
         });
 
         // Smooth transitions for internal links
@@ -104,17 +102,11 @@ class PageTransition {
         links.forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
-
-                // Skip if it's an anchor link
                 if (href.startsWith('#')) return;
 
                 e.preventDefault();
-                document.body.style.transition = 'opacity 0.3s ease';
-                document.body.style.opacity = '0';
-
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 300);
+                document.body.classList.add('page-leaving');
+                setTimeout(() => { window.location.href = href; }, 300);
             });
         });
     }
@@ -327,14 +319,10 @@ document.addEventListener('DOMContentLoaded', () => {
     new DisciplineCycle();
     new ContactForm();
 
-    // Initialize magnetic hero text (desktop only)
-    if (window.innerWidth > 1024 &&
-        !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        new MagneticHeroText('.hero-title', {
-            maxDistance: 200,
-            maxDisplacement: 25,
-            springEasing: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
-        });
+    // Particle hero effect is initialized in index.html
+    // Magnetic text works alongside particles
+    if (document.querySelector('.hero-title')) {
+        new MagneticHeroText('.hero-title');
     }
 
     // Smooth scroll for anchor links

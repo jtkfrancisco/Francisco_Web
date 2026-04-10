@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalhousie University Hospitality Brand – Complete Dining System | Francisco Designs</title>
+    <meta name="description" content="Enterprise-scale brand architecture for Dalhousie University: 13+ location brands across 2 campuses, delivered in 4 weeks for a $180M contract bid.">
+
+    <meta property="og:title" content="Dalhousie University Hospitality Brand – Complete Dining System | Francisco Designs">
+    <meta property="og:description" content="Enterprise-scale brand architecture for Dalhousie University: 13+ location brands across 2 campuses.">
+    <meta property="og:image" content="https://francisco.design/Dalhousie%20Dining%20Brand/DalU_Cover@2x.png">
+    <meta property="og:url" content="https://francisco.design/dalhousie.html">
+    <meta property="og:type" content="article">
+
+    <link rel="canonical" href="https://francisco.design/dalhousie.html">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* =============================================
+           DALHOUSIE PROJECT PAGE — VISUAL-FIRST
+           ============================================= */
+
+        .dal-page {
+            --dal-black: #1a1a1a;
+            --dal-gold: #C5A55A;
+            --dal-dark: #111111;
+            --dal-warm: #F5F3F0;
+            --dal-light: #FAFAF8;
+        }
+
+        /* --- Full-Bleed Hero --- */
+        .dal-hero {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .dal-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Meta Strip --- */
+        .dal-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #e0e0e0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dal-meta-item {
+            background: var(--color-bg);
+            padding: 40px 32px;
+            text-align: center;
+        }
+
+        .dal-meta-label {
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: 8px;
+        }
+
+        .dal-meta-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text);
+            line-height: 1.4;
+        }
+
+        .dal-meta-value .gold {
+            color: var(--dal-gold);
+        }
+
+        /* --- Text Sections --- */
+        .dal-text {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .dal-text h2 {
+            font-size: clamp(28px, 3.5vw, 42px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--color-text);
+        }
+
+        .dal-text p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-text-medium);
+            margin-bottom: 16px;
+        }
+
+        .dal-text p strong {
+            color: var(--color-text);
+        }
+
+        /* --- Full-Bleed Image --- */
+        .dal-img-full {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .dal-img-full img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Contained Image --- */
+        .dal-img-contained {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .dal-img-contained img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        .dal-caption {
+            font-size: 13px;
+            color: var(--color-text-light);
+            margin-top: 16px;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+
+        /* --- Brand Architecture Block --- */
+        .dal-architecture {
+            background: var(--dal-dark);
+            padding: 80px 40px;
+        }
+
+        .dal-arch-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .dal-arch-tier {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 32px;
+            align-items: center;
+            padding: 32px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .dal-arch-tier:last-child {
+            border-bottom: none;
+        }
+
+        .dal-arch-level {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--dal-gold);
+            font-weight: 600;
+        }
+
+        .dal-arch-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .dal-arch-desc {
+            font-size: 14px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.5;
+        }
+
+        /* --- Metrics Bar --- */
+        .dal-metrics {
+            background: var(--dal-dark);
+            padding: 64px 40px;
+        }
+
+        .dal-metrics-inner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dal-metric {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dal-metric-number {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            color: var(--dal-gold);
+            letter-spacing: -0.02em;
+        }
+
+        .dal-metric-label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 8px;
+            letter-spacing: 0.04em;
+        }
+
+        /* --- Cafe Mosaic --- */
+        .dal-cafe-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto auto;
+            gap: 4px;
+        }
+
+        .dal-cafe-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Mosaic placement for cafe mockups */
+        .dal-cafe-grid .cafe-brief-break {
+            grid-column: 1 / 7;
+            grid-row: 1;
+            aspect-ratio: 3/2;
+        }
+        .dal-cafe-grid .cafe-frederics {
+            grid-column: 7 / 13;
+            grid-row: 1;
+            aspect-ratio: 3/2;
+        }
+        .dal-cafe-grid .cafe-green {
+            grid-column: 1 / 5;
+            grid-row: 2;
+            aspect-ratio: 2036/2161;
+        }
+        .dal-cafe-grid .cafe-cyber {
+            grid-column: 5 / 13;
+            grid-row: 2;
+            aspect-ratio: 16/9;
+        }
+
+        /* --- Split Layout --- */
+        .dal-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .dal-split-img {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dal-split-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .dal-split-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px 60px 60px;
+        }
+
+        .dal-split-text h3 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--color-text);
+        }
+
+        .dal-split-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-text-medium);
+            margin-bottom: 12px;
+        }
+
+        .dal-split-text p strong {
+            color: var(--color-text);
+        }
+
+        /* --- Concept Comparison --- */
+        .dal-concepts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+
+        .dal-concept {
+            text-align: center;
+            padding: 48px 40px 24px;
+            background: var(--dal-warm);
+        }
+
+        .dal-concept img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 24px;
+        }
+
+        .dal-concept-label {
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: 6px;
+        }
+
+        .dal-concept-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        /* --- Closing --- */
+        .dal-closing {
+            background: var(--dal-dark);
+            padding: 120px 40px;
+            text-align: center;
+        }
+
+        .dal-closing-text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+        }
+
+        .dal-closing-attr {
+            margin-top: 32px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.06em;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .dal-meta { grid-template-columns: repeat(2, 1fr); }
+            .dal-split { grid-template-columns: 1fr; }
+            .dal-split-text { padding: 40px; }
+            .dal-cafe-grid { grid-template-columns: 1fr; }
+            .dal-cafe-grid .cafe-brief-break,
+            .dal-cafe-grid .cafe-frederics,
+            .dal-cafe-grid .cafe-green,
+            .dal-cafe-grid .cafe-cyber {
+                grid-column: 1; grid-row: auto;
+            }
+            .dal-concepts { grid-template-columns: 1fr; }
+            .dal-metrics-inner { grid-template-columns: repeat(2, 1fr); }
+            .dal-arch-tier { grid-template-columns: 1fr; gap: 8px; }
+            .dal-text { padding: 60px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="MainFranciscoLogo.png" alt="Francisco Designs">
+            </a>
+            <nav class="main-nav">
+                <a href="index.html#work" class="nav-link">WORK</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+                <a href="About/about.html" class="nav-link">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="project-detail dal-page">
+
+        <!-- ============================
+             HERO — Cover image
+             ============================ -->
+        <section class="dal-hero">
+            <img src="Dalhousie%20Dining%20Brand/DalU_Cover@2x.png"
+                 alt="Dalhousie University hospitality brand system — master brand, dining halls, and retail cafes">
+        </section>
+
+        <!-- ============================
+             META STRIP
+             ============================ -->
+        <div class="dal-meta">
+            <div class="dal-meta-item">
+                <div class="dal-meta-label">Client</div>
+                <div class="dal-meta-value">Dalhousie University <span style="font-weight: 400; color: var(--color-text-light);">via</span> Compass Group</div>
+            </div>
+            <div class="dal-meta-item">
+                <div class="dal-meta-label">Timeline</div>
+                <div class="dal-meta-value">4 weeks, sole creative</div>
+            </div>
+            <div class="dal-meta-item">
+                <div class="dal-meta-label">Scale</div>
+                <div class="dal-meta-value"><span class="gold">$180M</span> contract bid</div>
+            </div>
+            <div class="dal-meta-item">
+                <div class="dal-meta-label">Scope</div>
+                <div class="dal-meta-value">13+ location brands, 2 campuses</div>
+            </div>
+        </div>
+
+        <!-- ============================
+             BRIEF
+             ============================ -->
+        <section>
+            <div class="dal-text">
+                <h2>13 brands. One system. Four weeks.</h2>
+                <p>Dalhousie University needed a unified hospitality identity that could span 5 dining halls and 8+ retail cafes across two campuses. Each location needed its own personality. All of them needed to feel like they belonged together.</p>
+                <p><strong>This was part of a $180M RFP response.</strong> The kind of brand architecture that takes an agency team 3-4 months. I did it solo in four weeks because the timeline didn't care about what's typical.</p>
+            </div>
+        </section>
+
+        <!-- ============================
+             BRAND ARCHITECTURE
+             ============================ -->
+        <div class="dal-architecture">
+            <div class="dal-arch-inner">
+                <div class="dal-arch-tier">
+                    <div class="dal-arch-level">Level 1</div>
+                    <div>
+                        <div class="dal-arch-name">Dalhousie Hospitality</div>
+                        <div class="dal-arch-desc">Master brand. Umbrella identity anchoring every dining experience to the university's 200-year heritage.</div>
+                    </div>
+                </div>
+                <div class="dal-arch-tier">
+                    <div class="dal-arch-level">Level 2</div>
+                    <div>
+                        <div class="dal-arch-name">Risley, Howe, Shireff, O'Brien, Jenkins</div>
+                        <div class="dal-arch-desc">Dining halls. Each with a unique icon and identity reflecting its location and community. Destinations, not cafeterias.</div>
+                    </div>
+                </div>
+                <div class="dal-arch-tier">
+                    <div class="dal-arch-level">Level 3</div>
+                    <div>
+                        <div class="dal-arch-name">Ground Zero, Green Cafe, Boba Tea House, Brief Break, Frederic's, Cyber Cafe +</div>
+                        <div class="dal-arch-desc">Retail cafes. Specialty concepts with distinct personalities. From Starbucks partnerships to boba kiosks, all part of the family.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================
+             RESEARCH — Process image
+             ============================ -->
+        <section>
+            <div class="dal-text">
+                <h2>Started with the eagle.</h2>
+                <p>Before designing anything, I deconstructed Dalhousie's existing visual identity. The crest, the typography, the black and gold palette. I pulled an abstracted beak form from the eagle crest and made it a recurring motif throughout the system. Every sub-brand traces back to the university's DNA.</p>
+            </div>
+        </section>
+
+        <div class="dal-img-contained">
+            <img src="Dalhousie%20Dining%20Brand/Content/Process/Research%2001.png"
+                 alt="Dalhousie brand research — deconstructing the eagle crest to extract design DNA">
+        </div>
+
+        <!-- ============================
+             EXPLORATION
+             ============================ -->
+        <section>
+            <div class="dal-text">
+                <h2>Testing every direction.</h2>
+                <p>Laurels, shields, typographic systems, icon grids. I explored how each visual language would scale across 13 locations before committing. The laurel won because it connects naturally to academic tradition and the idea of harvest and gathering.</p>
+            </div>
+        </section>
+
+        <div class="dal-img-contained" style="margin-bottom: 48px;">
+            <img src="Dalhousie%20Dining%20Brand/Content/Process/Dining%20Halls.png"
+                 alt="Dining hall identity exploration — testing icon systems for five residence halls">
+        </div>
+
+        <!-- ============================
+             CONCEPT 01 & 02 SIDE BY SIDE
+             ============================ -->
+        <div class="dal-concepts">
+            <div class="dal-concept">
+                <img src="Dalhousie%20Dining%20Brand/Content/Final%20V1.png"
+                     alt="Concept 01: Circle system with laurel master brand and unique dining hall icons">
+                <div class="dal-concept-label">Concept 01</div>
+                <div class="dal-concept-title">The Circle System</div>
+            </div>
+            <div class="dal-concept">
+                <img src="Dalhousie%20Dining%20Brand/Content/Final%20V2.png"
+                     alt="Concept 02: Shield-based woodblock system with DalU Eats naming">
+                <div class="dal-concept-label">Concept 02</div>
+                <div class="dal-concept-title">The Woodblock System</div>
+            </div>
+        </div>
+
+        <!-- ============================
+             SYSTEM LOGIC
+             ============================ -->
+        <section>
+            <div class="dal-text">
+                <h2>Two directions. Same rigor.</h2>
+                <p>The Circle System uses a laurel-framed monogram as the master brand, with each dining hall getting a unique icon inside a gold ring. Cafes extend the system through color-coded circles for wayfinding.</p>
+                <p>The Woodblock System takes a bolder graphic approach. Shield-based architecture, stronger typographic presence, and a direct tie back to Dalhousie's crest through an abstracted eagle head.</p>
+                <p><strong>Both were fully developed.</strong> Not sketches. Not mood boards. Complete systems with environmental mockups, ready for stakeholder review.</p>
+            </div>
+        </section>
+
+        <!-- ============================
+             CAFE MOCKUPS — 2x2 grid
+             ============================ -->
+        <div class="dal-cafe-grid">
+            <img class="cafe-brief-break" src="Dalhousie%20Dining%20Brand/Content/Cafe-Mockups/BriefBreak@2x.png"
+                 alt="Brief Break Cafe — Starbucks partnership concept with premium coffee positioning">
+            <img class="cafe-frederics" src="Dalhousie%20Dining%20Brand/Content/Cafe-Mockups/Frederics@2x.png"
+                 alt="Frederic's Coffee — artisanal cafe with sophisticated European aesthetic">
+            <img class="cafe-green" src="Dalhousie%20Dining%20Brand/Content/Cafe-Mockups/GreenCafe@2x.png"
+                 alt="Green Cafe — health-forward, sustainability-focused dining concept">
+            <img class="cafe-cyber" src="Dalhousie%20Dining%20Brand/Content/Cafe-Mockups/CyberCafe@2x.png"
+                 alt="Cyber Cafe — tech-forward coffee concept for the Computer Science building">
+        </div>
+
+        <!-- ============================
+             BOBA — Split layout
+             ============================ -->
+        <section class="dal-split">
+            <div class="dal-split-img">
+                <img src="Dalhousie%20Dining%20Brand/Content/Cafe-Mockups/BobaTeaHouse@2x.png"
+                     alt="Boba Tea House — complete retail concept with custom character illustration and branded environment">
+            </div>
+            <div class="dal-split-text">
+                <h3>From dining halls to boba kiosks.</h3>
+                <p>The system had to flex from a 200-seat residence hall to a playful food court kiosk. Boba Tea House got a custom mascot, illustrated menu items, branded roll-up banners, and environmental graphics.</p>
+                <p><strong>Same brand architecture. Completely different personality.</strong> That's what a real system does.</p>
+            </div>
+        </section>
+
+        <!-- ============================
+             COFFEE BEFORE/AFTER
+             ============================ -->
+        <section class="dal-split" style="direction: rtl;">
+            <div class="dal-split-img" style="direction: ltr;">
+                <img src="Dalhousie%20Dining%20Brand/Content/Cafe-Mockups/DalCoffee-After.png"
+                     alt="Dal's Coffee House — redesigned cafe environment with cohesive brand identity">
+            </div>
+            <div class="dal-split-text" style="direction: ltr;">
+                <h3>Every location, production-ready.</h3>
+                <p>Environmental mockups weren't conceptual fluff. Every cafe got full signage specs, menu board templates, and material callouts that a fabricator could work from without a follow-up call.</p>
+                <p><strong>The goal was never to impress a committee.</strong> It was to hand over files that could be built.</p>
+            </div>
+        </section>
+
+        <!-- ============================
+             METRICS
+             ============================ -->
+        <div class="dal-metrics">
+            <div class="dal-metrics-inner">
+                <div class="dal-metric">
+                    <div class="dal-metric-number">$180M</div>
+                    <div class="dal-metric-label">Contract bid value</div>
+                </div>
+                <div class="dal-metric">
+                    <div class="dal-metric-number">13+</div>
+                    <div class="dal-metric-label">Location brands created</div>
+                </div>
+                <div class="dal-metric">
+                    <div class="dal-metric-number">4</div>
+                    <div class="dal-metric-label">Weeks to deliver</div>
+                </div>
+                <div class="dal-metric">
+                    <div class="dal-metric-number">1</div>
+                    <div class="dal-metric-label">Designer</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================
+             CLOSING
+             ============================ -->
+        <section class="dal-closing">
+            <div class="dal-closing-text">
+                Enterprise-scale brand architecture, built solo, in a month. 13 brands that feel like a family without looking like copies of each other.
+            </div>
+            <div class="dal-closing-attr">Dalhousie University / Hospitality Brand System / 2024</div>
+        </section>
+
+    </main>
+
+    <!-- Project Navigation -->
+    <nav class="project-navigation" role="navigation" aria-label="Project navigation">
+        <div class="project-nav-header">
+            <a href="index.html" class="back-to-work">← Back to All Work</a>
+        </div>
+        <div class="project-nav-links">
+            <a href="sarnia-arena.html" class="nav-project prev">
+                <span class="nav-project-label">← Previous</span>
+                <span class="nav-project-title">Sarnia Arena Rebrand</span>
+            </a>
+            <a href="liberty.html" class="nav-project next">
+                <span class="nav-project-label">Next →</span>
+                <span class="nav-project-title">Liberty Entertainment Group</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-column footer-about">
+                <h3 class="footer-heading">Francisco Designs</h3>
+                <p class="footer-text">
+                    Strategic partner, graphic designer, specializing in brand identity,<br>
+                    environmental design, and creative direction.
+                </p>
+                <p class="footer-text">
+                    <a href="mailto:jtkfrancisco@gmail.com" class="footer-email">jtkfrancisco@gmail.com</a>
+                </p>
+            </div>
+            <div class="footer-column footer-social">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jtkfrancisco/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/justinfranciscodesigns" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column footer-nav">
+                <h3 class="footer-heading">Navigation</h3>
+                <nav class="footer-nav-links">
+                    <a href="index.html" class="footer-nav-link">Home</a>
+                    <a href="About/about.html" class="footer-nav-link">About</a>
+                    <a href="contact.html" class="footer-nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Francisco Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

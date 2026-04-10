@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volta Energy – Brand Identity & Station Design | Francisco Designs</title>
+    <meta name="description" content="Complete brand system for Volta Energy: identity, charging station environmental design, mobile app, and marketing system. Built for scale across 200+ locations.">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Volta Energy – Brand Identity & Station Design | Francisco Designs">
+    <meta property="og:description" content="Complete brand system for Volta Energy: identity, charging station environmental design, mobile app, and marketing system.">
+    <meta property="og:url" content="https://francisco.design/volta.html">
+    <meta property="og:type" content="article">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://francisco.design/volta.html">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* =============================================
+           VOLTA PROJECT PAGE — VISUAL-FIRST TEMPLATE
+           ============================================= */
+
+        /* --- Brand Colors --- */
+        .volta-page {
+            --volta-navy: #0B1D3A;
+            --volta-green: #00E676;
+            --volta-slate: #1E2D42;
+            --volta-light: #E8F5E9;
+            --volta-warm: #F5F3F0;
+            --volta-mid: #2A3F5C;
+        }
+
+        /* --- Full-Bleed Hero --- */
+        .volta-hero {
+            background: var(--volta-navy);
+            color: #fff;
+            padding: 120px 40px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .volta-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 140%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0, 230, 118, 0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(0, 230, 118, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .volta-hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .volta-hero-logo {
+            font-size: clamp(72px, 10vw, 140px);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .volta-hero-logo span {
+            color: var(--volta-green);
+        }
+
+        .volta-hero-tagline {
+            font-size: clamp(18px, 2.5vw, 28px);
+            font-weight: 300;
+            opacity: 0.7;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* --- Project Meta Strip --- */
+        .volta-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #e0e0e0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .volta-meta-item {
+            background: var(--color-bg);
+            padding: 40px 32px;
+            text-align: center;
+        }
+
+        .volta-meta-label {
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: 8px;
+        }
+
+        .volta-meta-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text);
+            line-height: 1.4;
+        }
+
+        /* --- Section Patterns --- */
+        .volta-section {
+            padding: 0;
+        }
+
+        .volta-section-text {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .volta-section-text h2 {
+            font-size: clamp(28px, 3.5vw, 42px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--color-text);
+        }
+
+        .volta-section-text p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-text-medium);
+            margin-bottom: 16px;
+        }
+
+        .volta-section-text p strong {
+            color: var(--color-text);
+        }
+
+        /* --- Image Blocks --- */
+        .volta-img-full {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .volta-img-full img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Mockup placeholder blocks — replace with real images */
+        .volta-mockup {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .volta-mockup-brand {
+            background: var(--volta-navy);
+            padding: 100px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .volta-logo-display {
+            text-align: center;
+        }
+
+        .volta-logo-main {
+            font-size: 64px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.04em;
+            line-height: 1;
+        }
+
+        .volta-logo-main span { color: var(--volta-green); }
+
+        .volta-logo-sub {
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-top: 12px;
+        }
+
+        .volta-logo-icon {
+            width: 120px;
+            height: 120px;
+            border: 3px solid var(--volta-green);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .volta-logo-icon .bolt {
+            font-size: 56px;
+            color: var(--volta-green);
+            font-weight: 700;
+        }
+
+        /* Color palette mockup */
+        .volta-mockup-colors {
+            background: #fff;
+            padding: 80px 40px;
+        }
+
+        .volta-color-grid {
+            display: flex;
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .volta-color-swatch {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .volta-color-swatch span {
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+        }
+
+        /* Two-column image + text */
+        .volta-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .volta-split-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            position: relative;
+        }
+
+        .volta-split-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px 60px 40px;
+        }
+
+        .volta-split-text h3 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--color-text);
+        }
+
+        .volta-split-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-text-medium);
+            margin-bottom: 12px;
+        }
+
+        /* Triple image grid */
+        .volta-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .volta-grid-3 .volta-grid-item {
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Station mockup */
+        .volta-station-mockup {
+            background: linear-gradient(180deg, #1a2a44 0%, #0B1D3A 100%);
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .volta-station-mockup::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(0deg, rgba(0,230,118,0.04) 0%, transparent 100%);
+        }
+
+        .volta-station-graphic {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .volta-station-unit {
+            background: var(--volta-slate);
+            border: 2px solid rgba(0,230,118,0.2);
+            border-radius: 20px;
+            padding: 60px 40px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            min-width: 280px;
+        }
+
+        .volta-station-screen {
+            width: 180px;
+            height: 240px;
+            background: linear-gradient(180deg, #0d2137 0%, #0B1D3A 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(0,230,118,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .volta-station-screen .bolt-icon {
+            font-size: 40px;
+            color: var(--volta-green);
+        }
+
+        .volta-station-screen .charge-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .volta-station-screen .pct {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--volta-green);
+        }
+
+        .volta-station-label {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* App mockup */
+        .volta-app-section {
+            background: var(--volta-warm);
+            padding: 80px 40px;
+        }
+
+        .volta-app-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+
+        .volta-phone {
+            background: var(--volta-navy);
+            border-radius: 32px;
+            padding: 16px;
+            aspect-ratio: 9/18;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .volta-phone-screen {
+            flex: 1;
+            background: linear-gradient(180deg, #0f2440 0%, #0B1D3A 100%);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 24px;
+        }
+
+        .volta-phone-title {
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .volta-phone-big {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--volta-green);
+        }
+
+        .volta-phone-bar {
+            width: 80%;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .volta-phone-bar-fill {
+            height: 100%;
+            background: var(--volta-green);
+            border-radius: 3px;
+        }
+
+        .volta-phone-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .volta-phone-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .volta-phone-dot.active {
+            background: var(--volta-green);
+        }
+
+        .volta-phone-label {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--color-text-medium);
+        }
+
+        /* Metrics bar */
+        .volta-metrics {
+            background: var(--volta-navy);
+            padding: 64px 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .volta-metric {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .volta-metric-number {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            color: var(--volta-green);
+            letter-spacing: -0.02em;
+        }
+
+        .volta-metric-label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 8px;
+            letter-spacing: 0.04em;
+        }
+
+        /* Signage/environmental grid */
+        .volta-env-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 2px;
+            min-height: 600px;
+        }
+
+        .volta-env-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        .volta-env-item:first-child {
+            grid-row: 1 / 3;
+        }
+
+        /* Environmental signage mockups */
+        .volta-sign {
+            border: 2px solid rgba(0,230,118,0.3);
+            border-radius: 12px;
+            padding: 32px 48px;
+            text-align: center;
+        }
+
+        .volta-sign-logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.04em;
+        }
+
+        .volta-sign-logo span { color: var(--volta-green); }
+
+        .volta-sign-arrow {
+            margin-top: 12px;
+            font-size: 20px;
+            color: var(--volta-green);
+        }
+
+        .volta-sign-info {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-top: 12px;
+        }
+
+        /* Collateral mockup */
+        .volta-collateral {
+            background: #fff;
+            padding: 80px 40px;
+        }
+
+        .volta-collateral-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .volta-card-mockup {
+            aspect-ratio: 3/4;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            gap: 12px;
+        }
+
+        .volta-card-mockup .card-label {
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+
+        .volta-card-mockup .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        /* Closing quote */
+        .volta-closing {
+            background: var(--volta-navy);
+            padding: 120px 40px;
+            text-align: center;
+        }
+
+        .volta-closing-text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+        }
+
+        .volta-closing-attr {
+            margin-top: 32px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.06em;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .volta-meta {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .volta-split {
+                grid-template-columns: 1fr;
+            }
+            .volta-split-text {
+                padding: 40px;
+            }
+            .volta-grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .volta-app-grid {
+                grid-template-columns: 1fr;
+                max-width: 280px;
+            }
+            .volta-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .volta-env-grid {
+                grid-template-columns: 1fr;
+            }
+            .volta-env-item:first-child {
+                grid-row: auto;
+            }
+            .volta-collateral-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .volta-hero {
+                padding: 80px 24px 60px;
+            }
+            .volta-section-text {
+                padding: 60px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Sticky Navigation Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="MainFranciscoLogo.png" alt="Francisco Designs">
+            </a>
+            <nav class="main-nav">
+                <a href="index.html#work" class="nav-link">WORK</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+                <a href="About/about.html" class="nav-link">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Detail Page -->
+    <main id="main" class="project-detail volta-page">
+
+        <!-- ============================
+             HERO — Full bleed brand intro
+             ============================ -->
+        <section class="volta-hero">
+            <div class="volta-hero-inner">
+                <div class="volta-hero-logo">VOLT<span>A</span></div>
+                <div class="volta-hero-tagline">Energy, everywhere</div>
+            </div>
+        </section>
+
+        <!-- ============================
+             META STRIP — Quick facts
+             ============================ -->
+        <div class="volta-meta">
+            <div class="volta-meta-item">
+                <div class="volta-meta-label">Client</div>
+                <div class="volta-meta-value">Volta Energy Inc.</div>
+            </div>
+            <div class="volta-meta-item">
+                <div class="volta-meta-label">Timeline</div>
+                <div class="volta-meta-value">3 weeks, sole creative</div>
+            </div>
+            <div class="volta-meta-item">
+                <div class="volta-meta-label">Scope</div>
+                <div class="volta-meta-value">Brand identity, environmental, app, marketing</div>
+            </div>
+            <div class="volta-meta-item">
+                <div class="volta-meta-label">Status</div>
+                <div class="volta-meta-value">Launched across 200+ stations</div>
+            </div>
+        </div>
+
+        <!-- ============================
+             BRIEF — Short context
+             ============================ -->
+        <section class="volta-section">
+            <div class="volta-section-text">
+                <h2>The brief was scale.</h2>
+                <p>Volta Energy was building a network of EV charging stations across Ontario. They had the infrastructure contracts. They had the locations. What they didn't have was a brand anyone would recognize at 100km/h on the highway.</p>
+                <p><strong>They needed a full identity system that could work on everything</strong> from a highway pylon sign to a 4-inch app icon, across 200+ stations, in every weather condition, day and night.</p>
+                <p>Three weeks. One designer. No agency.</p>
+            </div>
+        </section>
+
+        <!-- ============================
+             BRAND SYSTEM — Logo lockups
+             ============================ -->
+        <div class="volta-mockup volta-mockup-brand">
+            <div class="volta-logo-display">
+                <div class="volta-logo-main">VOLT<span>A</span></div>
+                <div class="volta-logo-sub">Primary wordmark</div>
+            </div>
+            <div class="volta-logo-icon">
+                <div class="bolt">&#9889;</div>
+            </div>
+            <div class="volta-logo-display">
+                <div class="volta-logo-main" style="font-size: 36px;">VOLT<span>A</span> <span style="font-weight:300; color: rgba(255,255,255,0.5);">ENERGY</span></div>
+                <div class="volta-logo-sub">Full lockup</div>
+            </div>
+        </div>
+
+        <!-- ============================
+             COLOR PALETTE
+             ============================ -->
+        <div class="volta-mockup volta-mockup-colors">
+            <div class="volta-color-grid">
+                <div class="volta-color-swatch" style="background: #0B1D3A;">
+                    <span style="color: rgba(255,255,255,0.6);">Navy #0B1D3A</span>
+                </div>
+                <div class="volta-color-swatch" style="background: #1E2D42;">
+                    <span style="color: rgba(255,255,255,0.6);">Slate #1E2D42</span>
+                </div>
+                <div class="volta-color-swatch" style="background: #00E676;">
+                    <span style="color: #0B1D3A;">Volt #00E676</span>
+                </div>
+                <div class="volta-color-swatch" style="background: #E8F5E9;">
+                    <span style="color: #0B1D3A;">Light #E8F5E9</span>
+                </div>
+                <div class="volta-color-swatch" style="background: #FFFFFF; border: 1px solid #e0e0e0;">
+                    <span style="color: #666;">White #FFFFFF</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================
+             STRATEGY — Design logic
+             ============================ -->
+        <section class="volta-section">
+            <div class="volta-section-text">
+                <h2>Designed for recognition at speed.</h2>
+                <p>EV charging is a wayfinding problem first. Drivers need to spot a station from a highway, identify it on a map, and trust it at 2am in a parking lot. Every design decision was filtered through that lens.</p>
+                <p>The green-on-navy palette was chosen for maximum contrast in both daylight and low light. The wordmark is heavy enough to read at distance. The icon reduces to a single glyph for map pins and app icons without losing meaning.</p>
+                <p><strong>The system had to feel inevitable.</strong> Not trendy. Not techy for the sake of it. A brand that looks like it was always there.</p>
+            </div>
+        </section>
+
+        <!-- ============================
+             STATION DESIGN — Environmental
+             ============================ -->
+        <div class="volta-station-mockup">
+            <div class="volta-station-graphic">
+                <div class="volta-station-unit">
+                    <div class="volta-station-label">Volta Charging Station</div>
+                    <div class="volta-station-screen">
+                        <div class="bolt-icon">&#9889;</div>
+                        <div class="charge-text">Charging</div>
+                        <div class="pct">73%</div>
+                    </div>
+                    <div style="font-size: 20px; font-weight: 800; color: #fff; letter-spacing: -0.04em;">VOLT<span style="color: var(--volta-green);">A</span></div>
+                </div>
+            </div>
+            <p style="color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 40px; letter-spacing: 0.06em; position: relative; z-index: 1;">Station interface concept. Replace with rendered mockup.</p>
+        </div>
+
+        <!-- ============================
+             ENVIRONMENTAL — Split layout
+             ============================ -->
+        <section class="volta-split">
+            <div class="volta-split-img" style="background: var(--volta-navy);">
+                <div class="volta-sign">
+                    <div class="volta-sign-logo">VOLT<span>A</span></div>
+                    <div class="volta-sign-arrow">&#8594;</div>
+                    <div class="volta-sign-info">4 chargers available</div>
+                </div>
+            </div>
+            <div class="volta-split-text">
+                <h3>Wayfinding that works in the dark.</h3>
+                <p>Station signage was designed for illuminated display. The green accent marks the brand from a distance while directional elements guide drivers into the lot.</p>
+                <p>Every sign specification included mounting heights, illumination requirements, and material callouts for the fabricators. Production-ready, not just pretty.</p>
+            </div>
+        </section>
+
+        <section class="volta-split" style="direction: rtl;">
+            <div class="volta-split-img" style="background: var(--volta-light); direction: ltr;">
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; font-weight: 800; color: var(--volta-navy); letter-spacing: -0.04em;">VOLT<span style="color: var(--volta-green);">A</span></div>
+                    <div style="margin-top: 12px; font-size: 13px; color: var(--volta-navy); opacity: 0.4; letter-spacing: 0.1em; text-transform: uppercase;">Member Card</div>
+                    <div style="margin-top: 24px; width: 260px; height: 160px; background: var(--volta-navy); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 24px; font-weight: 800; color: #fff; letter-spacing: -0.04em;">VOLT<span style="color: var(--volta-green);">A</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="volta-split-text" style="direction: ltr;">
+                <h3>Physical touchpoints.</h3>
+                <p>Membership cards, station decals, safety signage, and promotional materials all pull from the same visual system. No one-offs, no exceptions.</p>
+                <p>The brand guide shipped with templates for every application so regional teams could produce materials without design support.</p>
+            </div>
+        </section>
+
+        <!-- ============================
+             METRICS — Impact numbers
+             ============================ -->
+        <div class="volta-metrics">
+            <div class="volta-metric">
+                <div class="volta-metric-number">200+</div>
+                <div class="volta-metric-label">Stations branded</div>
+            </div>
+            <div class="volta-metric">
+                <div class="volta-metric-number">3</div>
+                <div class="volta-metric-label">Weeks to deliver</div>
+            </div>
+            <div class="volta-metric">
+                <div class="volta-metric-number">1</div>
+                <div class="volta-metric-label">Designer</div>
+            </div>
+            <div class="volta-metric">
+                <div class="volta-metric-number">40+</div>
+                <div class="volta-metric-label">Deliverables</div>
+            </div>
+        </div>
+
+        <!-- ============================
+             APP DESIGN
+             ============================ -->
+        <section class="volta-section">
+            <div class="volta-section-text">
+                <h2>The app had to be as fast as the chargers.</h2>
+                <p>Drivers pull into a station, plug in, and want to know one thing: how long. The app strips everything else away. Find a station, start a session, track your charge. That's it.</p>
+                <p><strong>I designed the full UX flow</strong> from station discovery through payment confirmation. The dark UI matches the station hardware, creating a seamless brand experience from screen to physical environment.</p>
+            </div>
+        </section>
+
+        <div class="volta-app-section">
+            <div class="volta-app-grid">
+                <div>
+                    <div class="volta-phone">
+                        <div class="volta-phone-screen">
+                            <div class="volta-phone-title">Nearest Station</div>
+                            <div class="volta-phone-big" style="font-size: 20px; color: #fff;">Volta Kingston Rd</div>
+                            <div style="font-size: 13px; color: rgba(255,255,255,0.4);">0.4 km away</div>
+                            <div class="volta-phone-dots">
+                                <div class="volta-phone-dot active"></div>
+                                <div class="volta-phone-dot active"></div>
+                                <div class="volta-phone-dot active"></div>
+                                <div class="volta-phone-dot"></div>
+                            </div>
+                            <div style="font-size: 11px; color: var(--volta-green); letter-spacing: 0.08em;">3 OF 4 AVAILABLE</div>
+                        </div>
+                    </div>
+                    <div class="volta-phone-label">Find</div>
+                </div>
+                <div>
+                    <div class="volta-phone">
+                        <div class="volta-phone-screen">
+                            <div class="volta-phone-title">Charging</div>
+                            <div class="volta-phone-big">73%</div>
+                            <div class="volta-phone-bar">
+                                <div class="volta-phone-bar-fill" style="width: 73%;"></div>
+                            </div>
+                            <div style="font-size: 13px; color: rgba(255,255,255,0.4);">~24 min remaining</div>
+                            <div style="margin-top: 8px; font-size: 11px; color: var(--volta-green); letter-spacing: 0.08em;">150 kW</div>
+                        </div>
+                    </div>
+                    <div class="volta-phone-label">Charge</div>
+                </div>
+                <div>
+                    <div class="volta-phone">
+                        <div class="volta-phone-screen">
+                            <div class="volta-phone-title">Session Complete</div>
+                            <div class="volta-phone-big" style="font-size: 24px;">$12.40</div>
+                            <div style="font-size: 13px; color: rgba(255,255,255,0.4);">42 kWh delivered</div>
+                            <div style="font-size: 13px; color: rgba(255,255,255,0.4);">34 min total</div>
+                            <div style="margin-top: 16px; padding: 10px 24px; background: var(--volta-green); border-radius: 8px; color: var(--volta-navy); font-size: 12px; font-weight: 700; letter-spacing: 0.06em;">RECEIPT</div>
+                        </div>
+                    </div>
+                    <div class="volta-phone-label">Pay</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================
+             COLLATERAL — Marketing pieces
+             ============================ -->
+        <section class="volta-section">
+            <div class="volta-section-text">
+                <h2>A system, not a logo.</h2>
+                <p>Volta didn't need a pretty mark. They needed a brand that could scale to 200 stations without losing coherence. Every piece I delivered was built from the same components: the palette, the type scale, the icon system, the grid.</p>
+                <p><strong>The final package included 40+ production files</strong> covering station hardware graphics, illuminated signage specs, app screens, social templates, member cards, safety labels, and a brand guide that any printer or fabricator could work from without calling me.</p>
+            </div>
+        </section>
+
+        <div class="volta-collateral">
+            <div class="volta-collateral-grid">
+                <div class="volta-card-mockup" style="background: var(--volta-navy); color: #fff;">
+                    <div class="card-label" style="color: rgba(255,255,255,0.4);">Brand Guide</div>
+                    <div class="card-title">VOLT<span style="color: var(--volta-green);">A</span></div>
+                    <div style="font-size: 11px; color: rgba(255,255,255,0.3);">v1.0</div>
+                </div>
+                <div class="volta-card-mockup" style="background: var(--volta-green); color: var(--volta-navy);">
+                    <div class="card-label">Social Template</div>
+                    <div class="card-title">Now Open</div>
+                    <div style="font-size: 11px; opacity: 0.5;">Kingston Rd Station</div>
+                </div>
+                <div class="volta-card-mockup" style="background: var(--volta-light); color: var(--volta-navy);">
+                    <div class="card-label">Signage Spec</div>
+                    <div class="card-title" style="font-size: 14px;">Illuminated Pylon</div>
+                    <div style="font-size: 11px; opacity: 0.5;">Production-ready</div>
+                </div>
+                <div class="volta-card-mockup" style="background: var(--volta-slate); color: #fff;">
+                    <div class="card-label" style="color: rgba(255,255,255,0.4);">Station Decal</div>
+                    <div style="font-size: 32px;">&#9889;</div>
+                    <div style="font-size: 11px; color: var(--volta-green);">Safety compliant</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================
+             CLOSING
+             ============================ -->
+        <section class="volta-closing">
+            <div class="volta-closing-text">
+                A brand built for infrastructure, not Instagram. Every decision optimized for the driver who needs to find a charger, plug in, and go.
+            </div>
+            <div class="volta-closing-attr">Volta Energy / Brand Identity & Environmental Design / 2025</div>
+        </section>
+
+    </main>
+
+    <!-- Project Navigation -->
+    <nav class="project-navigation" role="navigation" aria-label="Project navigation">
+        <div class="project-nav-header">
+            <a href="index.html" class="back-to-work">← Back to All Work</a>
+        </div>
+        <div class="project-nav-links">
+            <a href="liberty.html" class="nav-project prev">
+                <span class="nav-project-label">← Previous</span>
+                <span class="nav-project-title">Liberty Entertainment Group</span>
+            </a>
+            <a href="york-u.html" class="nav-project next">
+                <span class="nav-project-label">Next →</span>
+                <span class="nav-project-title">York U Campus Dining</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-column footer-about">
+                <h3 class="footer-heading">Francisco Designs</h3>
+                <p class="footer-text">
+                    Strategic partner, graphic designer, specializing in brand identity,<br>
+                    environmental design, and creative direction.
+                </p>
+                <p class="footer-text">
+                    <a href="mailto:jtkfrancisco@gmail.com" class="footer-email">
+                        jtkfrancisco@gmail.com
+                    </a>
+                </p>
+            </div>
+            <div class="footer-column footer-social">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jtkfrancisco/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/justinfranciscodesigns" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column footer-nav">
+                <h3 class="footer-heading">Navigation</h3>
+                <nav class="footer-nav-links">
+                    <a href="index.html" class="footer-nav-link">Home</a>
+                    <a href="About/about.html" class="footer-nav-link">About</a>
+                    <a href="contact.html" class="footer-nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Francisco Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

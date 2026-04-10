@@ -6,29 +6,325 @@
     <title>Sarnia Arena Rebrand – Environmental Design & Wayfinding | Francisco Designs</title>
     <meta name="description" content="Complete arena rebrand delivered in 2 weeks: luxury suites, environmental graphics, hexagonal LED lighting, and cohesive venue wayfinding system.">
 
-    <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="Sarnia Arena Rebrand – Environmental Design & Wayfinding | Francisco Designs">
     <meta property="og:description" content="Complete arena rebrand delivered in 2 weeks: luxury suites, environmental graphics, hexagonal LED lighting, and cohesive venue wayfinding system.">
     <meta property="og:image" content="https://francisco.design/sarnia-arena-rebrand/Sarnia_Cover@2x.png">
     <meta property="og:url" content="https://francisco.design/sarnia-arena.html">
     <meta property="og:type" content="article">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sarnia Arena Rebrand – Environmental Design & Wayfinding | Francisco Designs">
     <meta name="twitter:description" content="Complete arena rebrand delivered in 2 weeks: luxury suites, environmental graphics, hexagonal LED lighting, and cohesive venue wayfinding system.">
     <meta name="twitter:image" content="https://francisco.design/sarnia-arena-rebrand/Sarnia_Cover@2x.png">
 
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://francisco.design/sarnia-arena.html">
-
     <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* =============================================
+           SARNIA ARENA PROJECT PAGE — VISUAL-FIRST
+           ============================================= */
+
+        .sar-page {
+            --sar-black: #1a1a1a;
+            --sar-gold: #D4A843;
+            --sar-dark: #222222;
+            --sar-warm: #F5F3F0;
+            --sar-light: #FAFAF8;
+        }
+
+        /* --- Full-Bleed Hero --- */
+        .sar-hero {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .sar-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Meta Strip --- */
+        .sar-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #e0e0e0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sar-meta-item {
+            background: var(--sar-light);
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .sar-meta-item .label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .sar-meta-item .value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--sar-black);
+            line-height: 1.4;
+        }
+
+        .sar-meta-item .value span {
+            display: block;
+            font-weight: 400;
+            font-size: 13px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* --- Text Sections --- */
+        .sar-text {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .sar-text h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--sar-black);
+            margin-bottom: 24px;
+        }
+
+        .sar-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 16px;
+        }
+
+        .sar-text p strong {
+            color: var(--sar-black);
+        }
+
+        /* --- Before/After --- */
+        .sar-before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+
+        .sar-ba-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sar-ba-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sar-ba-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            font-weight: 600;
+        }
+
+        /* --- Full-Bleed Image --- */
+        .sar-img-full {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .sar-img-full img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Split Layout --- */
+        .sar-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .sar-split-img {
+            overflow: hidden;
+        }
+
+        .sar-split-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sar-split-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 48px;
+            background: var(--sar-warm);
+        }
+
+        .sar-split-text h3 {
+            font-size: clamp(22px, 3vw, 30px);
+            font-weight: 700;
+            color: var(--sar-black);
+            margin-bottom: 16px;
+        }
+
+        .sar-split-text p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* --- Naming Architecture Block --- */
+        .sar-naming {
+            background: var(--sar-dark);
+            padding: 80px 40px;
+        }
+
+        .sar-naming-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .sar-naming h2 {
+            font-size: clamp(24px, 3vw, 34px);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .sar-naming-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .sar-zone {
+            border-left: 2px solid var(--sar-gold);
+            padding-left: 16px;
+        }
+
+        .sar-zone .zone-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--sar-gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .sar-zone .zone-desc {
+            font-size: 13px;
+            color: #999;
+            line-height: 1.4;
+        }
+
+        /* --- Metrics Bar --- */
+        .sar-metrics {
+            background: var(--sar-black);
+            padding: 48px 24px;
+        }
+
+        .sar-metrics-inner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .sar-metric .number {
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 800;
+            color: var(--sar-gold);
+            line-height: 1;
+        }
+
+        .sar-metric .label {
+            font-size: 12px;
+            color: #888;
+            margin-top: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .sar-quote {
+            max-width: 700px;
+            margin: 32px auto 0;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            font-style: italic;
+            line-height: 1.6;
+            padding-top: 32px;
+            border-top: 1px solid #333;
+        }
+
+        .sar-quote .attr {
+            font-style: normal;
+            font-size: 12px;
+            color: #555;
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+
+        /* --- Closing --- */
+        .sar-closing {
+            text-align: center;
+            padding: 100px 24px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .sar-closing p {
+            font-size: clamp(20px, 3vw, 28px);
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--sar-black);
+        }
+
+        .sar-closing .tag {
+            font-size: 13px;
+            color: #999;
+            margin-top: 16px;
+            letter-spacing: 1px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .sar-meta { grid-template-columns: repeat(2, 1fr); }
+            .sar-before-after { grid-template-columns: 1fr; }
+            .sar-split { grid-template-columns: 1fr; }
+            .sar-split-text { padding: 40px 24px; }
+            .sar-naming-grid { grid-template-columns: repeat(2, 1fr); }
+            .sar-metrics-inner { grid-template-columns: repeat(2, 1fr); }
+            .sar-text { padding: 60px 24px; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip to Main Content -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- Sticky Navigation Header -->
     <header class="main-header">
         <div class="header-content">
             <a href="index.html" class="logo">
@@ -42,294 +338,199 @@
         </div>
     </header>
 
-    <!-- Project Detail Page -->
-    <main id="main" class="project-detail">
+    <main id="main" class="project-detail sar-page" style="padding-top: 160px;">
 
-        <!-- Hero Image -->
-        <section class="hero">
-            <div class="bleed hero-image">
-                <img src="sarnia-arena-rebrand/Sarnia_Cover@2x.png"
-                     alt="Sarnia Arena luxury suite with hexagonal LED lighting and premium finishes">
-            </div>
+        <!-- ============================
+             HERO — Full-bleed cover
+             ============================ -->
+        <section class="sar-hero">
+            <img src="sarnia-arena-rebrand/Sarnia_Cover@2x.png"
+                 alt="Sarnia Arena luxury suite with hexagonal LED lighting and premium finishes">
         </section>
 
-        <!-- Project Title -->
-        <div class="container">
-            <h1>Sarnia Arena Rebrand & Environmental Design</h1>
+        <!-- ============================
+             META STRIP
+             ============================ -->
+        <div class="sar-meta">
+            <div class="sar-meta-item">
+                <div class="label">Client</div>
+                <div class="value">Sarnia Arena<span>via Compass Group</span></div>
+            </div>
+            <div class="sar-meta-item">
+                <div class="label">Timeline</div>
+                <div class="value">2 weeks, sole creative</div>
+            </div>
+            <div class="sar-meta-item">
+                <div class="label">Scale</div>
+                <div class="value">8 venue zones<span>Full arena transformation</span></div>
+            </div>
+            <div class="sar-meta-item">
+                <div class="label">Scope</div>
+                <div class="value">Environmental design<span>Wayfinding & brand system</span></div>
+            </div>
         </div>
 
-        <!-- Proof Strip: Project Quick Scan -->
-        <section class="proof-strip">
-            <div class="proof-grid">
-                <div class="proof-item">
-                    <h3>Project</h3>
-                    <p><strong>Sarnia Arena Rebrand</strong></p>
-                    <p>Environmental Design & Wayfinding System</p>
-                </div>
-                <div class="proof-item">
-                    <h3>Role & Timeline</h3>
-                    <p><strong>Lead Designer (Solo)</strong></p>
-                    <p>2 weeks · 2024</p>
-                </div>
-                <div class="proof-item">
-                    <h3>Deliverables</h3>
-                    <ul>
-                        <li>Complete venue brand architecture</li>
-                        <li>Environmental graphics system</li>
-                        <li>Lighting & material specifications</li>
-                        <li>8 distinct venue zones</li>
-                    </ul>
-                </div>
-                <div class="proof-item">
-                    <h3>Outcomes</h3>
-                    <ul>
-                        <li><strong>Enthusiastically approved</strong></li>
-                        <li>Exceeded client expectations</li>
-                        <li>Pending implementation</li>
-                        <li>Full venue transformation</li>
-                    </ul>
-                </div>
-                <div class="proof-item">
-                    <h3>Tools & Process</h3>
-                    <p>Adobe Creative Suite, 3D Rendering, AI (Midjourney)</p>
-                    <p><em>AI-accelerated concept visualization and environmental mockups compressed a typical 4–6 week agency timeline into 2 weeks — rapid iteration of architectural elements without sacrificing design integrity or production-readiness.</em></p>
-                </div>
+        <!-- ============================
+             BRIEF
+             ============================ -->
+        <section>
+            <div class="sar-text">
+                <h2>8 zones. One language. Two weeks.</h2>
+                <p>New ownership acquired the Sarnia Arena — home of the OHL's Sarnia Sting — and wanted a total transformation. <strong>Budget wasn't the constraint. Time was.</strong> Two weeks to concept, design, and present a comprehensive rebrand covering luxury suites, restaurants, concessions, a kids zone, and a complete wayfinding system.</p>
+                <p>The Sting's mascot is a bee. That gave me the hexagonal design language — honeycomb patterns, hex LED fixtures, a "Buzz" naming convention — that could unify eight completely different spaces into one cohesive experience.</p>
             </div>
         </section>
 
-        <!-- Section: The Challenge -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>The Challenge</h2>
-                <p><strong>New ownership acquired the Sarnia Arena—home of the OHL's Sarnia Sting—and wanted a bold, ambitious rebrand that would transform the fan experience.</strong> Budget was not a constraint. They wanted transformative ideas that would make the venue feel premium and contemporary.</p>
-                <p>The challenge: <strong>Two weeks.</strong> That was the timeline to concept, design, and present a comprehensive rebrand covering multiple venue zones—from luxury suites to concession stands to a kids entertainment area.</p>
-                <p>The existing spaces were dated, with mismatched furniture and no cohesive visual identity. The scope demanded more than graphic design—it required full environmental design thinking: material selection, lighting specification, millwork concepts, 3D signage, and a cohesive visual system that could flex across very different contexts.</p>
-            </div>
-        </section>
-
-        <!-- Section: Strategic Approach -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Strategic Approach: A Cohesive Visual Language</h2>
-                <p><strong>The Sarnia Sting's mascot is a bee—which immediately suggested a powerful design direction.</strong></p>
-                <p>I developed a hexagonal visual language that could unify the entire venue:</p>
-                <p><strong>1. Honeycomb patterns</strong> in environmental graphics that work at any scale<br>
-                <strong>2. Hexagonal LED light fixtures</strong> as signature architectural features<br>
-                <strong>3. "Buzz"-themed naming convention</strong> for all food and beverage destinations</p>
-                <p>This wasn't just about graphics—it was about creating immersive branded environments. Every specification had to work architecturally: the materials needed to be durable for a sports venue, the lighting needed to create atmosphere without interfering with sightlines, and the signage needed to function as wayfinding while reinforcing the brand.</p>
-                <p><strong>The result: a complete venue brand architecture</strong> with 8 distinct zones, each with its own personality but unified by the hexagonal design system.</p>
-            </div>
-        </section>
-
-        <!-- Image: Before/After Suites -->
-        <section class="content-section">
-            <div class="section-image">
+        <!-- ============================
+             BEFORE / AFTER
+             ============================ -->
+        <div class="sar-before-after">
+            <div class="sar-ba-card">
                 <img src="sarnia-arena-rebrand/Content/Suites-Before.png"
-                     alt="Before: Dated suite spaces with mismatched furniture and no cohesive identity">
-                <p class="image-caption"><strong>Before:</strong> Dated finishes, mismatched furniture, no cohesive brand identity</p>
+                     alt="Before: Dated suite with mismatched furniture and no cohesive identity">
+                <div class="sar-ba-label">Before</div>
+            </div>
+            <div class="sar-ba-card">
+                <img src="sarnia-arena-rebrand/Content/Suites-After.jpeg"
+                     alt="After: Transformed Sarnia Suite with premium finishes and hexagonal lighting">
+                <div class="sar-ba-label">After</div>
+            </div>
+        </div>
+
+        <!-- ============================
+             BUZZSOCIAL
+             ============================ -->
+        <section>
+            <div class="sar-text">
+                <h2>BuzzSocial.</h2>
+                <p>The arena's flagship restaurant and social hub. Dramatic honeycomb LED ceiling installations serve as both lighting and architectural statement. Exposed brick, wood flooring, leather seating — a premium sports bar that elevates the typical arena concession into a destination.</p>
             </div>
         </section>
 
-        <!-- Section: Sarnia Suites Transformation -->
-        <section class="content-section">
-            <div class="logo-section">
-                <div class="logo-image">
-                    <img src="sarnia-arena-rebrand/Sarnia_Cover@2x.png"
-                         alt="Transformed Sarnia Suite with premium finishes and hexagonal lighting">
-                </div>
-                <div class="logo-text">
-                    <h2>Sarnia Suites: Premium Hospitality</h2>
-                    <p>The suites transformation showcases the full environmental design approach. <strong>Signature hexagonal LED light fixtures</strong> echo the Sting brand while creating warm ambient lighting. The space features premium leather seating, refined millwork with wood slat detailing, a slate feature wall, and custom carpet featuring the geometric pattern system.</p>
-                    <p><strong>Local imagery—including the Bluewater Bridge—creates a sense of place</strong> and community pride, making these spaces feel distinctly Sarnia.</p>
-                    <p><strong>Key Specifications:</strong></p>
-                    <ul style="list-style: none; padding-left: 1em;">
-                        <li style="margin-bottom: 0.5em;">• Hexagonal LED light fixtures (signature element)</li>
-                        <li style="margin-bottom: 0.5em;">• Premium leather seating and bar stools</li>
-                        <li style="margin-bottom: 0.5em;">• Refined millwork with wood slat details</li>
-                        <li style="margin-bottom: 0.5em;">• Slate feature wall</li>
-                        <li style="margin-bottom: 0.5em;">• Custom carpet with brand pattern</li>
-                        <li style="margin-bottom: 0.5em;">• Local Bluewater Bridge imagery</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <div class="sar-img-full">
+            <img src="sarnia-arena-rebrand/Content/buzzsocial-interior.png"
+                 alt="BuzzSocial restaurant interior with dramatic hexagonal LED ceiling installation">
+        </div>
 
-        <!-- Section: BuzzSocial -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>BuzzSocial: The Arena's Social Hub</h2>
-                <p><strong>BuzzSocial is the arena's flagship restaurant destination—a social hub where fans can gather before and during games.</strong> The hexagonal theme is pushed to its maximum expression here: dramatic honeycomb LED ceiling installations serve as both lighting and architectural statement pieces.</p>
-                <p>The warm material palette—exposed brick, wood flooring, and leather seating—creates an upscale sports bar atmosphere that elevates the typical arena concession experience. <strong>This is where environmental design and brand experience converge.</strong></p>
-                <p>The space needed to feel premium enough for VIP guests while remaining approachable for families. The design achieves this balance through material selection and lighting design that creates intimacy in a large-scale venue.</p>
-            </div>
-        </section>
-
-        <!-- Image: BuzzSocial Interior -->
-        <section class="content-section">
-            <div class="section-image">
-                <img src="sarnia-arena-rebrand/Content/buzzsocial-interior.png"
-                     alt="BuzzSocial restaurant interior with dramatic hexagonal LED ceiling">
-                <p class="image-caption">BuzzSocial's dramatic hexagonal LED ceiling creates an architectural focal point</p>
-            </div>
-        </section>
-
-        <!-- Section: Hall of Fame -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Hall of Fame: Celebrating Sarnia Sting History</h2>
-                <p><strong>The Hall of Fame bar celebrates Sarnia Sting legends while providing a premium hospitality experience.</strong> Design elements include limewashed brick for a contemporary industrial feel, an L-shaped bar with black granite countertops, and the signature hexagonal floor pattern throughout.</p>
-                <p>A large hockey puck-shaped pendant light featuring the Sting mascot serves as the focal point—a playful nod to hockey culture that reinforces brand identity. The "Honourable Inductees" display is prominently featured, turning team history into environmental storytelling.</p>
-                <p><strong>This demonstrates my ability to design spaces that honor heritage while feeling contemporary</strong>—balancing nostalgia with forward-looking brand energy.</p>
-            </div>
-        </section>
-
-        <!-- Image: Hall of Fame -->
-        <section class="content-section">
-            <div class="section-image">
+        <!-- ============================
+             HALL OF FAME — Split
+             ============================ -->
+        <section class="sar-split">
+            <div class="sar-split-img">
                 <img src="sarnia-arena-rebrand/Content/hall-of-fame.png"
-                     alt="Hall of Fame bar with limewashed brick and custom pendant lighting">
-                <p class="image-caption">Hall of Fame bar with signature puck-shaped pendant light and limewashed brick</p>
+                     alt="Hall of Fame bar with limewashed brick and custom puck-shaped pendant light">
+            </div>
+            <div class="sar-split-text">
+                <h3>Hall of Fame</h3>
+                <p>Celebrates Sarnia Sting legends with limewashed brick, black granite bar tops, and a hockey puck pendant light featuring the Sting mascot. The "Honourable Inductees" display turns team history into environmental storytelling. Heritage that feels contemporary.</p>
             </div>
         </section>
 
-        <!-- Section: Naming Architecture & Brand System -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Complete Naming Architecture: The "Buzz" Family</h2>
-                <p><strong>I created a complete venue brand architecture with consistent naming that reinforces the bee/buzz theme throughout the arena:</strong></p>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5em; margin-top: 1.5em;">
-                    <div>
-                        <p><strong style="color: var(--accent-color);">BUZZSOCIAL</strong><br>Premium restaurant & social hub</p>
-                    </div>
-                    <div>
-                        <p><strong style="color: var(--accent-color);">BUZZSPOT</strong><br>Quick-service concessions</p>
-                    </div>
-                    <div>
-                        <p><strong style="color: var(--accent-color);">HALL OF FAME</strong><br>Sarnia Sting legends bar</p>
-                    </div>
-                    <div>
-                        <p><strong style="color: var(--accent-color);">SARNIA SUITES</strong><br>Luxury viewing suites</p>
-                    </div>
-                    <div>
-                        <p><strong style="color: var(--accent-color);">YOUTH HIVE</strong><br>Kids entertainment zone</p>
-                    </div>
-                    <div>
-                        <p><strong style="color: var(--accent-color);">SNACK STOP</strong><br>Grab-and-go refreshments</p>
-                    </div>
-                    <div>
-                        <p><strong style="color: var(--accent-color);">STAMMER'S STATION</strong><br>Condiment stand (Stamkos tribute)</p>
-                    </div>
-                    <div>
-                        <p><strong style="color: var(--accent-color);">BEER RUN</strong><br>Self-service beer concept</p>
-                    </div>
-                </div>
-
-                <p style="margin-top: 1.5em;"><strong>This naming system does triple duty:</strong> it creates wayfinding clarity, reinforces brand identity at every touchpoint, and tells a cohesive story throughout the venue journey.</p>
+        <!-- ============================
+             BUZZSPOT — Reversed split
+             ============================ -->
+        <section class="sar-split">
+            <div class="sar-split-text">
+                <h3>BuzzSpot</h3>
+                <p>Quick-service concessions with high-visibility branding. Bold orange and black graphics, hexagonal floor patterns, and clear wayfinding. The same design system that works in a luxury suite also works at a concession counter — that's the point of a cohesive language.</p>
             </div>
-        </section>
-
-        <!-- Section: Youth Hive -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Youth Hive: Family-Friendly Brand Expression</h2>
-                <p><strong>Youth Hive demonstrates how the hexagonal brand language adapts to different audiences.</strong> The space maintains visual continuity with the rest of the venue while introducing brighter, more playful colors—adding blue accents to the orange and black palette.</p>
-                <p>The space includes games, poster-making stations, hot chocolate service, and kid-friendly concessions. Large-scale environmental graphics create Instagram-worthy moments for families while the hexagonal pattern maintains brand consistency.</p>
-                <p><em>This project showcases my versatility: designing premium hospitality spaces alongside family entertainment zones, all within a unified visual system.</em></p>
-            </div>
-        </section>
-
-        <!-- Image: Youth Hive -->
-        <section class="content-section">
-            <div class="section-image">
-                <img src="sarnia-arena-rebrand/Content/youth-hive-mockup.jpeg"
-                     alt="Youth Hive kids zone with playful colors and hexagonal brand elements">
-                <p class="image-caption">Youth Hive brings the hexagonal brand language to a family-friendly context</p>
-            </div>
-        </section>
-
-        <!-- Section: Environmental Graphics & Wayfinding -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Environmental Graphics & Wayfinding</h2>
-                <p><strong>Beyond individual spaces, I designed a comprehensive wayfinding and environmental graphics system</strong> that guides fans through the venue while reinforcing brand identity at every touchpoint.</p>
-                <p>The hexagonal pattern appears in floor vinyl graphics, wall murals, ceiling installations, and signage elements. The pattern's modularity allows it to scale from small wayfinding signs to building-sized installations while maintaining visual consistency.</p>
-                <p><strong>Color-coding helps with wayfinding:</strong> premium spaces use warm wood tones and black, quick-service areas use bold orange and black, and family zones incorporate blue accents—all tied together by the hexagonal geometry.</p>
-            </div>
-        </section>
-
-        <!-- Image: Additional Mockup -->
-        <section class="content-section">
-            <div class="section-image">
+            <div class="sar-split-img">
                 <img src="sarnia-arena-rebrand/Content/buzzspot-concessions.png"
-                     alt="BuzzSpot concession stand with bold orange and black graphics">
-                <p class="image-caption">BuzzSpot concessions with high-visibility branding and hexagonal pattern system</p>
+                     alt="BuzzSpot concession stand with bold orange and black hexagonal branding">
             </div>
         </section>
 
-        <!-- Section: Material Specifications & Technical Execution -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Complete Design Specifications</h2>
-                <p><strong>This project required more than visual concepts—it demanded production-ready specifications</strong> that could be handed to contractors and manufacturers. Every design decision had to be architecturally sound and commercially viable.</p>
-
-                <p><strong>Key Deliverables:</strong></p>
-                <ul style="list-style: none; padding-left: 1em;">
-                    <li style="margin-bottom: 0.5em;">→ Hexagonal LED lighting specifications (fixture dimensions, mounting details, electrical requirements)</li>
-                    <li style="margin-bottom: 0.5em;">→ Material & finish selections (limestone, limewashed brick, slate, wood slats, granite)</li>
-                    <li style="margin-bottom: 0.5em;">→ Millwork concepts (bar fronts, countertops, wall treatments)</li>
-                    <li style="margin-bottom: 0.5em;">→ 3D signage designs (pendant lights, wayfinding, menu boards)</li>
-                    <li style="margin-bottom: 0.5em;">→ Floor vinyl graphics (custom hexagonal pattern system)</li>
-                    <li style="margin-bottom: 0.5em;">→ Furniture specifications (seating, tables, bar stools)</li>
-                    <li style="margin-bottom: 0.5em;">→ Environmental graphics (wall murals, window graphics, ceiling installations)</li>
-                    <li style="margin-bottom: 0.5em;">→ Complete wayfinding system (directional signage, zone identification)</li>
-                </ul>
-
-                <p style="margin-top: 1.5em;"><strong>The client praised the "attention to detail" and noted how easy it was to "imagine the future state of the building"</strong>—validation that the specifications were both comprehensive and clearly communicated.</p>
+        <!-- ============================
+             YOUTH HIVE
+             ============================ -->
+        <section>
+            <div class="sar-text">
+                <h2>Youth Hive.</h2>
+                <p>The hexagonal language adapts for families — brighter colors, playful scale, but still unmistakably part of the same system. Games, poster-making stations, hot chocolate. Large-scale environmental graphics that create moments worth photographing.</p>
             </div>
         </section>
 
-        <!-- Section: Results & Impact -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Results & Client Response</h2>
-                <p><strong>The proposal was enthusiastically approved by ownership and external stakeholders—described as "amazing work" that exceeded expectations.</strong></p>
+        <div class="sar-img-full">
+            <img src="sarnia-arena-rebrand/Content/youth-hive-mockup.jpeg"
+                 alt="Youth Hive kids zone with playful colors and hexagonal brand elements">
+        </div>
 
-                <p>From the client presentation feedback:</p>
-                <blockquote style="border-left: 3px solid var(--accent-color); padding-left: 1.5em; margin: 1.5em 0; font-style: italic;">
-                    "The client was very impressed with what they saw. The renderings, digital mock-ups, and visual boards you created really anchored the story—the client called out the attention to detail and how easy it was to imagine the future state of the building."
-                </blockquote>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="metric-number">2 Weeks</div>
-                        <div class="metric-label">Complete rebrand concept to presentation</div>
+        <!-- ============================
+             NAMING ARCHITECTURE
+             ============================ -->
+        <div class="sar-naming">
+            <div class="sar-naming-inner">
+                <h2>The Buzz Family</h2>
+                <div class="sar-naming-grid">
+                    <div class="sar-zone">
+                        <div class="zone-name">BuzzSocial</div>
+                        <div class="zone-desc">Premium restaurant & social hub</div>
                     </div>
-                    <div class="metric-item">
-                        <div class="metric-number">2–3x Faster</div>
-                        <div class="metric-label">vs. traditional agency timeline</div>
+                    <div class="sar-zone">
+                        <div class="zone-name">BuzzSpot</div>
+                        <div class="zone-desc">Quick-service concessions</div>
                     </div>
-                    <div class="metric-item">
-                        <div class="metric-number">8 Zones</div>
-                        <div class="metric-label">Distinct venue destinations designed</div>
+                    <div class="sar-zone">
+                        <div class="zone-name">Hall of Fame</div>
+                        <div class="zone-desc">Sarnia Sting legends bar</div>
                     </div>
-                    <div class="metric-item">
-                        <div class="metric-number">Approved</div>
-                        <div class="metric-label">Pending implementation</div>
+                    <div class="sar-zone">
+                        <div class="zone-name">Sarnia Suites</div>
+                        <div class="zone-desc">Luxury viewing suites</div>
+                    </div>
+                    <div class="sar-zone">
+                        <div class="zone-name">Youth Hive</div>
+                        <div class="zone-desc">Kids entertainment zone</div>
+                    </div>
+                    <div class="sar-zone">
+                        <div class="zone-name">Snack Stop</div>
+                        <div class="zone-desc">Grab-and-go refreshments</div>
+                    </div>
+                    <div class="sar-zone">
+                        <div class="zone-name">Stammer's Station</div>
+                        <div class="zone-desc">Condiment stand (Stamkos tribute)</div>
+                    </div>
+                    <div class="sar-zone">
+                        <div class="zone-name">Beer Run</div>
+                        <div class="zone-desc">Self-service beer concept</div>
                     </div>
                 </div>
-
-                <p style="margin-top: var(--space-lg);"><strong>This project demonstrates:</strong></p>
-                <ul style="list-style: none; padding-left: 1em;">
-                    <li style="margin-bottom: 0.5em;">• <strong>Environmental design expertise</strong> beyond graphic design—material selection, lighting, millwork</li>
-                    <li style="margin-bottom: 0.5em;">• <strong>AI-accelerated delivery</strong>—comprehensive rebrand in 2 weeks vs. typical 4–6 week agency timeline</li>
-                    <li style="margin-bottom: 0.5em;">• <strong>Cohesive brand systems</strong> that unify diverse spaces with a single visual language</li>
-                    <li style="margin-bottom: 0.5em;">• <strong>Production-ready specifications</strong> that contractors can implement</li>
-                    <li style="margin-bottom: 0.5em;">• <strong>Strategic naming architecture</strong> that supports wayfinding and brand storytelling</li>
-                    <li style="margin-bottom: 0.5em;">• <strong>Versatility across contexts</strong>—luxury suites to kids zones to quick-service concessions</li>
-                    <li style="margin-bottom: 0.5em;">• <strong>Client presentations that sell the vision</strong> and exceed expectations</li>
-                </ul>
             </div>
+        </div>
+
+        <!-- ============================
+             METRICS BAR
+             ============================ -->
+        <div class="sar-metrics">
+            <div class="sar-metrics-inner">
+                <div class="sar-metric">
+                    <div class="number">2</div>
+                    <div class="label">Weeks</div>
+                </div>
+                <div class="sar-metric">
+                    <div class="number">8</div>
+                    <div class="label">Venue zones</div>
+                </div>
+                <div class="sar-metric">
+                    <div class="number">Approved</div>
+                    <div class="label">By ownership</div>
+                </div>
+                <div class="sar-metric">
+                    <div class="number">Building</div>
+                    <div class="label">Under construction</div>
+                </div>
+            </div>
+            <p class="sar-quote">"The renderings, digital mock-ups, and visual boards really anchored the story — the client called out the attention to detail and how easy it was to imagine the future state of the building."
+                <span class="attr">— Client presentation feedback</span>
+            </p>
+        </div>
+
+        <!-- ============================
+             CLOSING
+             ============================ -->
+        <section class="sar-closing">
+            <p>One hexagonal system turned eight disconnected spaces into a venue that feels like it was always meant to be this way.</p>
+            <div class="tag">Sarnia Arena / Environmental Design & Wayfinding</div>
         </section>
 
     </main>
@@ -354,7 +555,6 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-content">
-            <!-- Column 1: About/Contact Info -->
             <div class="footer-column footer-about">
                 <h3 class="footer-heading">Francisco Designs</h3>
                 <p class="footer-text">
@@ -362,32 +562,20 @@
                     environmental design, and creative direction.
                 </p>
                 <p class="footer-text">
-                    <a href="mailto:jtkfrancisco@gmail.com" class="footer-email">
-                        jtkfrancisco@gmail.com
-                    </a>
+                    <a href="mailto:jtkfrancisco@gmail.com" class="footer-email">jtkfrancisco@gmail.com</a>
                 </p>
             </div>
-
-            <!-- Column 2: Social Links -->
             <div class="footer-column footer-social">
                 <h3 class="footer-heading">Connect</h3>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/jtkfrancisco/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="LinkedIn"
-                       class="social-icon">
+                    <a href="https://www.linkedin.com/in/jtkfrancisco/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                             <rect x="2" y="9" width="4" height="12"/>
                             <circle cx="4" cy="4" r="2"/>
                         </svg>
                     </a>
-                    <a href="https://instagram.com/justinfranciscodesigns"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="Instagram"
-                       class="social-icon">
+                    <a href="https://instagram.com/justinfranciscodesigns" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -396,8 +584,6 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Column 3: Quick Navigation -->
             <div class="footer-column footer-nav">
                 <h3 class="footer-heading">Navigation</h3>
                 <nav class="footer-nav-links">
@@ -407,8 +593,6 @@
                 </nav>
             </div>
         </div>
-
-        <!-- Copyright -->
         <div class="footer-bottom">
             <p class="footer-copyright">&copy; 2026 Francisco Designs. All rights reserved.</p>
         </div>

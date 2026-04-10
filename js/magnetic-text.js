@@ -83,30 +83,40 @@ class MagneticHeroText {
     }
 
     /**
-     * Split text content into individual word spans
+     * Split text content into individual word spans,
+     * preserving <br> tags in the original HTML.
      */
     splitTextIntoWords() {
-        const originalText = this.element.textContent;
-        const words = originalText.split(' ');
+        const originalHTML = this.element.innerHTML;
+        // Split on <br> variants to get lines
+        const lines = originalHTML.split(/<br\s*\/?>/i);
 
         // Clear element
-        this.element.textContent = '';
+        this.element.innerHTML = '';
         this.element.classList.add('magnetic-enabled');
 
-        // Create spans for each word
-        words.forEach((word, index) => {
-            const wordSpan = document.createElement('span');
-            wordSpan.className = 'word-magnetic';
-            wordSpan.textContent = word;
-            this.element.appendChild(wordSpan);
-            this.words.push(wordSpan);
+        lines.forEach((line, lineIndex) => {
+            const words = line.trim().split(/\s+/).filter(w => w.length > 0);
 
-            // Add space after each word (except last)
-            if (index < words.length - 1) {
-                const spaceSpan = document.createElement('span');
-                spaceSpan.className = 'word-space';
-                spaceSpan.textContent = ' ';
-                this.element.appendChild(spaceSpan);
+            words.forEach((word, wordIndex) => {
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'word-magnetic';
+                wordSpan.textContent = word;
+                this.element.appendChild(wordSpan);
+                this.words.push(wordSpan);
+
+                // Add space after each word (except last in this line)
+                if (wordIndex < words.length - 1) {
+                    const spaceSpan = document.createElement('span');
+                    spaceSpan.className = 'word-space';
+                    spaceSpan.textContent = ' ';
+                    this.element.appendChild(spaceSpan);
+                }
+            });
+
+            // Re-insert <br> between lines (not after the last line)
+            if (lineIndex < lines.length - 1) {
+                this.element.appendChild(document.createElement('br'));
             }
         });
     }
@@ -288,10 +298,20 @@ class MagneticHeroText {
         }
         window.removeEventListener('resize', this.handleResize);
 
-        // Reset and restore original text
+        // Reset and restore original text with line breaks
         if (this.element) {
-            const originalText = this.words.map(word => word.textContent).join(' ');
-            this.element.textContent = originalText;
+            const parts = [];
+            let currentLine = [];
+            for (const child of this.element.childNodes) {
+                if (child.tagName === 'BR') {
+                    parts.push(currentLine.join(' '));
+                    currentLine = [];
+                } else if (child.classList && child.classList.contains('word-magnetic')) {
+                    currentLine.push(child.textContent);
+                }
+            }
+            parts.push(currentLine.join(' '));
+            this.element.innerHTML = parts.join('<br>');
             this.element.classList.remove('magnetic-enabled');
         }
 

@@ -63,6 +63,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+    opacity: 1 !important;
+}
+
+body.page-leaving {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -270,8 +279,8 @@ em {
 /* Hero Section */
 .hero-section {
     max-width: var(--text-max-width);
-    margin: 0 auto var(--space-2xl);
-    padding: var(--space-xl) var(--space-md) 0;
+    margin: 0 auto var(--space-xl);
+    padding: var(--space-2xl) var(--space-md) 0;
     text-align: center;
 }
 
@@ -290,6 +299,28 @@ em {
     color: var(--color-text-medium);
     max-width: 640px;
     margin: 0 auto;
+}
+
+/* Hero Particles Canvas - full bleed */
+.hero-particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-section {
+    position: relative;
+    overflow: visible;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 /* Magnetic Text Animation */
@@ -312,7 +343,7 @@ em {
 /* Client Strip */
 .client-strip {
     max-width: var(--text-max-width);
-    margin: 0 auto var(--space-2xl);
+    margin: 0 auto var(--space-lg);
     padding: 0 var(--space-md);
     text-align: center;
 }
@@ -559,30 +590,57 @@ em {
     transform: translateX(4px);
 }
 
-/* Testimonials Section */
+/* Testimonials Section - Infinite Horizontal Scroll */
 .testimonials-section {
-    margin: var(--space-2xl) auto;
+    margin: var(--space-2xl) 0;
+    overflow: hidden;
+}
+
+.testimonials-section .section-heading {
     padding: 0 var(--space-md);
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-lg);
-    max-width: var(--content-max-width);
-    margin: 0 auto;
+.testimonials-scroll {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.testimonials-track {
+    display: flex;
+    gap: var(--space-md);
+    animation: scroll-testimonials 40s linear infinite;
+    width: max-content;
+}
+
+.testimonials-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-testimonials {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .testimonial-card {
+    flex-shrink: 0;
+    width: 420px;
     background-color: rgba(0, 0, 0, 0.02);
     padding: var(--space-lg);
+    border-radius: 4px;
 }
 
 .testimonial-quote {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
     color: var(--color-text);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
 }
 
 .testimonial-attribution {
@@ -591,12 +649,34 @@ em {
     font-weight: 500;
 }
 
+@media (max-width: 768px) {
+    .testimonial-card {
+        width: 300px;
+    }
+
+    .testimonials-track {
+        animation-duration: 30s;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .testimonials-track {
+        animation: none;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .testimonial-card {
+        scroll-snap-align: start;
+    }
+}
+
 /* ===================================
    PROJECT DETAIL PAGE
    =================================== */
 
 .project-detail {
-    margin-top: 120px;
+    padding-top: 160px;
 }
 
 /* Project Title Styling */

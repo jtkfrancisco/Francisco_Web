@@ -13,16 +13,510 @@
     <meta property="og:url" content="https://francisco.design/york-u.html">
     <meta property="og:type" content="article">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="YU Eats Campus Dining Brand – RFP-Winning Design | Francisco Designs">
-    <meta name="twitter:description" content="Award-winning campus dining brand identity serving 55,000+ students across 70+ locations. From RFP to live launch.">
-    <meta name="twitter:image" content="https://francisco.design/York%20U%20Mobile%20Odering%20App%20Brand/YorkApp_Cover@2x.png">
-
     <!-- Canonical URL -->
     <link rel="canonical" href="https://francisco.design/york-u.html">
 
     <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* =============================================
+           YORK U PROJECT PAGE — VISUAL-FIRST TEMPLATE
+           ============================================= */
+
+        .york-page {
+            --york-red: #E31837;
+            --york-dark: #1a1a1a;
+            --york-charcoal: #2D2D2D;
+            --york-warm: #F5F3F0;
+            --york-light: #FAFAF8;
+        }
+
+        /* --- Full-Bleed Hero --- */
+        .york-hero {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .york-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Meta Strip --- */
+        .york-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #e0e0e0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .york-meta-item {
+            background: var(--color-bg);
+            padding: 40px 32px;
+            text-align: center;
+        }
+
+        .york-meta-label {
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: 8px;
+        }
+
+        .york-meta-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text);
+            line-height: 1.4;
+        }
+
+        .york-meta-value .highlight {
+            color: var(--york-red);
+        }
+
+        /* --- Text Sections --- */
+        .york-text {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .york-text h2 {
+            font-size: clamp(28px, 3.5vw, 42px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--color-text);
+        }
+
+        .york-text p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-text-medium);
+            margin-bottom: 16px;
+        }
+
+        .york-text p strong {
+            color: var(--color-text);
+        }
+
+        /* --- Full-Bleed Image --- */
+        .york-img-full {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .york-img-full img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Contained Image with caption --- */
+        .york-img-contained {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .york-img-contained img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .york-caption {
+            font-size: 13px;
+            color: var(--color-text-light);
+            margin-top: 16px;
+            letter-spacing: 0.02em;
+            text-align: center;
+        }
+
+        /* --- Brand Showcase Block --- */
+        .york-brand-block {
+            background: var(--york-red);
+            padding: 100px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .york-brand-block::before {
+            content: 'YUYUYUYUYUYUYUYUYUYUYUYUYUYUYUYUYUYUYU';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 200px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.06);
+            white-space: nowrap;
+            letter-spacing: -0.04em;
+            pointer-events: none;
+        }
+
+        .york-brand-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .york-brand-inner img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        .york-brand-label {
+            font-size: 13px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            margin-top: 24px;
+        }
+
+        /* --- Split Layout --- */
+        .york-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .york-split-img {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .york-split-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .york-split-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px 60px 60px;
+        }
+
+        .york-split-text h3 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--color-text);
+        }
+
+        .york-split-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-text-medium);
+            margin-bottom: 12px;
+        }
+
+        .york-split-text p strong {
+            color: var(--color-text);
+        }
+
+        /* --- Metrics Bar --- */
+        .york-metrics {
+            background: var(--york-dark);
+            padding: 64px 40px;
+        }
+
+        .york-metrics-inner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .york-metric {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .york-metric-number {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            color: var(--york-red);
+            letter-spacing: -0.02em;
+        }
+
+        .york-metric-label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 8px;
+            letter-spacing: 0.04em;
+        }
+
+        /* --- App Mockup Section --- */
+        .york-app-section {
+            background: var(--york-warm);
+            padding: 80px 40px;
+        }
+
+        .york-app-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .york-app-inner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .york-app-label {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 13px;
+            color: var(--color-text-light);
+            letter-spacing: 0.06em;
+        }
+
+        /* --- Two-Column Image Grid --- */
+        .york-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+
+        .york-grid-2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- Collateral Mosaic --- */
+        .york-mosaic {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 80px;
+            gap: 16px;
+        }
+
+        .york-mosaic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Poster — tall, left side */
+        .york-mosaic-poster {
+            grid-column: 1 / 6;
+            grid-row: 1 / 6;
+        }
+
+        /* Social — square, top right */
+        .york-mosaic-social {
+            grid-column: 6 / 10;
+            grid-row: 1 / 4;
+        }
+
+        /* Vertical — tall, far right */
+        .york-mosaic-vert {
+            grid-column: 10 / 13;
+            grid-row: 1 / 6;
+        }
+
+        /* Horizontal — wide, bottom right */
+        .york-mosaic-horiz {
+            grid-column: 6 / 10;
+            grid-row: 4 / 6;
+        }
+
+        @media (max-width: 768px) {
+            .york-mosaic {
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: auto;
+                padding: 0 24px;
+            }
+            .york-mosaic-poster,
+            .york-mosaic-social,
+            .york-mosaic-vert,
+            .york-mosaic-horiz {
+                grid-column: auto;
+                grid-row: auto;
+            }
+            .york-mosaic img {
+                height: auto;
+                object-fit: contain;
+            }
+        }
+
+        /* --- Three-Column Image Grid --- */
+        .york-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .york-grid-3 img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Sub-brand block --- */
+        .york-subbrand {
+            background: var(--york-charcoal);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .york-subbrand-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .york-subbrand h3 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .york-subbrand p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.5);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* --- Design Principles --- */
+        .york-principles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: #e0e0e0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .york-principle {
+            background: var(--color-bg);
+            padding: 48px 40px;
+            text-align: center;
+        }
+
+        .york-principle-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+
+        .york-principle-desc {
+            font-size: 14px;
+            color: var(--color-text-medium);
+            line-height: 1.6;
+        }
+
+        /* --- Color palette --- */
+        .york-palette {
+            background: #fff;
+            padding: 60px 40px;
+        }
+
+        .york-color-row {
+            display: flex;
+            gap: 0;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 160px;
+        }
+
+        .york-color-swatch {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .york-color-swatch span {
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+        }
+
+        /* --- Closing Statement --- */
+        .york-closing {
+            background: var(--york-dark);
+            padding: 120px 40px;
+            text-align: center;
+        }
+
+        .york-closing-text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+        }
+
+        .york-closing-attr {
+            margin-top: 32px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.06em;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .york-meta {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .york-split {
+                grid-template-columns: 1fr;
+            }
+            .york-split-text {
+                padding: 40px;
+            }
+            .york-grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .york-grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .york-metrics-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .york-principles {
+                grid-template-columns: 1fr;
+            }
+            .york-text {
+                padding: 60px 24px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip to Main Content -->
@@ -43,217 +537,248 @@
     </header>
 
     <!-- Project Detail Page -->
-    <main id="main" class="project-detail">
+    <main id="main" class="project-detail york-page">
 
-        <!-- Hero Image -->
-        <section class="hero">
-            <div class="bleed hero-image">
-                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/Mockups/YU-WallMural%20Mockup.png"
-                     alt="Large-scale YU Eats wall mural with repeating pattern in campus environment">
-            </div>
+        <!-- ============================
+             HERO — Full bleed wall mural
+             ============================ -->
+        <section class="york-hero">
+            <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/Mockups/YU-WallMural%20Mockup.png"
+                 alt="Large-scale YU Eats wall mural with repeating pattern in campus environment">
         </section>
 
-        <!-- Project Title -->
-        <div class="container">
-            <h1>YU Eats Campus Dining Brand Identity</h1>
+        <!-- ============================
+             META STRIP
+             ============================ -->
+        <div class="york-meta">
+            <div class="york-meta-item">
+                <div class="york-meta-label">Client</div>
+                <div class="york-meta-value">York University <span style="font-weight: 400; color: var(--color-text-light);">via</span> Chartwells Canada</div>
+            </div>
+            <div class="york-meta-item">
+                <div class="york-meta-label">Timeline</div>
+                <div class="york-meta-value">4 weeks, sole creative</div>
+            </div>
+            <div class="york-meta-item">
+                <div class="york-meta-label">Outcome</div>
+                <div class="york-meta-value"><span class="highlight">Won competitive RFP</span></div>
+            </div>
+            <div class="york-meta-item">
+                <div class="york-meta-label">Status</div>
+                <div class="york-meta-value">Live since 2022 across 70+ locations</div>
+            </div>
         </div>
 
-        <!-- Proof Strip: Project Quick Scan -->
-        <section class="proof-strip">
-            <div class="proof-grid">
-                <div class="proof-item">
-                    <h3>Project</h3>
-                    <p><strong>YU Eats Campus Dining Brand Identity</strong></p>
-                    <p>York University × Chartwells Canada</p>
-                </div>
-                <div class="proof-item">
-                    <h3>Role & Timeline</h3>
-                    <p><strong>Lead Designer (Sole Creative)</strong></p>
-                    <p>4 weeks · April 2022</p>
-                </div>
-                <div class="proof-item">
-                    <h3>Deliverables</h3>
-                    <ul>
-                        <li>Master brand identity + sub-brand</li>
-                        <li>Mobile app UI concepts</li>
-                        <li>Environmental graphics</li>
-                        <li>Photography art direction</li>
-                    </ul>
-                </div>
-                <div class="proof-item">
-                    <h3>Outcomes</h3>
-                    <ul>
-                        <li><strong>Won competitive RFP</strong></li>
-                        <li>55,000+ students served daily</li>
-                        <li>70+ dining locations</li>
-                        <li>Live since Fall 2022 (<span id="years-proof">3+ years</span>)</li>
-                    </ul>
-                </div>
-                <div class="proof-item">
-                    <h3>Tools & Process</h3>
-                    <p>Adobe Creative Suite, Figma</p>
-                    <p><em>Leveraged AI tools (Midjourney, ChatGPT) to accelerate concept exploration and copywriting—allowing faster iteration while maintaining senior-level creative judgment.</em></p>
-                </div>
+        <!-- ============================
+             BRIEF
+             ============================ -->
+        <section>
+            <div class="york-text">
+                <h2>55,000 students. One brand.</h2>
+                <p>York University needed a campus dining identity that could win a competitive RFP and then actually work at scale. 70+ locations, two campuses, the most diverse student body in Canada. The brand had to feel relevant to 18-year-olds without pandering to them.</p>
+                <p><strong>Four weeks. Sole creative on the project.</strong> Brand identity, mobile app, environmental design, photography direction, and a sub-brand for good measure.</p>
             </div>
         </section>
 
-        <!-- Section: The Challenge -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>The Challenge</h2>
-                <p><strong>York University—Canada's third-largest university with 55,000+ students—issued an RFP for a complete campus food services overhaul.</strong> Chartwells Canada needed a compelling brand identity to anchor their pitch and differentiate from competitors.</p>
-                <p>The core tension: <strong>How do you create a brand that feels relevant to 18-24 year olds without relying on aesthetic trends that will feel stale in 12 months?</strong></p>
-                <p>York's student body is one of the most diverse in Canada—over 10,000 international students from 178 countries. The brand needed to feel inclusive and representative, not designed for a narrow demographic.</p>
+        <!-- ============================
+             BRAND LOGO — Red block
+             ============================ -->
+        <div class="york-brand-block">
+            <div class="york-brand-inner">
+                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/York-Main-Logo.png"
+                     alt="YU Eats master brand logo with repeating YU pattern">
+                <div class="york-brand-label">Primary brand identity</div>
             </div>
-        </section>
+        </div>
 
-        <!-- Section: Strategic Approach -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Strategic Approach: Designed for Longevity</h2>
-                <p><strong>Three design principles guided every decision:</strong></p>
-                <p><strong>1. Fun, not silly</strong><br>Playful typography and bold colors that feel energetic without being cartoonish.</p>
-                <p><strong>2. Youthful, not young</strong><br>A visual language that respects students as adults, not teenagers.</p>
-                <p><strong>3. Timeless energy</strong><br>Strong graphic foundations that can evolve without complete redesign.</p>
-                <p>Rather than chasing Gen Z trends, I anchored the brand in York's existing equity—the bold red (#E31837), the strong geometric "Y" and "U" letterforms—while bringing fresh energy to campus dining.</p>
+        <!-- ============================
+             DESIGN PRINCIPLES
+             ============================ -->
+        <div class="york-principles">
+            <div class="york-principle">
+                <div class="york-principle-title">Fun, not silly</div>
+                <div class="york-principle-desc">Playful typography and bold colors that feel energetic without being cartoonish.</div>
             </div>
-        </section>
-
-        <!-- Image: Brand in Context -->
-        <section class="content-section">
-            <div class="section-image">
-                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/Mockups/YU-ExtendedMockups.jpeg"
-                     alt="YU Eats brand applied in campus dining environment">
-                <p class="image-caption">Brand identity applied across physical touchpoints in campus dining locations</p>
+            <div class="york-principle">
+                <div class="york-principle-title">Youthful, not young</div>
+                <div class="york-principle-desc">A visual language that respects students as adults, not teenagers.</div>
             </div>
-        </section>
+            <div class="york-principle">
+                <div class="york-principle-title">Timeless energy</div>
+                <div class="york-principle-desc">Strong graphic foundations that evolve without complete redesign. Still in market 3+ years later.</div>
+            </div>
+        </div>
 
-        <!-- Section: Brand Identity System -->
-        <section class="content-section">
-            <div class="logo-section">
-                <div class="logo-image">
-                    <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/York-Main-Logo.png"
-                         alt="YU Eats master brand logo with repeating pattern">
+        <!-- ============================
+             COLOR PALETTE
+             ============================ -->
+        <div class="york-palette">
+            <div class="york-color-row">
+                <div class="york-color-swatch" style="background: #E31837;">
+                    <span style="color: rgba(255,255,255,0.8);">York Red</span>
                 </div>
-                <div class="logo-text">
-                    <h2>Brand Identity: YU Eats</h2>
-                    <p>The YU Eats wordmark leverages the natural connection between "York University" and the brand name—the Y and U letterforms become both a name and an address to the student: <strong>"You Eat."</strong></p>
-                    <p>The repeating "YU" pattern creates visual texture that scales from app icons to building murals, reinforces brand recognition through repetition, and creates a sense of community: <strong>this is YOUR dining experience.</strong></p>
-                    <p><strong>Color Palette:</strong> York Red (#E31837), White (#FFFFFF), Charcoal (#2D2D2D)</p>
+                <div class="york-color-swatch" style="background: #2D2D2D;">
+                    <span style="color: rgba(255,255,255,0.6);">Charcoal</span>
+                </div>
+                <div class="york-color-swatch" style="background: #FFFFFF; border: 1px solid #e0e0e0;">
+                    <span style="color: #999;">White</span>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Section: Mobile Ordering Experience -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Mobile Ordering Experience</h2>
-                <p><strong>The mobile app design prioritizes speed and ease of use</strong>—critical for students ordering between classes. The interface maintains the bold red and clean typography while adding functional UI elements that reduce friction in the ordering process.</p>
-                <p><strong>Key features designed:</strong></p>
-                <ul style="list-style: none; padding-left: 1em;">
-                    <li style="margin-bottom: 0.5em;">• Mobile ordering with real-time tracking</li>
-                    <li style="margin-bottom: 0.5em;">• Customizable dietary preferences</li>
-                    <li style="margin-bottom: 0.5em;">• Scheduled pickup between classes</li>
-                    <li style="margin-bottom: 0.5em;">• Seamless payment integration</li>
-                    <li style="margin-bottom: 0.5em;">• Location-based menu browsing</li>
-                </ul>
+        <!-- ============================
+             STRATEGY TEXT
+             ============================ -->
+        <section>
+            <div class="york-text">
+                <h2>The Y and U do double duty.</h2>
+                <p>The YU Eats wordmark plays on the natural connection between "York University" and the imperative "You Eat." The repeating YU pattern scales from app icons to building-sized murals, creating visual texture that reinforces brand recognition through repetition.</p>
+                <p><strong>The palette anchors in York's existing equity.</strong> That bold red was already theirs. I didn't reinvent it. I gave it a system to live in.</p>
             </div>
         </section>
 
-        <!-- Image: App Screens - Additional Views -->
-        <section class="content-section">
-            <div class="section-image">
-                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/York-app-2_1@2x.png"
-                     alt="YU Eats mobile app detailed interface views">
-                <p class="image-caption">Comprehensive mobile experience across key ordering touchpoints</p>
-            </div>
+        <!-- ============================
+             ENVIRONMENTAL — Full bleed
+             ============================ -->
+        <section class="york-img-full">
+            <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/Mockups/YU-ExtendedMockups.jpeg"
+                 alt="YU Eats brand applied across campus dining environments — signage, counters, and wall graphics">
         </section>
 
-        <!-- Section: Environmental Design & Wayfinding -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Environmental Design & Wayfinding</h2>
-                <p><strong>The brand pattern translates powerfully to large-scale environmental graphics.</strong> Wall murals at dining locations create Instagram-worthy moments while reinforcing brand presence across campus. The repeating pattern works at any scale—from napkins to building-sized installations.</p>
-                <p>I designed comprehensive wayfinding systems including mobile pickup signage, location identifiers, and promotional messaging that aligns with York's values—including sustainability initiatives like the "Proudly Fighting Food Waste" campaign.</p>
-            </div>
-        </section>
-
-        <!-- Image: Sustainability Campaign -->
-        <section class="content-section">
-            <div class="section-image">
+        <!-- ============================
+             SPLIT — Environmental detail
+             ============================ -->
+        <section class="york-split">
+            <div class="york-split-img">
                 <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/Mockups/Generated%20Image%20January%2006%2C%202026%20-%208_24AM.jpeg"
-                     alt="Proudly Fighting Food Waste environmental graphic">
-                <p class="image-caption">Sustainability campaign messaging aligned with institutional values</p>
+                     alt="Proudly Fighting Food Waste sustainability campaign signage">
+            </div>
+            <div class="york-split-text">
+                <h3>Brand meets values.</h3>
+                <p>The system extended into campaign messaging that aligned with York's institutional priorities. Sustainability wasn't an afterthought bolted onto the brand. It was designed into the visual language from day one.</p>
+                <p><strong>"Proudly Fighting Food Waste"</strong> reads as brand-native, not corporate-mandated. That's the difference between a logo and a system.</p>
             </div>
         </section>
 
-        <!-- Section: Sub-brand - 416 Burger Co. -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Creating a Multi-Brand Ecosystem: 416 Burger Co.</h2>
-                <p><strong>York's RFP specifically requested unique, differentiated food brands that would compete with off-campus options.</strong> Beyond the master YU Eats identity, I created 416 Burger Co.—a playful sub-brand referencing Toronto's area code for immediate local relevance.</p>
-                <p>The 416 identity takes a more irreverent tone with puns like "Keep on Grillin' Baby" and "Oh How Bun-derful" that speak to Gen Z's appreciation for self-aware humor. Bold color blocks and retro-inspired typography create a distinct personality while maintaining cohesion with the YU Eats system.</p>
-                <p><strong>This demonstrates my ability to create differentiated sub-brands within a cohesive master system</strong>—each with its own personality but unified by strategic design principles.</p>
+        <!-- ============================
+             APP SCREENS
+             ============================ -->
+        <section>
+            <div class="york-text">
+                <h2>Ordering between classes.</h2>
+                <p>The mobile app had to be fast above everything else. Students have 10 minutes between lectures. Browse, order, pay, pick up. Every screen was designed to reduce friction, not showcase the brand.</p>
             </div>
         </section>
 
-        <!-- Image: 416 Burger Co. Brand System -->
-        <section class="content-section">
-            <div class="section-image">
-                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/GenZ%20Grill/GenZgrill_V3-04.png"
-                     alt="416 Burger Co. promotional materials with playful messaging">
-                <p class="image-caption">416 Burger Co. sub-brand with directed food photography and playful messaging</p>
+        <div class="york-app-section">
+            <div class="york-app-inner">
+                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/York-app-2_1@2x.png"
+                     alt="YU Eats mobile app interface — browse, order, and track screens">
+                <div class="york-app-label">Mobile ordering experience across key touchpoints</div>
+            </div>
+        </div>
+
+        <!-- ============================
+             MARKETING COLLATERAL GRID
+             ============================ -->
+        <section>
+            <div class="york-text">
+                <h2>A system that sells itself.</h2>
+                <p>Promotional materials, social content, campus signage, and launch collateral all built from the same components. Red, white, the YU pattern, and a voice that's confident without being loud.</p>
             </div>
         </section>
 
-        <!-- Image: 416 In-Store Application -->
-        <section class="content-section">
-            <div class="section-image">
-                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/GenZ%20Grill/12549_D1_082.jpg"
-                     alt="416 Burger Co. in-store branding and signage">
-                <p class="image-caption">In-store application of 416 Burger Co. brand at campus location</p>
+        <div class="york-mosaic">
+            <div class="york-mosaic-poster">
+                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/App%20Marketing%20Designs/yorkueats-poster.0e6dccca.png"
+                     alt="YU Eats promotional poster — enter to win campaign with app download CTA">
             </div>
-        </section>
-
-        <!-- Section: Photography Direction -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Complete Project Ownership: Photography Direction</h2>
-                <p><strong>Beyond design, I directed the food photography photoshoot</strong> to ensure all visual assets aligned with the brand vision. This involved art direction, styling guidance, and shot selection to capture appetite appeal while maintaining the energetic, modern feel of the YU Eats brand.</p>
-                <p><em>This project showcases end-to-end creative leadership: from strategic brand development through execution and photography direction.</em></p>
+            <div class="york-mosaic-social">
+                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/App%20Marketing%20Designs/yorkueats-social.425259a9.png"
+                     alt="YU Eats social media content — contest promotion with brand pattern">
             </div>
-        </section>
+            <div class="york-mosaic-vert">
+                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/App%20Marketing%20Designs/yorkueats-dvert.71f570b6.png"
+                     alt="YU Eats vertical digital display ad for campus kiosks">
+            </div>
+            <div class="york-mosaic-horiz">
+                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/App%20Marketing%20Designs/yorkueats-dhoriz.e55c2ef2.png"
+                     alt="YU Eats horizontal digital display ad for campus screens">
+            </div>
+        </div>
 
-        <!-- Section: Results & Impact -->
-        <section class="content-section">
-            <div class="section-text">
-                <h2>Results & Business Impact</h2>
-                <p><strong>The brand identity played a key role in differentiating Chartwells' proposal from competitors. York University selected Chartwells as their food services partner, and the YU Eats brand launched across campus in Fall 2022.</strong></p>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="metric-number">55,000+</div>
-                        <div class="metric-label">Students served daily</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-number">70+</div>
-                        <div class="metric-label">Dining locations on campus</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-number" id="years-in-market">3+ Years</div>
-                        <div class="metric-label">Contract renewed—brand still in market</div>
-                    </div>
+        <!-- ============================
+             METRICS BAR
+             ============================ -->
+        <div class="york-metrics">
+            <div class="york-metrics-inner">
+                <div class="york-metric">
+                    <div class="york-metric-number">55K+</div>
+                    <div class="york-metric-label">Students served daily</div>
                 </div>
-
-                <p style="margin-top: var(--space-lg);"><strong>This project demonstrates:</strong></p>
-                <ul style="list-style: none; padding-left: 1em;">
-                    <li style="margin-bottom: 0.5em;">• Strategic brand thinking that wins competitive business</li>
-                    <li style="margin-bottom: 0.5em;">• Design leadership from concept through photography direction</li>
-                    <li style="margin-bottom: 0.5em;">• Multi-brand systems that scale across digital and physical touchpoints</li>
-                    <li style="margin-bottom: 0.5em;">• Work with proven longevity and market staying power</li>
-                    <li style="margin-bottom: 0.5em;">• Ability to balance trend-awareness with timeless foundations</li>
-                </ul>
+                <div class="york-metric">
+                    <div class="york-metric-number">70+</div>
+                    <div class="york-metric-label">Dining locations</div>
+                </div>
+                <div class="york-metric">
+                    <div class="york-metric-number" id="years-metric">4+</div>
+                    <div class="york-metric-label">Years in market</div>
+                </div>
+                <div class="york-metric">
+                    <div class="york-metric-number">Won</div>
+                    <div class="york-metric-label">Competitive RFP</div>
+                </div>
             </div>
+        </div>
+
+        <!-- ============================
+             SUB-BRAND — 416 Burger Co.
+             ============================ -->
+        <div class="york-subbrand">
+            <div class="york-subbrand-inner">
+                <h3>416 Burger Co.</h3>
+                <p>A sub-brand built for a different audience within the same system. Toronto's area code as instant local cred, self-aware humor for Gen Z, distinct personality without breaking the master brand.</p>
+            </div>
+        </div>
+
+        <div class="york-grid-2">
+            <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/GenZ%20Grill/GenZgrill_V3-04.png"
+                 alt="416 Burger Co. promotional materials with playful food photography and pun-driven messaging">
+            <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/GenZ%20Grill/12549_D1_082.jpg"
+                 alt="416 Burger Co. in-store branding, countertop signage, and menu boards at campus location">
+        </div>
+
+        <!-- ============================
+             PHOTOGRAPHY DIRECTION
+             ============================ -->
+        <section class="york-split" style="direction: rtl;">
+            <div class="york-split-img" style="direction: ltr;">
+                <img src="York%20U%20Mobile%20Odering%20App%20Brand/Content/GenZ%20Grill/12549_D1_069.jpg"
+                     alt="Art-directed food photography for campus dining brand">
+            </div>
+            <div class="york-split-text" style="direction: ltr;">
+                <h3>Photography direction is part of the job.</h3>
+                <p>Art direction, styling guidance, shot selection, final selects. If the photography doesn't match the system, the system breaks. So I own it.</p>
+                <p><strong>Brand strategy through final deliverable.</strong> No handoffs, no gaps.</p>
+            </div>
+        </section>
+
+        <!-- ============================
+             COVER IMAGE — Full bleed
+             ============================ -->
+        <section class="york-img-full">
+            <img src="York%20U%20Mobile%20Odering%20App%20Brand/YorkApp_Cover@2x.png"
+                 alt="YU Eats complete brand system — logo, app, environmental, and collateral overview">
+        </section>
+
+        <!-- ============================
+             CLOSING
+             ============================ -->
+        <section class="york-closing">
+            <div class="york-closing-text">
+                Built to win the contract. Designed to outlast the trend cycle. Still running across 70+ locations, four years later.
+            </div>
+            <div class="york-closing-attr">York University / Campus Dining Brand Identity / 2022</div>
         </section>
 
     </main>
@@ -278,7 +803,6 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-content">
-            <!-- Column 1: About/Contact Info -->
             <div class="footer-column footer-about">
                 <h3 class="footer-heading">Francisco Designs</h3>
                 <p class="footer-text">
@@ -291,27 +815,17 @@
                     </a>
                 </p>
             </div>
-
-            <!-- Column 2: Social Links -->
             <div class="footer-column footer-social">
                 <h3 class="footer-heading">Connect</h3>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/jtkfrancisco/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="LinkedIn"
-                       class="social-icon">
+                    <a href="https://www.linkedin.com/in/jtkfrancisco/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                             <rect x="2" y="9" width="4" height="12"/>
                             <circle cx="4" cy="4" r="2"/>
                         </svg>
                     </a>
-                    <a href="https://instagram.com/justinfranciscodesigns"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="Instagram"
-                       class="social-icon">
+                    <a href="https://instagram.com/justinfranciscodesigns" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -320,8 +834,6 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Column 3: Quick Navigation -->
             <div class="footer-column footer-nav">
                 <h3 class="footer-heading">Navigation</h3>
                 <nav class="footer-nav-links">
@@ -331,33 +843,19 @@
                 </nav>
             </div>
         </div>
-
-        <!-- Copyright -->
         <div class="footer-bottom">
             <p class="footer-copyright">&copy; 2026 Francisco Designs. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Auto-calculate years in market -->
+    <script src="js/main.js" defer></script>
     <script>
         (function() {
             const launchYear = 2022;
-            const currentYear = new Date().getFullYear();
-            const yearsInMarket = currentYear - launchYear;
-
-            // Update main metrics
-            const yearsElement = document.getElementById('years-in-market');
-            if (yearsElement && yearsInMarket > 0) {
-                yearsElement.textContent = yearsInMarket + '+ Years';
-            }
-
-            // Update proof strip
-            const yearsProof = document.getElementById('years-proof');
-            if (yearsProof && yearsInMarket > 0) {
-                yearsProof.textContent = yearsInMarket + '+ years';
-            }
+            const years = new Date().getFullYear() - launchYear;
+            const el = document.getElementById('years-metric');
+            if (el && years > 0) el.textContent = years + '+';
         })();
     </script>
-
 </body>
 </html>
