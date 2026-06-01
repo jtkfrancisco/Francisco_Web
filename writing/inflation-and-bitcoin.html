@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our currency is dying. – Francisco Designs</title>
+    <meta name="description" content="Inflation, the next ten years, and the one move that gets you off the sinking ship. A field guide for anyone watching their paycheck lose the race.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Our currency is dying.">
+    <meta property="og:description" content="Inflation, the next ten years, and the one move that gets you off the sinking ship. A field guide for anyone watching their paycheck lose the race.">
+    <meta property="og:image" content="https://francisco.design/writing/inflation-and-bitcoin-cover.svg">
+    <meta property="og:url" content="https://francisco.design/writing/inflation-and-bitcoin.html">
+    <meta property="og:type" content="article">
+    <meta property="article:author" content="Justin Francisco">
+    <meta property="article:published_time" content="2026-05-28">
+    <meta property="article:section" content="Essays">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our currency is dying.">
+    <meta name="twitter:description" content="Inflation, the next ten years, and the one move that gets you off the sinking ship.">
+    <meta name="twitter:image" content="https://francisco.design/writing/inflation-and-bitcoin-cover.svg">
+
+    <link rel="canonical" href="https://francisco.design/writing/inflation-and-bitcoin.html">
+
+    <!-- Portfolio chrome styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Article fonts (scoped to .melt-article body only) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           ARTICLE-SCOPED STYLES — preserved verbatim from source,
+           prefixed with .melt-article so the article's editorial
+           identity is contained and cannot leak into the portfolio
+           chrome (header, footer, nav, back-link).
+           ========================================================= */
+
+        /* The article reader sits inside this scope. */
+        .melt-article {
+            --ink:#0a0a0a;
+            --paper:#f4f0e8;
+            --paper-dim:#e8e2d4;
+            --blood:#c1272d;
+            --rust:#b5651d;
+            --gold:#caa14a;
+            --mut:#6b6356;
+            --line:#0a0a0a;
+
+            background:var(--paper);
+            color:var(--ink);
+            font-family:'Spectral',Georgia,serif;
+            font-size:19px;
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+            background-image:
+                radial-gradient(circle at 20% 8%, rgba(193,39,45,.04), transparent 40%),
+                radial-gradient(circle at 80% 75%, rgba(181,101,29,.05), transparent 45%);
+            position: relative;
+            overflow: hidden; /* contain the .turn full-width band */
+        }
+
+        /* Reset only inside the article scope (portfolio already resets globally) */
+        .melt-article * { box-sizing:border-box; margin:0; padding:0; }
+
+        .melt-article .grain {
+            position:absolute; inset:0; pointer-events:none; z-index:1; opacity:.035;
+            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        .melt-article .wrap { max-width:720px; margin:0 auto; padding:0 28px; position: relative; z-index: 2; }
+
+        /* Article masthead (was <header> in source; renamed to .melt-cover to avoid semantic clash with the site header) */
+        .melt-article .melt-cover { padding:13vh 0 8vh; border-bottom:3px solid var(--line); }
+        .melt-article .kicker {
+            font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.32em;
+            text-transform:uppercase; color:var(--blood); margin-bottom:24px;
+        }
+        .melt-article h1 {
+            font-family:'Archivo Black',sans-serif;
+            font-size:clamp(46px,11vw,104px); line-height:.88; letter-spacing:-.02em;
+            text-transform:uppercase; font-weight: 400; color: var(--ink);
+        }
+        .melt-article h1 .drip { color:var(--blood); }
+
+        .melt-article .body-copy { padding:7vh 0; position: relative; z-index: 2; }
+        .melt-article .body-copy p { margin:0 0 22px; font-size:20px; color: var(--ink); line-height: 1.6; }
+        .melt-article .body-copy p.first { font-size:23px; }
+        .melt-article strong { font-weight:600; color: var(--ink); }
+        .melt-article em { color: var(--ink); font-style: italic; }
+
+        .melt-article .bullets { list-style:none; margin:28px 0; border-top:2px solid var(--line); padding: 0; }
+        .melt-article .bullets li {
+            padding:16px 2px; border-bottom:1px solid rgba(10,10,10,.16);
+            font-family:'JetBrains Mono',monospace; font-size:15px; color:var(--ink);
+        }
+        .melt-article .bullets li b { color:var(--blood); }
+
+        .melt-article .eyebrow {
+            font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.28em;
+            text-transform:uppercase; color:var(--rust); font-weight:700; margin:5vh 0 18px;
+        }
+        .melt-article .cases-block p { margin:0 0 14px; font-size:18px; color: var(--ink); }
+        .melt-article .cases-block .country { color:var(--blood); font-weight:600; }
+
+        .melt-article .quote-line {
+            font-family:'Archivo Black',sans-serif; font-size:clamp(22px,4.5vw,34px);
+            line-height:1.05; text-transform:uppercase; letter-spacing:-.01em; margin:30px 0;
+            color: var(--ink); font-weight: 400;
+        }
+        .melt-article .objection {
+            background:var(--paper-dim); border:2px solid var(--line);
+            padding:24px 26px; margin:30px 0; font-style:italic; font-size:20px;
+            color:#3a352c; box-shadow:7px 7px 0 var(--ink);
+            font-family:'Spectral',Georgia,serif;
+        }
+        .melt-article .dots {
+            text-align:center; font-family:'Archivo Black',sans-serif; font-size:40px;
+            color:var(--rust); letter-spacing:.3em; padding:5vh 0; position: relative; z-index: 2;
+        }
+
+        .melt-article .turn {
+            background:var(--ink); color:#d8d2c4; padding:8vh 0;
+            position: relative; z-index: 2;
+            /* Full-bleed dark band: use viewport width via negative margins inside the article scope */
+            width: 100%;
+        }
+        .melt-article .turn .inner { max-width:720px; margin:0 auto; padding:0 28px; }
+        .melt-article .turn p { margin:0 0 22px; font-size:20px; color: #d8d2c4; line-height: 1.6; }
+        .melt-article .turn strong { color:#fff; }
+        .melt-article .turn .open {
+            font-family:'Archivo Black',sans-serif; font-size:clamp(24px,5vw,40px);
+            line-height:1; text-transform:uppercase; color:#fff; margin-bottom:30px; font-weight: 400;
+        }
+
+        /* Calculator */
+        .melt-article .calc {
+            background:var(--paper); color:var(--ink); border:3px solid var(--gold);
+            margin:38px 0; box-shadow:10px 10px 0 rgba(202,161,74,.4);
+        }
+        .melt-article .calc-head {
+            background:var(--gold); color:var(--ink); padding:17px 24px;
+            font-family:'Archivo Black',sans-serif; text-transform:uppercase; font-size:19px;
+            display:flex; align-items:center; gap:12px; font-weight: 400;
+        }
+        .melt-article .calc-head .dot {
+            width:13px; height:13px; border-radius:50%; background:var(--blood);
+            box-shadow:0 0 0 4px rgba(193,39,45,.25);
+        }
+        .melt-article .calc-body { padding:26px 24px; }
+        .melt-article .ctrl { margin-bottom:24px; }
+        .melt-article .ctrl-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; }
+        .melt-article .ctrl label {
+            font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.08em;
+            text-transform:uppercase; color:var(--mut);
+        }
+        .melt-article .ctrl .now {
+            font-family:'JetBrains Mono',monospace; font-weight:700; font-size:19px; color:var(--ink);
+        }
+        .melt-article input[type=range] {
+            -webkit-appearance:none; appearance:none; width:100%; height:6px;
+            background:var(--paper-dim); border:1px solid var(--line); outline:none; cursor:pointer;
+        }
+        .melt-article input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance:none; appearance:none; width:26px; height:26px;
+            background:var(--blood); border:2px solid var(--ink); cursor:pointer;
+            border-radius:0; transition:transform .1s;
+        }
+        .melt-article input[type=range]::-webkit-slider-thumb:hover { transform:scale(1.12); }
+        .melt-article input[type=range]::-moz-range-thumb {
+            width:26px; height:26px; background:var(--blood); border:2px solid var(--ink);
+            cursor:pointer; border-radius:0;
+        }
+        .melt-article .seg { display:flex; border:2px solid var(--line); margin-top:4px; }
+        .melt-article .seg button {
+            flex:1; background:var(--paper); border:none; border-right:2px solid var(--line);
+            padding:11px 4px; font-family:'JetBrains Mono',monospace; font-size:13px;
+            font-weight:700; cursor:pointer; color:var(--mut); transition:all .12s;
+        }
+        .melt-article .seg button:last-child { border-right:none; }
+        .melt-article .seg button.on { background:var(--ink); color:var(--paper); }
+        .melt-article .results { margin-top:28px; border-top:2px solid var(--line); }
+        .melt-article .res-row {
+            display:flex; justify-content:space-between; align-items:center;
+            padding:15px 0; border-bottom:1px solid rgba(10,10,10,.14); gap:16px;
+        }
+        .melt-article .res-row .rl {
+            font-family:'JetBrains Mono',monospace; font-size:12.5px;
+            text-transform:uppercase; letter-spacing:.04em; color:var(--mut); max-width:55%;
+        }
+        .melt-article .res-row .rv {
+            font-family:'JetBrains Mono',monospace; font-weight:700; font-size:24px;
+        }
+        .melt-article .res-cash .rv { color:var(--ink); }
+        .melt-article .res-btc .rv { color:var(--rust); }
+        .melt-article .res-pow {
+            background:var(--ink); margin:14px -24px -26px; padding:20px 24px;
+            display:flex; justify-content:space-between; align-items:center; gap:16px;
+        }
+        .melt-article .res-pow .rl {
+            color:#bdb6a6; font-family:'JetBrains Mono',monospace;
+            font-size:12.5px; text-transform:uppercase; letter-spacing:.04em; max-width:52%;
+        }
+        .melt-article .res-pow .rv {
+            color:var(--gold); font-family:'Archivo Black',sans-serif; font-size:28px;
+        }
+        .melt-article .calc-foot {
+            font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.6;
+            color:var(--mut); padding:15px 24px; border-top:2px solid var(--line); background:var(--paper-dim);
+        }
+        .melt-article .calc-foot b { color:var(--blood); }
+
+        .melt-article .end { padding:7vh 0 12vh; position: relative; z-index: 2; }
+        .melt-article .end p { font-size:20px; margin:0 0 22px; color: var(--ink); line-height: 1.6; }
+        .melt-article .end .smiling {
+            font-family:'Archivo Black',sans-serif; font-size:clamp(26px,5.5vw,44px);
+            line-height:1; text-transform:uppercase; margin:30px 0; color: var(--ink); font-weight: 400;
+        }
+        .melt-article .end .smiling .g { color:var(--gold); }
+
+        .melt-article .reveal {
+            opacity:0; transform:translateY(22px);
+            transition:opacity .7s ease, transform .7s ease;
+        }
+        .melt-article .reveal.in { opacity:1; transform:none; }
+
+        @media(max-width:560px) {
+            .melt-article { font-size:18px; }
+            .melt-article .body-copy p { font-size:18px; }
+            .melt-article .res-row .rv { font-size:21px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .melt-article .reveal { opacity: 1; transform: none; transition: none; }
+        }
+
+        /* =========================================================
+           ARTICLE TOP/BOTTOM TRANSITION STRIP (portfolio system)
+           Bridges from the site chrome into the article's identity.
+           ========================================================= */
+        .article-topbar {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: var(--space-md) var(--bleed-margin) 0;
+        }
+        .article-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--color-text-medium);
+            transition: color var(--transition-base);
+        }
+        .article-back:hover { color: var(--color-text); opacity: 1; }
+
+        /* The article is positioned full-width below the topbar; we clip its scoped overflow so .turn band fills correctly */
+        .article-shell {
+            margin-top: var(--space-md);
+        }
+
+        /* Site-style closing strip below the article — keeps reader anchored in the portfolio */
+        .article-outro {
+            background-color: var(--color-bg);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding: var(--space-2xl) var(--space-md);
+            text-align: center;
+        }
+        .article-outro .outro-kicker {
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: var(--space-sm);
+        }
+        .article-outro h2 {
+            font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-3xl));
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-md);
+            color: var(--color-text);
+        }
+        .article-outro .outro-links {
+            display: flex;
+            gap: var(--space-lg);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: var(--space-md);
+        }
+        .article-outro .outro-link {
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            transition: transform var(--transition-base);
+            display: inline-block;
+        }
+        .article-outro .outro-link:hover { transform: translateX(4px); opacity: 1; }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ============ PORTFOLIO SITE HEADER ============ -->
+    <header class="main-header" role="banner">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../MainFranciscoLogo.png" alt="Francisco Designs" width="200" height="72">
+            </a>
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="../index.html#work" class="nav-link">WORK</a>
+                <a href="index.html" class="nav-link">WRITING</a>
+                <a href="../contact.html" class="nav-link">CONTACT</a>
+                <a href="../About/about.html" class="nav-link">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="project-detail" style="padding-top: 120px;">
+
+        <!-- ============ TOPBAR: back to writing index ============ -->
+        <div class="article-topbar">
+            <a href="index.html" class="article-back">← Back to Writing</a>
+        </div>
+
+        <!-- ============ ARTICLE — editorial identity preserved verbatim ============ -->
+        <article class="melt-article article-shell" lang="en">
+            <div class="grain"></div>
+
+            <div class="melt-cover">
+                <div class="wrap">
+                    <div class="kicker">A Field Guide to the Next Ten Years</div>
+                    <h1>Our currency<br>is <span class="drip">dying.</span></h1>
+                </div>
+            </div>
+
+            <div class="body-copy">
+                <div class="wrap">
+                    <p class="first">They say Inflation "is 3%."</p>
+                    <p>Your rent, food, and insurance say otherwise. They average in cheaper TVs to hide what your actual life costs.</p>
+                    <p><strong>The real rate feels like 10%.</strong></p>
+                    <p>At 10% inflation prices double every 7 years.</p>
+                    <ul class="bullets">
+                        <li>Coffee: <b>$5 → $10 → $20 → $80</b> in our lifetime</li>
+                        <li>$2000 iPhone? <b>$8,000</b> in 14 years</li>
+                        <li>$50,000 in savings, untouched, <b>buys $25k of life</b> in 7 years</li>
+                    </ul>
+                    <p>Saving cash is not the optimal move — the system pays people who own assets and bleeds people who hold dollars.</p>
+                    <p>Though, having some savings is better than spending every pay cheque. You spend every cheque now? Where does that leave you in 7 years when everything is double? You're gonna have to spend less, maybe eat less. An emergency hits? Now you're in debt. The exact opposite of an appreciating asset.</p>
+                    <p>You must save money, and use that to buy what they can't print — appreciating assets. Bitcoin. Gold. Durable businesses.</p>
+                    <p>Let's explore some possibilities for what 10% inflation really feels like over time:</p>
+
+                    <div class="eyebrow">Year 0–7 — prices double once – we are already here.</div>
+                    <p>The vibe sours. People are feeling even more broke and even more tired — second jobs, side hustles framed as "hustle culture" but really just running to stand still. Dining out becomes a luxury. "Shrinkflation" everywhere — same chip bag, less in it.</p>
+                    <p>Tipping creep, subscription creep, junk fees on everything. Dating and family formation get delayed again — kids feel financially impossible.</p>
+
+                    <div class="eyebrow">Year 7–14 — prices double again, 4x from today</div>
+                    <p>Canada starts feeling like a truly different country. The $5 coffee is $20. The smallest houses are seven figures everywhere, not just the cities.</p>
+                    <p>People are now forced to move money into anything that isn't dollars at prices magnitudes higher than just a decade ago. The picture is now undeniable. There is a massive divide between the owner class that rode assets up, and a renter class that can no longer imagine ownership and stops trying.</p>
+                    <p>Though, I have to add a correction. Once people expect high inflation— once it's baked in, prices won't compound at a steady rate — the rate itself climbs.</p>
+                    <p>You're not on a steady doubling, you're on a steepening one.<br>7 years, then 5, then 3 years, every few months.</p>
+
+                    <div class="quote-line">This is not theory.</div>
+
+                    <div class="cases-block">
+                        <p><span class="country">Weimar Germany (1923):</span> prices doubled every few days at the peak. Wheelbarrows of cash were needed for basic groceries— people were paid twice a day and ran to spend it before lunch prices rose. Cash got burned as fuel because it was cheaper than firewood.</p>
+                        <p><span class="country">Zimbabwe (2008):</span> ~89.7 sextillion percent at peak. They printed a 100-trillion-dollar note. The currency was abandoned entirely — the country switched to US dollars to function.</p>
+                        <p><span class="country">Hungary (1946):</span> the worst ever recorded — prices doubled every ~15 hours. They issued a banknote denominated in 100 quintillion.</p>
+                        <p><span class="country">Venezuela (2016-2019):</span> modern, oil-rich, and still collapsed — millions fled, women traded sex for food. Weight loss from hunger had a grim nickname ("the Maduro diet").</p>
+                    </div>
+
+                    <p>The logical conclusion for printable currencies is an approach toward zero value. The British pound has lost ~99% of its purchasing power since 1900. The US dollar lost ~98% since 1913.</p>
+
+                    <p>If you arent agressivly positioning to escape the sinking ship then you can only expect to sink with it.</p>
+                    <p>Say you get laid off? Bills keep coming. Landlord comes knocking— Then pounding on the door. People start stealing for food and stuff to sell. You get beat up when you're in the street if you look like you aren't as hungry as them. That's a taste ofhow bad it can get, and that is not the worst case.</p>
+
+                    <div class="objection">"But this is too far out. Too extreme. The system has worked forever. Times are harder now but it's not going to get that bad."</div>
+
+                    <p>Inflation was 2%. Now it's more like 10% since "the pandemic". The game has changed.</p>
+                    <p>2% is sustainable. You can walk on that treadmill for a long time. 10%— now you're jogging all day every day.</p>
+                </div>
+            </div>
+
+            <div class="dots">…</div>
+
+            <div class="turn">
+                <div class="inner">
+                    <p class="open">It doesn't have to go down that dark path.</p>
+                    <p>If you work hard and diligently today, you can avoid the worst outcomes. You must save money — build a cash pile first, three to six months of expenses.</p>
+                    <p>Can you save $5 a day? That's $150 a month, $1800 a year. In 5 years you've got almost 10k.</p>
+                    <p>Bitcoin compounds around 30-40% a year when you average it out — solidly out-running inflation. Gold and stocks do about 12%/year on average. There's been no better-performing asset on a 5+ year timescale in recent history.</p>
+
+                    <div class="calc">
+                        <div class="calc-head"><span class="dot"></span>Run the numbers on a Bitcoin Standard.</div>
+                        <div class="calc-body">
+                            <div class="ctrl">
+                                <div class="ctrl-top"><label for="perDay">I can save</label><span class="now" id="perDayLbl">$5 / day</span></div>
+                                <input type="range" id="perDay" min="1" max="50" step="1" value="5">
+                            </div>
+                            <div class="ctrl">
+                                <div class="ctrl-top"><label for="yrs">For</label><span class="now" id="yrsLbl">5 years</span></div>
+                                <input type="range" id="yrs" min="1" max="20" step="1" value="5">
+                            </div>
+                            <div class="ctrl">
+                                <div class="ctrl-top"><label>Invested at / yr</label><span class="now" id="cagrLbl">30%</span></div>
+                                <div class="seg" id="cagrSeg">
+                                    <button type="button" data-c="0">0% cash</button>
+                                    <button type="button" data-c="12">12%</button>
+                                    <button type="button" data-c="30" class="on">30%</button>
+                                    <button type="button" data-c="40">40%</button>
+                                </div>
+                            </div>
+                            <div class="results">
+                                <div class="res-row res-cash"><span class="rl">Total you set aside</span><span class="rv" id="rContrib">$0</span></div>
+                                <div class="res-row res-btc"><span class="rl">What it grows to if invested in Bitcoin</span><span class="rv" id="rGrown">$0</span></div>
+                                <div class="res-pow"><span class="rl">That's</span><span class="rv" id="rMult">—</span></div>
+                            </div>
+                        </div>
+                        <div class="calc-foot"><b>Bitcoin is volatile.</b> It is down 24% year to date. It has crashed more than 50% before, more than once, and it might again. The growth above only belongs to people who hold through the crashes — which is why the cash pile comes first. No rate is guaranteed.</div>
+                    </div>
+
+                    <p>Bitcoin is volatile. It is down 24% this year to date. It has crashed more than 50% before, more than once, and it might again. You have to hold.</p>
+                </div>
+            </div>
+
+            <div class="end">
+                <div class="wrap">
+                    <p>Hold for 7 years through the noise, and the picture flips. Instead of everything costing 2x more, from your side it costs less over time. You can afford nice things— eat out without a second thought, help your parents, your friends, build the life you dream about.</p>
+                    <div class="smiling">Get off the sinking ship. <span class="g">I am calling from the lifeboat.</span></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============ PORTFOLIO-STYLE OUTRO STRIP ============ -->
+        <section class="article-outro">
+            <p class="outro-kicker">End of essay</p>
+            <h2>Thanks for reading.</h2>
+            <div class="outro-links">
+                <a href="index.html" class="outro-link">← More Writing</a>
+                <a href="../index.html#work" class="outro-link">See the Design Work →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ PORTFOLIO SITE FOOTER ============ -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column footer-about">
+                <h3 class="footer-heading">Francisco Designs</h3>
+                <p class="footer-text">
+                    Strategic partner, graphic designer, specializing in brand identity,<br>
+                    environmental design, and creative direction.
+                </p>
+                <p class="footer-text">
+                    <a href="mailto:jtkfrancisco@gmail.com" class="footer-email">jtkfrancisco@gmail.com</a>
+                </p>
+            </div>
+            <div class="footer-column footer-social">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jtkfrancisco/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/justinfranciscodesigns" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column footer-nav">
+                <h3 class="footer-heading">Navigation</h3>
+                <nav class="footer-nav-links">
+                    <a href="../index.html" class="footer-nav-link">Home</a>
+                    <a href="index.html" class="footer-nav-link">Writing</a>
+                    <a href="../About/about.html" class="footer-nav-link">About</a>
+                    <a href="../contact.html" class="footer-nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Francisco Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ============ ARTICLE CALCULATOR + REVEAL — preserved verbatim, scoped to .melt-article ============ -->
+    <script>
+    (function(){
+        const root = document.querySelector('.melt-article');
+        if (!root) return;
+
+        const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+        const perDay = root.querySelector('#perDay');
+        const yrs    = root.querySelector('#yrs');
+        const seg    = root.querySelector('#cagrSeg');
+        let cagr = 30;
+
+        function calc(){
+            const d = +perDay.value, y = +yrs.value;
+            const monthly = d * 30.4, months = y * 12, contrib = monthly * months;
+            function fv(p){ const r = p/100/12; return r === 0 ? monthly*months : monthly*((Math.pow(1+r, months)-1)/r); }
+            const grown = fv(cagr), mult = grown / Math.max(contrib, 1);
+            root.querySelector('#perDayLbl').textContent = '$' + d + ' / day';
+            root.querySelector('#yrsLbl').textContent    = y + (y === 1 ? ' year' : ' years');
+            root.querySelector('#cagrLbl').textContent   = cagr + '%';
+            root.querySelector('#rContrib').textContent  = fmt(contrib);
+            root.querySelector('#rGrown').textContent    = fmt(grown);
+            root.querySelector('#rMult').textContent     = cagr === 0 ? 'no growth' : mult.toFixed(1) + '× your money';
+        }
+        perDay.addEventListener('input', calc);
+        yrs.addEventListener('input', calc);
+        seg.addEventListener('click', e => {
+            const b = e.target.closest('button'); if (!b) return;
+            [...seg.children].forEach(x => x.classList.remove('on'));
+            b.classList.add('on');
+            cagr = +b.dataset.c;
+            calc();
+        });
+        calc();
+
+        const obs = new IntersectionObserver(es => es.forEach(en => {
+            if (en.isIntersecting) en.target.classList.add('in');
+        }), { threshold: 0.1 });
+        root.querySelectorAll('.body-copy .wrap > *, .turn .inner > *, .end .wrap > *').forEach((el, i) => {
+            el.classList.add('reveal');
+            el.style.transitionDelay = (i % 5 * 40) + 'ms';
+            obs.observe(el);
+        });
+    })();
+    </script>
+</body>
+</html>
