@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume – Justin Francisco | Senior Designer & Creative Director</title>
+    <meta name="description" content="Senior graphic designer and creative director. Brand systems, naming, and environmental design embedded in $13.3M+ awarded annual contract value across education, sports, and corporate sectors.">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Resume – Justin Francisco | Senior Designer & Creative Director">
+    <meta property="og:description" content="Brand systems, naming, and environmental design embedded in $13.3M+ awarded annual contract value in a single fiscal year.">
+    <meta property="og:image" content="https://francisco.design/og-image.png">
+    <meta property="og:url" content="https://francisco.design/resume.html">
+    <meta property="og:type" content="profile">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Resume – Justin Francisco">
+    <meta name="twitter:description" content="Senior graphic designer & creative director. $13.3M+ awarded annual contract value.">
+    <meta name="twitter:image" content="https://francisco.design/og-image.png">
+
+    <link rel="canonical" href="https://francisco.design/resume.html">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Resume page — extends the portfolio system. */
+        .resume-wrap {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: calc(var(--space-2xl) + 24px) var(--space-md) var(--space-xl);
+        }
+
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            margin-bottom: var(--space-lg);
+        }
+
+        .resume-name {
+            font-size: clamp(var(--font-size-3xl), 5vw, 56px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin: 0 0 var(--space-xs);
+            color: var(--color-text);
+        }
+
+        .resume-tagline {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-medium);
+            line-height: var(--line-height-base);
+            margin: 0;
+        }
+
+        .resume-tagline strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .resume-meta {
+            text-align: right;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-medium);
+            line-height: 1.7;
+            flex-shrink: 0;
+        }
+
+        .resume-meta a {
+            color: var(--color-text-medium);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .resume-meta a:hover {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+
+        .resume-download {
+            display: inline-block;
+            margin-top: var(--space-xs);
+            padding: 8px 14px;
+            background: var(--color-text);
+            color: var(--color-bg);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .resume-download:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            border-bottom: none;
+        }
+
+        .resume-summary {
+            font-size: var(--font-size-lg);
+            line-height: var(--line-height-relaxed);
+            color: var(--color-text);
+            margin-bottom: var(--space-xl);
+            max-width: 760px;
+        }
+
+        .resume-section {
+            margin-bottom: var(--space-xl);
+        }
+
+        .resume-section-title {
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            padding-bottom: var(--space-xs);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            margin-bottom: var(--space-md);
+        }
+
+        .resume-role {
+            margin-bottom: var(--space-lg);
+        }
+
+        .resume-role:last-child {
+            margin-bottom: 0;
+        }
+
+        .resume-role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: var(--space-md);
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+
+        .resume-role-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .resume-role-dates {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-light);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .resume-role-company {
+            font-size: var(--font-size-base);
+            color: var(--color-text-medium);
+            font-weight: 500;
+            margin: 0 0 var(--space-sm);
+        }
+
+        .resume-role-summary {
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-relaxed);
+            color: var(--color-text-medium);
+            margin: 0 0 var(--space-md);
+        }
+
+        .resume-subsection-title {
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            margin: var(--space-md) 0 var(--space-sm);
+        }
+
+        .resume-projects {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .resume-projects li {
+            padding: var(--space-sm) 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .resume-projects li:last-child {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .resume-project-name {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0 0 4px;
+        }
+
+        .resume-project-name .resume-value {
+            font-weight: 500;
+            color: var(--color-accent);
+            margin-left: 8px;
+            font-size: var(--font-size-sm);
+            letter-spacing: 0;
+        }
+
+        .resume-project-desc {
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-relaxed);
+            color: var(--color-text-medium);
+            margin: 0;
+        }
+
+        /* Two-column grid for short lists (capabilities, tools, etc.) */
+        .resume-cols-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+
+        .resume-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .resume-list li {
+            font-size: var(--font-size-base);
+            line-height: 1.8;
+            color: var(--color-text-medium);
+            padding-left: 1.25em;
+            position: relative;
+        }
+
+        .resume-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .resume-block-text {
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-relaxed);
+            color: var(--color-text-medium);
+            margin: 0;
+        }
+
+        .resume-education {
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--color-text-medium);
+        }
+
+        .resume-education strong {
+            color: var(--color-text);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .resume-wrap {
+                padding: calc(var(--space-xl) + 16px) var(--space-sm) var(--space-lg);
+            }
+
+            .resume-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-sm);
+            }
+
+            .resume-meta {
+                text-align: left;
+            }
+
+            .resume-summary {
+                font-size: var(--font-size-base);
+            }
+
+            .resume-role-header {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .resume-cols-2 {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+            }
+        }
+
+        /* Print styles — clean A4/Letter output */
+        @media print {
+            .main-header,
+            .main-footer,
+            .skip-link,
+            .resume-download {
+                display: none !important;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+            .resume-wrap {
+                max-width: 100%;
+                padding: 0;
+            }
+            .resume-section {
+                page-break-inside: avoid;
+                margin-bottom: 24px;
+            }
+            .resume-role {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Sticky Navigation Header -->
+    <header class="main-header" role="banner">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="MainFranciscoLogo.png" alt="Francisco Designs" width="200" height="72">
+            </a>
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html#work" class="nav-link">WORK</a>
+                <a href="writing/index.html" class="nav-link">WRITING</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+                <a href="About/about.html" class="nav-link">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="resume-wrap" role="main">
+
+        <!-- Header / Identity -->
+        <header class="resume-header">
+            <div>
+                <h1 class="resume-name">Justin Francisco</h1>
+                <p class="resume-tagline">Brand &amp; Creative Direction · <strong>$13.3M+ in awarded contract value</strong></p>
+            </div>
+            <div class="resume-meta">
+                Guelph, ON<br>
+                <a href="mailto:jtkfrancisco@gmail.com">jtkfrancisco@gmail.com</a><br>
+                <a href="https://www.francisco.design">www.francisco.design</a><br>
+                <a class="resume-download" href="Justin_Francisco_Resume_2026.pdf" download>Download PDF</a>
+            </div>
+        </header>
+
+        <!-- Summary -->
+        <p class="resume-summary">
+            Brand systems, naming, and environmental design embedded in <strong>$13.3M+ awarded annual contract value</strong> across education, sports, and corporate sectors in a single fiscal year. I create strategic designs that win.
+        </p>
+
+        <!-- Experience -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">Experience</h2>
+
+            <!-- Senior Graphic Designer -->
+            <div class="resume-role">
+                <div class="resume-role-header">
+                    <h3 class="resume-role-title">Senior Graphic Designer</h3>
+                    <span class="resume-role-dates">2021 – Present</span>
+                </div>
+                <p class="resume-role-company">Compass Group Canada</p>
+                <p class="resume-role-summary">
+                    Senior graphic designer for Canada's largest foodservice company. I build brand strategy and visual systems across hospitality, education, sports, and corporate sectors. Develop station brand concepts, naming, and environmental direction from wordmark to signage. Direct photo and video shoots.
+                </p>
+
+                <h4 class="resume-subsection-title">Awarded Contracts — Creative Lead</h4>
+                <ul class="resume-projects">
+                    <li>
+                        <p class="resume-project-name">Algonquin College <span class="resume-value">$9.0M annual</span></p>
+                        <p class="resume-project-desc">New campus dining program built to read as an extension of the college itself. Drew the Algonquin green, institutional typography, and logo cues into a family of station brands — The Grill House, Bagel Den, and a grab-and-go market — so each venue felt distinct but unmistakably Algonquin. The largest education award in the year's pipeline.</p>
+                    </li>
+                    <li>
+                        <p class="resume-project-name">King's University College <span class="resume-value">$2.4M annual</span></p>
+                        <p class="resume-project-desc">The King's Table dining brand, built directly from the institution's own identity — crest, colors, and typography — so the program reads as the school, not an outside vendor. A sub-brand designed to inherit trust rather than introduce a new logo to learn.</p>
+                    </li>
+                    <li>
+                        <p class="resume-project-name">Progressive Arena <span class="resume-value">$1.9M annual · 10-yr term</span></p>
+                        <p class="resume-project-desc">Top-to-bottom venue refresh for a decade-long partnership — VIP suites, environmental branding for kids' areas, wayfinding, and concourse, all tied to a single family that pulls from the Sarnia Sting identity. District 94 is the pinnacle of the system — a new bar and eatery (named for the arena's 1994 founding) built to draw as a standalone destination, not just somewhere people end up because they're already at the game.</p>
+                    </li>
+                </ul>
+
+                <h4 class="resume-subsection-title">Competitive Bid &amp; Flagship Accounts</h4>
+                <ul class="resume-projects">
+                    <li>
+                        <p class="resume-project-name">York University — YU Eats</p>
+                        <p class="resume-project-desc">Brand and environmental system for the CSQ food hall and satellite locations, including unified station identities. A refresh program that revitalized a flagship account.</p>
+                    </li>
+                    <li>
+                        <p class="resume-project-name">Redeemer University <span class="resume-value">$2.6M annual</span></p>
+                        <p class="resume-project-desc">Hospitality brand and logo developed for a competitive RFP (Chartwells).</p>
+                    </li>
+                    <li>
+                        <p class="resume-project-name">Sarnia Arena</p>
+                        <p class="resume-project-desc">Full venue rebrand in 2 weeks from concept to print. Brand identity, wayfinding, and environmental graphics for premium suites, restaurant, bar, and concourse. Met a hard season-opener deadline.</p>
+                    </li>
+                </ul>
+
+                <h4 class="resume-subsection-title">Strategy &amp; Systems</h4>
+                <ul class="resume-projects">
+                    <li>
+                        <p class="resume-project-name">Foundations 2026</p>
+                        <p class="resume-project-desc">Redesigned a sprawling station concept portfolio into a tight, equipment-driven framework that works across 300+ units country-wide.</p>
+                    </li>
+                    <li>
+                        <p class="resume-project-name">Northwood Corrections</p>
+                        <p class="resume-project-desc">Naming and full multi-registry trademark clearance for Compass Group Canada's Corrections sector — delivered as a complete rationale and brand package.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Graphic Designer -->
+            <div class="resume-role">
+                <div class="resume-role-header">
+                    <h3 class="resume-role-title">Graphic Designer</h3>
+                    <span class="resume-role-dates">2020 – 2021</span>
+                </div>
+                <p class="resume-role-company">Compass Group Canada (Restaurant Associates)</p>
+                <p class="resume-role-summary">
+                    Brand and marketing materials for corporate dining clients including Microsoft, CIBC, RBC, and Rogers.
+                </p>
+            </div>
+
+            <!-- Motion Graphic Designer -->
+            <div class="resume-role">
+                <div class="resume-role-header">
+                    <h3 class="resume-role-title">Motion Graphic Designer</h3>
+                    <span class="resume-role-dates">2018 – 2020</span>
+                </div>
+                <p class="resume-role-company">CityNews / CityTV</p>
+                <p class="resume-role-summary">
+                    Broadcast motion graphics including the 2019 Federal Leader's Debate. Daily assets for national news on live deadlines.
+                </p>
+            </div>
+
+            <!-- Freelance Designer -->
+            <div class="resume-role">
+                <div class="resume-role-header">
+                    <h3 class="resume-role-title">Freelance Designer</h3>
+                    <span class="resume-role-dates">2016 – 2018</span>
+                </div>
+                <p class="resume-role-company">Self-employed</p>
+                <p class="resume-role-summary">
+                    Branding, web, and UI/UX for startups and small businesses.
+                </p>
+            </div>
+        </section>
+
+        <!-- How I Work -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">How I Work</h2>
+            <p class="resume-block-text">
+                I iterate and test multitudes of directions, then build strong solutions on round one — refining with judgment built over 10 years in high-pressure environments.
+            </p>
+        </section>
+
+        <!-- What I Do + Tools -->
+        <section class="resume-section">
+            <div class="resume-cols-2">
+                <div>
+                    <h2 class="resume-section-title">What I Do</h2>
+                    <ul class="resume-list">
+                        <li>Brand systems &amp; spaces</li>
+                        <li>Creative direction</li>
+                        <li>Naming &amp; brand architecture</li>
+                        <li>Environmental design</li>
+                        <li>Wayfinding systems</li>
+                        <li>Motion &amp; video</li>
+                        <li>3D visualization</li>
+                        <li>UI design &amp; prototyping</li>
+                        <li>Illustration</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="resume-section-title">Tools</h2>
+                    <ul class="resume-list">
+                        <li>Adobe Creative Cloud</li>
+                        <li>After Effects, Premiere</li>
+                        <li>Blender</li>
+                        <li>HTML / CSS / JS</li>
+                        <li>AI workflows (Claude, Midjourney)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted By -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">Trusted By</h2>
+            <p class="resume-block-text">
+                Compass Group Canada · York University · Dalhousie University · Liberty Entertainment Group · Sarnia Arena · Chestnut Park Real Estate
+            </p>
+        </section>
+
+        <!-- Education + Languages -->
+        <section class="resume-section">
+            <div class="resume-cols-2">
+                <div>
+                    <h2 class="resume-section-title">Education</h2>
+                    <p class="resume-education">
+                        <strong>Honours B.Des, Graphic Design</strong>
+                        OCAD University, 2014–2018
+                    </p>
+                </div>
+                <div>
+                    <h2 class="resume-section-title">Languages</h2>
+                    <p class="resume-education">
+                        English (native)
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-column footer-about">
+                <h3 class="footer-heading">Francisco Designs</h3>
+                <p class="footer-text">
+                    Strategic partner, graphic designer, specializing in brand identity,<br>
+                    environmental design, and creative direction.
+                </p>
+                <p class="footer-text">
+                    <a href="mailto:jtkfrancisco@gmail.com" class="footer-email">
+                        jtkfrancisco@gmail.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="footer-column footer-social">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jtkfrancisco/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="LinkedIn"
+                       class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/justinfranciscodesigns"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram"
+                       class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column footer-nav">
+                <h3 class="footer-heading">Navigation</h3>
+                <nav class="footer-nav-links">
+                    <a href="index.html" class="footer-nav-link">Home</a>
+                    <a href="About/about.html" class="footer-nav-link">About</a>
+                    <a href="contact.html" class="footer-nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Francisco Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
