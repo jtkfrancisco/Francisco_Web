@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ground and atmosphere. – Francisco Designs</title>
+    <meta name="description" content="What money actually is, why dollars have to leak, and why Bitcoin isn't a currency — it's the ground beneath one. A meditation on money and thermodynamics.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ground and atmosphere.">
+    <meta property="og:description" content="What money actually is, why dollars have to leak, and why Bitcoin isn't a currency — it's the ground beneath one.">
+    <meta property="og:image" content="https://francisco.design/writing/ground-and-atmosphere-cover.svg">
+    <meta property="og:url" content="https://francisco.design/writing/ground-and-atmosphere.html">
+    <meta property="og:type" content="article">
+    <meta property="article:author" content="Justin Francisco">
+    <meta property="article:published_time" content="2026-07-03">
+    <meta property="article:section" content="Essays">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ground and atmosphere.">
+    <meta name="twitter:description" content="What money actually is, why dollars have to leak, and why Bitcoin isn't a currency — it's the ground beneath one.">
+    <meta name="twitter:image" content="https://francisco.design/writing/ground-and-atmosphere-cover.svg">
+
+    <link rel="canonical" href="https://francisco.design/writing/ground-and-atmosphere.html">
+
+    <!-- Portfolio chrome styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Article fonts (scoped to .melt-article body only) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           Article-scoped editorial identity — matches the writing
+           series design system (cream/blood/gold, Archivo Black,
+           Spectral, JetBrains Mono). Prefixed with .melt-article
+           so nothing leaks into the portfolio chrome.
+           ========================================================= */
+
+        .melt-article {
+            --ink:#0a0a0a;
+            --paper:#f4f0e8;
+            --paper-dim:#e8e2d4;
+            --blood:#c1272d;
+            --rust:#b5651d;
+            --gold:#caa14a;
+            --mut:#6b6356;
+            --line:#0a0a0a;
+
+            background:var(--paper);
+            color:var(--ink);
+            font-family:'Spectral',Georgia,serif;
+            font-size:19px;
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+            background-image:
+                radial-gradient(circle at 20% 8%, rgba(193,39,45,.04), transparent 40%),
+                radial-gradient(circle at 80% 75%, rgba(181,101,29,.05), transparent 45%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .melt-article * { box-sizing:border-box; margin:0; padding:0; }
+
+        .melt-article .grain {
+            position:absolute; inset:0; pointer-events:none; z-index:1; opacity:.035;
+            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        .melt-article .wrap { max-width:720px; margin:0 auto; padding:0 28px; position: relative; z-index: 2; }
+
+        .melt-article .melt-cover { padding:13vh 0 8vh; border-bottom:3px solid var(--line); }
+        .melt-article .kicker {
+            font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.32em;
+            text-transform:uppercase; color:var(--blood); margin-bottom:24px;
+        }
+        .melt-article h1 {
+            font-family:'Archivo Black',sans-serif;
+            font-size:clamp(46px,11vw,104px); line-height:.88; letter-spacing:-.02em;
+            text-transform:uppercase; font-weight: 400; color: var(--ink);
+        }
+        .melt-article h1 .atm { color:var(--gold); }
+
+        .melt-article .body-copy { padding:7vh 0; position: relative; z-index: 2; }
+        .melt-article .body-copy p {
+            margin: 0 0 26px; /* explicit inter-paragraph spacing */
+            font-size: 20px;
+            color: var(--ink);
+            line-height: 1.65;
+        }
+        .melt-article .body-copy p.lede { font-size: 24px; line-height: 1.5; }
+        .melt-article strong { font-weight: 600; color: var(--ink); }
+        .melt-article em { color: var(--ink); font-style: italic; }
+
+        .melt-article .dots {
+            text-align:center; font-family:'Archivo Black',sans-serif; font-size:40px;
+            color:var(--rust); letter-spacing:.3em; padding:5vh 0;
+            position: relative; z-index: 2; font-weight: 400;
+        }
+
+        .melt-article .end { padding: 3vh 0 12vh; position: relative; z-index: 2; }
+        .melt-article .end .closer {
+            font-family:'Archivo Black',sans-serif;
+            font-size:clamp(22px,4.2vw,32px);
+            line-height:1.1; text-transform:uppercase; letter-spacing:-.01em;
+            margin: 32px 0 0; color: var(--ink); font-weight: 400;
+        }
+        .melt-article .end .closer .g { color: var(--gold); }
+
+        .melt-article .reveal {
+            opacity:0; transform:translateY(22px);
+            transition:opacity .7s ease, transform .7s ease;
+        }
+        .melt-article .reveal.in { opacity:1; transform:none; }
+
+        @media(max-width:560px) {
+            .melt-article { font-size:18px; }
+            .melt-article .body-copy p { font-size:18px; margin: 0 0 22px; }
+            .melt-article .body-copy p.lede { font-size: 20px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .melt-article .reveal { opacity: 1; transform: none; transition: none; }
+        }
+
+        /* =========================================================
+           Portfolio-system chrome around the article
+           (matches inflation-and-bitcoin.html for consistency)
+           ========================================================= */
+        .article-topbar {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: var(--space-md) var(--bleed-margin) 0;
+        }
+        .article-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: var(--font-size-sm); font-weight: 600;
+            letter-spacing: 0.05em; text-transform: uppercase;
+            color: var(--color-text-medium);
+            transition: color var(--transition-base);
+        }
+        .article-back:hover { color: var(--color-text); opacity: 1; }
+
+        .article-shell { margin-top: var(--space-md); }
+
+        .article-outro {
+            background-color: var(--color-bg);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding: var(--space-2xl) var(--space-md);
+            text-align: center;
+        }
+        .article-outro .outro-kicker {
+            font-size: var(--font-size-xs); font-weight: 600;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: var(--space-sm);
+        }
+        .article-outro h2 {
+            font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-3xl));
+            font-weight: 700; letter-spacing: -0.02em;
+            margin-bottom: var(--space-md); color: var(--color-text);
+        }
+        .article-outro .outro-links {
+            display: flex; gap: var(--space-lg); justify-content: center;
+            flex-wrap: wrap; margin-top: var(--space-md);
+        }
+        .article-outro .outro-link {
+            font-size: var(--font-size-sm); font-weight: 600;
+            letter-spacing: 0.05em; text-transform: uppercase;
+            color: var(--color-accent);
+            transition: transform var(--transition-base);
+            display: inline-block;
+        }
+        .article-outro .outro-link:hover { transform: translateX(4px); opacity: 1; }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ============ PORTFOLIO SITE HEADER ============ -->
+    <header class="main-header" role="banner">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../MainFranciscoLogo.png" alt="Francisco Designs" width="200" height="72">
+            </a>
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="../index.html#work" class="nav-link">WORK</a>
+                <a href="index.html" class="nav-link">WRITING</a>
+                <a href="../contact.html" class="nav-link">CONTACT</a>
+                <a href="../About/about.html" class="nav-link">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="project-detail" style="padding-top: 120px;">
+
+        <div class="article-topbar">
+            <a href="index.html" class="article-back">← Back to Writing</a>
+        </div>
+
+        <!-- ============ ARTICLE ============ -->
+        <article class="melt-article article-shell" lang="en">
+            <div class="grain"></div>
+
+            <div class="melt-cover">
+                <div class="wrap">
+                    <div class="kicker">A Note on Money &amp; Thermodynamics</div>
+                    <h1>Ground and<br><span class="atm">atmosphere.</span></h1>
+                </div>
+            </div>
+
+            <div class="body-copy">
+                <div class="wrap">
+
+                    <p class="lede">What is money?</p>
+
+                    <p>It is economic energy — mental and physical labour transmuted into matter: goods or services.</p>
+
+                    <p>Where once we put our effort into growing wheat to trade for chickens, or hammering a chunk of metal into a sword — negotiating a conversion rate each time — now we convert effort into dollars and let the market try to set a fair price for everyone. It was a good innovation. It is easier to carry dollars than chickens. What if you want milk but the person selling doesn't need a sword?</p>
+
+                    <p>Dollars helped fix some real problems, but this container of our economic energy — dollars — is a leaky one. You can print more paper for very little effort.</p>
+
+                    <p>New units of the material are constantly created without being backed by equal effort, so the effort represented by one unit, one dollar, is going down over time. If you cut a cake into eight pieces, you get a hearty slice. Cut it into eighty and you're left with a thin sheet and an empty belly. With one dollar you could buy a loaf of bread 50 years ago. Now you need 5 dollars for a loaf, and it's smaller and made of worse ingredients. Why?</p>
+
+                    <p>The machinery of the current system depends on a force we call inflation. For decades politicians have been spending more than their countries make. They are accruing debt. This extra spending money comes from entities who are willing to loan it to the government plus interest.</p>
+
+                    <p>If the value of the underlying unit (dollars) goes up, then the value of the debt gets heavier as well. Inflation is a requirement for the government to continue spending more than the country makes and not get crushed under the massive weight of the deficit. But the rate of inflation needs to land within a band that is enough to inflate away the debt but not so much that the public realizes their savings and purchasing are evaporating as well.</p>
+
+                    <p>So the system will run inflation at a rate that makes everyone holding dollars poorer over time, and also makes the debt less heavy as well.</p>
+                </div>
+            </div>
+
+            <div class="dots">…</div>
+
+            <div class="body-copy" style="padding-top: 0;">
+                <div class="wrap">
+
+                    <p>Seeing all of this, people have tried to store their economic energy in other ways, via things like gold, houses, stocks.</p>
+
+                    <p>People invest in companies that they believe in. Smart inventors take the money and turn it into products that people want and generate a profit as they try to outpace the rate of dissipation of the currency.</p>
+
+                    <p>It works well to generate money, but the dissipating currency forces consumerism, planned obsolescence, shrinkflation and many other negative quirks to try and make as much money as possible now before inflation blows it away. Inflation of the base unit of account makes the quality of the world worse over time as everyone cuts corners to get ahead.</p>
+
+                    <p>Stocks, houses, gold; these things are better stores of value than dollars. <em>(Better, not perfect. Houses break down, companies go bankrupt.)</em> But even though they store value better than dollars, they don't work as a medium of exchange very well. You can't buy a coffee with a fraction of your house. You don't trade a fraction of Apple stock for a pair of shoes.</p>
+
+                    <p>Every escape is an attempt to store energy in something denser than dollars — things that you can't just make more of — unique products, structures — matter, and matter obeys thermodynamics. The physical world runs toward disorder; holding any structure against that current costs continuous energy. Every store of value in history has been a negotiation with entropy — <strong>and entropy always collects.</strong></p>
+
+                    <p><strong>Bitcoin's move is not escaping entropy. It's the first container that redirects it.</strong></p>
+
+                    <p>Bitcoin lives as information — a structure that doesn't rot, but which has the opposite curse: perfect copies at zero cost. You can make a hundred copies of a file for no effort at all. Information could never be money because it could never be scarce. Until Bitcoin.</p>
+
+                    <p>Bitcoin's founding act was manufacturing scarcity in the copyable realm: a ledger whose history can only be written by burning real energy, and can only be rewritten by burning more energy than the whole world's miners have spent since.</p>
+
+                    <p>The dissipation isn't waste — it's the wall. Entropy, the force that ate every vault and rotted every roof, is conscripted as the guard.</p>
+
+                    <p>The house made you the maintainer; gold made you the guard; stocks made you the risk-bearer. Bitcoin's holder carries nothing — the structure is defended continuously by strangers paid in its own issuance, verified by anyone for free, moved at the speed of a memorized phrase. Twenty-one million units, forever.</p>
+
+                    <p>For the first time, effort can be transmuted into a form that does not leak, does not rot, does not weigh, and does not need you as an individual to defend it.</p>
+
+                    <p>If a better container of economic energy exists, why would the stored effort of the world — the premium now squatting in bonds, excess housing, gold, and cash — not migrate toward it?</p>
+
+                    <p>Logically it will, in waves, over decades, against resistance. But it will.</p>
+
+                    <p>Energy flows downhill toward the tightest container, and human effort is no exception, because no one wants their farmland to dissolve slowly each night as they sleep.</p>
+                </div>
+            </div>
+
+            <div class="dots">…</div>
+
+            <div class="body-copy" style="padding-top: 0;">
+                <div class="wrap">
+
+                    <p>None of this means dollars have to die. It means they get demoted to their honest job.</p>
+
+                    <p>An economy needs flex. Governments need a unit they can manage; commerce needs a medium that flows without friction; nobody prices a coffee in something that might be worth double by Christmas.</p>
+
+                    <p>A melting currency is genuinely good at circulating — the leak that ruins it as a vault is harmless in money you hold for two weeks. The failure of the past century wasn't that dollars existed. It's that we were forced to store in the same unit we spend — to stack a lifetime of effort in a container built to leak.</p>
+
+                    <p>One material was doing two jobs, and doing the important one badly.</p>
+
+                    <p><strong>The future is a division of labor: two layers, each doing what it's actually built for.</strong></p>
+
+                    <p>Bitcoin is the mass of the planet — fixed, dense, inert. It doesn't move and it doesn't need to. Its job is to sit there and hold weight: the stored effort of lifetimes, resting on the one structure that doesn't leak, rot, or answer to an issuer.</p>
+
+                    <p>Dollars are the atmosphere — thin, fluid, circulating. Weather. Storms of spending, currents of trade, the pressure systems of policy.</p>
+
+                    <p>An atmosphere is supposed to move; its instability is its function. Nobody stores their wealth in weather, and once nobody has to, its turbulence stops being a tragedy and becomes what it always should have been: climate for commerce.</p>
+
+                    <p>You need the rock and the air. And notice the proportions — a planet's atmosphere is a film, a fraction of a percent of its mass. That ratio is roughly what an honest monetary system looks like: the vast majority of value at rest in the solid layer, a thin working float aloft in the fluid one.</p>
+
+                    <p>The past century inverted this — we tried to live on a gas giant, all atmosphere and no ground, everything we saved suspended in vapor. Every crisis, every bubble, every generation's evaporated savings was the turbulence of a world with no surface.</p>
+
+                    <p>The transition won't be smooth — atmospheres aren't calm while a planet forms beneath them. But the end state is simple, and older than money itself: solid ground to stand on, moving air to live in.</p>
+                </div>
+            </div>
+
+            <div class="end">
+                <div class="wrap">
+                    <p class="closer">The goal is not to replace the dollar,<br>but to finally put <span class="g">ground beneath it.</span></p>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============ PORTFOLIO-STYLE OUTRO STRIP ============ -->
+        <section class="article-outro">
+            <p class="outro-kicker">End of essay</p>
+            <h2>Thanks for reading.</h2>
+            <div class="outro-links">
+                <a href="index.html" class="outro-link">← More Writing</a>
+                <a href="../index.html#work" class="outro-link">See the Design Work →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ PORTFOLIO SITE FOOTER ============ -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column footer-about">
+                <h3 class="footer-heading">Francisco Designs</h3>
+                <p class="footer-text">
+                    Strategic partner, graphic designer, specializing in brand identity,<br>
+                    environmental design, and creative direction.
+                </p>
+                <p class="footer-text">
+                    <a href="mailto:jtkfrancisco@gmail.com" class="footer-email">jtkfrancisco@gmail.com</a>
+                </p>
+            </div>
+            <div class="footer-column footer-social">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jtkfrancisco/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/justinfranciscodesigns" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column footer-nav">
+                <h3 class="footer-heading">Navigation</h3>
+                <nav class="footer-nav-links">
+                    <a href="../index.html" class="footer-nav-link">Home</a>
+                    <a href="index.html" class="footer-nav-link">Writing</a>
+                    <a href="../About/about.html" class="footer-nav-link">About</a>
+                    <a href="../contact.html" class="footer-nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Francisco Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function(){
+        const root = document.querySelector('.melt-article');
+        if (!root) return;
+        const obs = new IntersectionObserver(es => es.forEach(en => {
+            if (en.isIntersecting) en.target.classList.add('in');
+        }), { threshold: 0.1 });
+        root.querySelectorAll('.body-copy .wrap > *, .end .wrap > *').forEach((el, i) => {
+            el.classList.add('reveal');
+            el.style.transitionDelay = (i % 5 * 40) + 'ms';
+            obs.observe(el);
+        });
+    })();
+    </script>
+</body>
+</html>
