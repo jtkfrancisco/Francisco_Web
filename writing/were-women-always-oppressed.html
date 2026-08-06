@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Were women always oppressed? – Francisco Designs</title>
+    <meta name="description" content="What the ancient record actually shows. Athens, Sparta, Egypt, and Rome disprove the claim that women were universally oppressed — the truth is variation, and cooperation under constraint.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Were women always oppressed?">
+    <meta property="og:description" content="What the ancient record actually shows. Athens, Sparta, Egypt, and Rome disprove the claim of universal oppression.">
+    <meta property="og:image" content="https://francisco.design/writing/were-women-always-oppressed-cover.svg">
+    <meta property="og:url" content="https://francisco.design/writing/were-women-always-oppressed.html">
+    <meta property="og:type" content="article">
+    <meta property="article:author" content="Justin Francisco">
+    <meta property="article:published_time" content="2026-08-06">
+    <meta property="article:section" content="Essays">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Were women always oppressed?">
+    <meta name="twitter:description" content="What the ancient record actually shows. Athens, Sparta, Egypt, and Rome disprove the claim of universal oppression.">
+    <meta name="twitter:image" content="https://francisco.design/writing/were-women-always-oppressed-cover.svg">
+
+    <link rel="canonical" href="https://francisco.design/writing/were-women-always-oppressed.html">
+
+    <!-- Portfolio chrome styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Article fonts (scoped to .melt-article body only) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           Article-scoped editorial identity — matches the writing
+           series design system (cream/blood/gold, Archivo Black,
+           Spectral, JetBrains Mono). Prefixed with .melt-article
+           so nothing leaks into the portfolio chrome.
+           ========================================================= */
+
+        .melt-article {
+            --ink:#0a0a0a;
+            --paper:#f4f0e8;
+            --paper-dim:#e8e2d4;
+            --blood:#c1272d;
+            --rust:#b5651d;
+            --gold:#caa14a;
+            --mut:#6b6356;
+            --line:#0a0a0a;
+
+            background:var(--paper);
+            color:var(--ink);
+            font-family:'Spectral',Georgia,serif;
+            font-size:19px;
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+            background-image:
+                radial-gradient(circle at 20% 8%, rgba(193,39,45,.04), transparent 40%),
+                radial-gradient(circle at 80% 75%, rgba(181,101,29,.05), transparent 45%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .melt-article * { box-sizing:border-box; margin:0; padding:0; }
+
+        .melt-article .grain {
+            position:absolute; inset:0; pointer-events:none; z-index:1; opacity:.035;
+            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        .melt-article .wrap { max-width:720px; margin:0 auto; padding:0 28px; position: relative; z-index: 2; }
+
+        .melt-article .melt-cover { padding:13vh 0 7vh; border-bottom:3px solid var(--line); }
+        .melt-article .kicker {
+            font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.32em;
+            text-transform:uppercase; color:var(--blood); margin-bottom:24px;
+        }
+        .melt-article h1 {
+            font-family:'Archivo Black',sans-serif;
+            font-size:clamp(42px,9.5vw,92px); line-height:.9; letter-spacing:-.02em;
+            text-transform:uppercase; font-weight: 400; color: var(--ink);
+        }
+        .melt-article h1 .atm { color:var(--gold); }
+        .melt-article .deck {
+            font-family:'Spectral',Georgia,serif; font-style: italic;
+            font-size: clamp(20px,3vw,26px); line-height:1.35; color: var(--mut);
+            margin-top: 28px; max-width: 34ch;
+        }
+
+        .melt-article .body-copy { padding:6vh 0; position: relative; z-index: 2; }
+        .melt-article .body-copy p {
+            margin: 0 0 26px; /* explicit inter-paragraph spacing */
+            font-size: 20px;
+            color: var(--ink);
+            line-height: 1.65;
+        }
+        .melt-article .body-copy p.lede { font-size: 24px; line-height: 1.5; }
+        .melt-article strong { font-weight: 600; color: var(--ink); }
+        .melt-article em { color: var(--ink); font-style: italic; }
+
+        /* Section headings within the essay */
+        .melt-article h2 {
+            font-family:'Archivo Black',sans-serif; font-weight: 400;
+            font-size: clamp(23px,3.4vw,33px); line-height: 1.08;
+            letter-spacing:-.01em; text-transform: uppercase;
+            color: var(--ink); margin: 1.5em 0 0.7em;
+            padding-top: 0.6em; border-top: 3px solid var(--line);
+        }
+        .melt-article .body-copy > .wrap > h2:first-child { margin-top: 0; }
+
+        /* Numbered findings — bold lead-in, gold marker */
+        .melt-article p.finding { margin-bottom: 30px; }
+        .melt-article p.finding strong { color: var(--ink); }
+        .melt-article p.finding strong .n { color: var(--blood); }
+
+        /* In-body lists (Rome timeline framing etc.) */
+        .melt-article .body-copy ul,
+        .melt-article .body-copy ol { margin: 0 0 26px 1.1em; }
+        .melt-article .body-copy li {
+            font-size: 20px; line-height: 1.6; margin-bottom: 12px; color: var(--ink);
+        }
+
+        /* Sources & open-questions — quieter, mono-flavoured reference block */
+        .melt-article .refs { list-style: none; margin: 0 0 26px; padding: 0; }
+        .melt-article .refs li {
+            font-size: 16px; line-height: 1.5; color: var(--mut);
+            padding-left: 24px; position: relative; margin-bottom: 16px;
+        }
+        .melt-article .refs li::before {
+            content: "§"; position: absolute; left: 0; top: 0;
+            font-family:'JetBrains Mono',monospace; color: var(--rust); font-size: 14px;
+        }
+        .melt-article .refs.q li::before { content: "?"; }
+        .melt-article .refs cite { font-style: italic; }
+
+        .melt-article .dots {
+            text-align:center; font-family:'Archivo Black',sans-serif; font-size:40px;
+            color:var(--rust); letter-spacing:.3em; padding:5vh 0;
+            position: relative; z-index: 2; font-weight: 400;
+        }
+
+        .melt-article .end { padding: 3vh 0 12vh; position: relative; z-index: 2; }
+        .melt-article .end .closer {
+            font-family:'Archivo Black',sans-serif;
+            font-size:clamp(22px,4.2vw,32px);
+            line-height:1.1; text-transform:uppercase; letter-spacing:-.01em;
+            margin: 32px 0 0; color: var(--ink); font-weight: 400;
+        }
+        .melt-article .end .closer .g { color: var(--gold); }
+
+        .melt-article .reveal {
+            opacity:0; transform:translateY(22px);
+            transition:opacity .7s ease, transform .7s ease;
+        }
+        .melt-article .reveal.in { opacity:1; transform:none; }
+
+        @media(max-width:560px) {
+            .melt-article { font-size:18px; }
+            .melt-article .body-copy p { font-size:18px; margin: 0 0 22px; }
+            .melt-article .body-copy p.lede { font-size: 20px; }
+            .melt-article .body-copy li { font-size: 18px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .melt-article .reveal { opacity: 1; transform: none; transition: none; }
+        }
+
+        /* =========================================================
+           Portfolio-system chrome around the article
+           (matches inflation-and-bitcoin.html for consistency)
+           ========================================================= */
+        .article-topbar {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: var(--space-md) var(--bleed-margin) 0;
+        }
+        .article-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: var(--font-size-sm); font-weight: 600;
+            letter-spacing: 0.05em; text-transform: uppercase;
+            color: var(--color-text-medium);
+            transition: color var(--transition-base);
+        }
+        .article-back:hover { color: var(--color-text); opacity: 1; }
+
+        .article-shell { margin-top: var(--space-md); }
+
+        .article-outro {
+            background-color: var(--color-bg);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding: var(--space-2xl) var(--space-md);
+            text-align: center;
+        }
+        .article-outro .outro-kicker {
+            font-size: var(--font-size-xs); font-weight: 600;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: var(--space-sm);
+        }
+        .article-outro h2 {
+            font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-3xl));
+            font-weight: 700; letter-spacing: -0.02em;
+            margin-bottom: var(--space-md); color: var(--color-text);
+        }
+        .article-outro .outro-links {
+            display: flex; gap: var(--space-lg); justify-content: center;
+            flex-wrap: wrap; margin-top: var(--space-md);
+        }
+        .article-outro .outro-link {
+            font-size: var(--font-size-sm); font-weight: 600;
+            letter-spacing: 0.05em; text-transform: uppercase;
+            color: var(--color-accent);
+            transition: transform var(--transition-base);
+            display: inline-block;
+        }
+        .article-outro .outro-link:hover { transform: translateX(4px); opacity: 1; }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ============ PORTFOLIO SITE HEADER ============ -->
+    <header class="main-header" role="banner">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../MainFranciscoLogo.png" alt="Francisco Designs" width="200" height="72">
+            </a>
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="../index.html#work" class="nav-link">WORK</a>
+                <a href="index.html" class="nav-link">WRITING</a>
+                <a href="../contact.html" class="nav-link">CONTACT</a>
+                <a href="../About/about.html" class="nav-link">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="project-detail" style="padding-top: 120px;">
+
+        <div class="article-topbar">
+            <a href="index.html" class="article-back">← Back to Writing</a>
+        </div>
+
+        <!-- ============ ARTICLE ============ -->
+        <article class="melt-article article-shell" lang="en">
+            <div class="grain"></div>
+
+            <div class="melt-cover">
+                <div class="wrap">
+                    <div class="kicker">A Note on History &amp; Power</div>
+                    <h1>Were women<br>always<br><span class="atm">oppressed?</span></h1>
+                    <p class="deck">What the ancient record actually shows.</p>
+                </div>
+            </div>
+
+            <!-- ===== Intro ===== -->
+            <div class="body-copy">
+                <div class="wrap">
+
+                    <p class="lede">A common claim: women have always been oppressed by men, across all cultures and all of history, because men are physically stronger and strength determines social power.</p>
+
+                    <p>This claim is partially true and substantially misleading. The ancient record shows enormous variation in women's legal status, economic power, and social authority — variation that the "eternal oppression" narrative erases.</p>
+
+                    <p>This article examines three civilizations that overlapped in time and geography — Athens, Sparta, and Egypt — and then asks what the variation tells us about the nature of gender arrangements across human history.</p>
+
+                    <h2>Athens: the worst case, treated as the representative one</h2>
+
+                    <p>Athenian women had severely restricted legal status. They could not own property in their own name. They could not appear in court. They required a male guardian (<em>kyrios</em>) — father, husband, or adult son — to conduct any legal business. They could not vote or hold office. They were largely confined to the women's quarters of the household and rarely appeared in public life.</p>
+
+                    <p>This is the version of "ancient women's experience" that most people learn. It is accurate for Athens. It is not accurate for the ancient world as a whole.</p>
+
+                    <p>Athens is treated as representative because it is the most documented Greek city-state and because Western intellectual history traces its lineage through Athens. But Athens was one city in a diverse Greek world, and its treatment of women was notably restrictive even by the standards of its contemporaries.</p>
+
+                    <h2>Sparta: the same civilization, radically different arrangement</h2>
+
+                    <p>Sparta was a Greek city-state that existed simultaneously with Athens. Same language, same religion, same broader culture. Its gender arrangements were drastically different.</p>
+
+                    <p>Spartan women could own property — and did. According to Aristotle, writing in the fourth century BCE, women owned approximately 40% of Sparta's agricultural land. This figure comes from Aristotle's <em>Politics</em> (Book II), where he criticizes this concentration of wealth among women as destabilizing to the state. The claim is corroborated by modern scholarship. Fleck and Hanssen (2009) analyzed the economic logic of Spartan women's property rights in a peer-reviewed paper published in <em>Economics of Governance</em>. Hodkinson (2004) confirmed through analysis of inheritance patterns that female property ownership in Sparta was not inferior in character to male ownership — women had full rights of gift and bequest.</p>
+
+                    <p>Spartan women could inherit property directly. They exercised publicly and competed in athletic events. They managed estates while men lived in military barracks. They had a reputation across Greece for being outspoken, physically strong, and politically influential. Plutarch records Spartan mothers telling their sons to return from battle "with your shield or on it" — a formulation that assumes female moral authority over male conduct.</p>
+
+                    <p>Spartan women's property was also subject to fewer public claims than men's. The polis levied agricultural produce for common mess dues and exercised various common rights over private property — but these claims bore less heavily on women's property than on men's, since they were tied to military obligations that women did not hold.</p>
+
+                    <p>The Spartan case is significant because it disproves the claim that patriarchal restriction was universal or inevitable in the ancient world. The same Greek civilization that produced Athens' severe restrictions also produced Sparta's relative empowerment — and the difference was structural and economic, not random.</p>
+
+                    <h2>Egypt: legal equality two thousand years before Europe</h2>
+
+                    <p>Ancient Egypt's treatment of women was more equitable than most societies that came after it.</p>
+
+                    <p>From the Old Kingdom (approximately 2575–2150 BCE) onward, Egyptian women had full legal personhood. They could own, buy, sell, rent, and mortgage property. They could enter into contracts. They could appear in court and bring legal actions. They could initiate divorce and, in many cases, retain the marital home, their original dowry, and custody of children. They kept their own names after marriage. Marriage was a civil contract, not a religious sacrament, and the government played a minimal role.</p>
+
+                    <p>These are not contested claims. Janet H. Johnson's scholarship at the University of Chicago's Oriental Institute confirms that the formal legal status of Egyptian women was "nearly identical" to that of men from the earliest preserved records. Papyri from multiple periods document prenuptial agreements that protected women's economic standing in the event of divorce — including a 2,480-year-old scroll in the Oriental Institute's collection specifying post-divorce provisions of silver and grain for the wife.</p>
+
+                    <p>If a husband initiated divorce, he forfeited claims to jointly held property and was required to pay maintenance to his former wife and children. Adultery was illegal for both partners, though punishment was more severe for women — a genuine double standard, but one that existed within a legal framework that recognized women as autonomous persons.</p>
+
+                    <p>For context: Egyptian women had full legal personhood more than two thousand years before European women gained comparable rights. In contemporary Athens — celebrated as the birthplace of democracy — women could not own property, could not appear in court, and required a male guardian for any legal business.</p>
+
+                    <h2>Rome: a moving target</h2>
+
+                    <p>Roman women's status changed significantly across the Republic and Empire, which makes generalizations misleading in either direction.</p>
+
+                    <p><strong>Early Republic</strong> (roughly 509–200 BCE): strict patriarchal legal control. Women were under <em>patria potestas</em> — the authority of the father — and later under the <em>manus</em> (legal control) of their husband. Legal rights were minimal.</p>
+
+                    <p><strong>Late Republic and Empire</strong> (roughly 200 BCE–476 CE): women's legal and economic autonomy expanded substantially. The key mechanism was marriage <em>sine manus</em> ("without hand"), which became the dominant form of marriage. Under this arrangement, a wife remained under her birth family's legal authority rather than her husband's — which meant she retained her own property, her inheritance rights from her father, and legal independence from her husband.</p>
+
+                    <p>By the late Republic, wealthy Roman women were owning property, running businesses, making investments, and accumulating significant fortunes. Cicero's friend Caereillia and Pliny the Younger's mother-in-law Pompeia Celerina both engaged in speculative buying and loans. The Second Triumvirate, during the civil wars, taxed the 1,400 wealthiest women's assets to fund military operations — which means those women held enough wealth to be worth taxing as a class.</p>
+
+                    <p>The legal scholar Gaius, writing in the late second century CE, noted that the old theory justifying women's guardianship — that women were mentally incapable of managing their own affairs — was widely regarded as false even by jurists of his time. He suggested that men retained the institution primarily to preserve the appearance of male authority over property, not because it served any practical function.</p>
+
+                    <p>Roman women wielded political influence through patronage networks, marriage alliances, and direct political maneuvering. Livia (wife of Augustus), Agrippina (mother of Nero), and Julia Domna (wife of Septimius Severus) are the most visible examples, but they represent a broader pattern of female agency operating within and around legal constraints.</p>
+                </div>
+            </div>
+
+            <div class="dots">…</div>
+
+            <!-- ===== What the variation tells us ===== -->
+            <div class="body-copy" style="padding-top: 0;">
+                <div class="wrap">
+
+                    <h2>What the variation tells us</h2>
+
+                    <p>Five findings follow from this evidence.</p>
+
+                    <p class="finding"><strong><span class="n">1.</span> "Women have always been oppressed" is not historically accurate as a universal claim.</strong> Some societies severely restricted women's legal status (Athens). Others granted near-legal-equality (Egypt). Most fell somewhere in between, with arrangements that shifted over time. The variation itself disproves any claim of a universal, transhistorical condition.</p>
+
+                    <p class="finding"><strong><span class="n">2.</span> The "might makes right" explanation does not survive contact with the evidence.</strong> If physical strength were the sole or primary determinant of gender arrangements, you would expect to see uniformly severe patriarchal control across all ancient societies. You do not. You see enormous variation determined by economic structure, military organization, inheritance law, and cultural values — not by physical strength ratios, which were constant across all these societies.</p>
+
+                    <p class="finding"><strong><span class="n">3.</span> Legal codification itself created a new form of gender asymmetry.</strong> In pre-literate tribal societies, women's power was relational and contextual — influence through mate selection, social networks, moral authority, control of household resources, and shaping of children's worldview. This power was real but could not be written into law. When civilizations scaled up and formalized their arrangements, the power that could be codified (property, legal standing, political office) was codified — and was predominantly held by men. The power that could not be codified (social influence, domestic authority, moral enforcement) became invisible. Legal codification did not create male dominance from nothing. It made one form of power visible and enforceable while rendering another form invisible and unrecognized.</p>
+
+                    <p class="finding"><strong><span class="n">4.</span> The "oppressor and oppressed" framework erases female agency.</strong> Women in every ancient society exercised influence — through mate selection, through social networks, through control of household resources, through moral authority over children, through religious roles. A framework that can only see power as formal legal authority or physical force is a framework that is blind to most of how human societies actually operate. The grandmother who controlled food stores, arranged marriages, and shaped the moral education of the next generation was not a powerless person. Her power was different in kind from a senator's, but it was not lesser in impact.</p>
+
+                    <p class="finding"><strong><span class="n">5.</span> The relationship between men and women was primarily cooperative, not adversarial.</strong> The dominant pattern across ancient societies was mutual dependence within a division of labor — not unilateral domination. Men and women needed each other for survival, reproduction, economic production, and social stability. The arrangements were imperfect, sometimes brutal, and varied enormously — but the baseline was cooperation under constraint, not warfare.</p>
+                </div>
+            </div>
+
+            <div class="dots">…</div>
+
+            <!-- ===== The claim that needs correcting ===== -->
+            <div class="body-copy" style="padding-top: 0;">
+                <div class="wrap">
+
+                    <h2>The claim that needs correcting</h2>
+
+                    <p>The claim that women have always been oppressed by men due to physical strength differences is a modern narrative, not a historical finding. It was formalized in the mid-twentieth century by thinkers who mapped a class-struggle framework onto gender relations — most notably Simone de Beauvoir (<em>The Second Sex</em>, 1949), Shulamith Firestone (<em>The Dialectic of Sex</em>, 1970), and the broader tradition of Marxist and radical feminism that treated male–female relations as a zero-sum power struggle.</p>
+
+                    <p>That framework has been absorbed into mainstream education and cultural discourse to the point where it feels like common sense. It is not common sense. It is one interpretation of a complex historical record — and the historical record contradicts it in specific, documented, well-sourced ways.</p>
+
+                    <p>The honest version of the history is harder to hold: men and women cooperated under conditions of mutual dependence, and both paid costs, and both held power of different kinds, and the arrangements were imperfect, sometimes unjust, and varied enormously across cultures and centuries. That version does not fit on a protest sign. But it is closer to the truth.</p>
+
+                    <h2>Sources</h2>
+
+                    <ul class="refs">
+                        <li>Aristotle, <cite>Politics</cite>, Book II (fourth century BCE) — on Spartan women's land ownership.</li>
+                        <li>Fleck, R.K. and Hanssen, F.A. (2009), "'Rulers Ruled by Women': An Economic Analysis of the Rise and Fall of Women's Rights in Ancient Sparta," <cite>Economics of Governance</cite>.</li>
+                        <li>Hodkinson, S. (2004), "Female Property Ownership and Empowerment in Classical and Hellenistic Sparta," Center for Hellenic Studies, Harvard.</li>
+                        <li>Johnson, J.H., "Women's Legal Rights in Ancient Egypt," University of Chicago Oriental Institute.</li>
+                        <li>Gaius, <cite>Institutes</cite> (second century CE) — on Roman <em>tutela</em> and its practical irrelevance.</li>
+                        <li>World History Encyclopedia, "Roman Women in Business" (2025).</li>
+                    </ul>
+
+                    <h2>Open questions</h2>
+
+                    <ul class="refs q">
+                        <li>How did the transition from oral to written law specifically affect the codification of gender asymmetries? The evidence suggests that writing itself was a mechanism of capture, but the causal chain needs more documentation.</li>
+                        <li>To what extent did women's informal power in pre-literate societies actually constrain male behavior? The anthropological record is suggestive but thin on this point.</li>
+                        <li>Why did Egypt's relatively equitable gender arrangements not spread to neighboring civilizations? Geographic isolation (the Nile corridor) and religious factors (female deities with genuine theological weight) are partial explanations, but neither is sufficient.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="end">
+                <div class="wrap">
+                    <p class="closer">Not eternal oppression.<br>Not warfare. <span class="g">Cooperation under constraint.</span></p>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============ PORTFOLIO-STYLE OUTRO STRIP ============ -->
+        <section class="article-outro">
+            <p class="outro-kicker">End of essay</p>
+            <h2>Thanks for reading.</h2>
+            <div class="outro-links">
+                <a href="index.html" class="outro-link">← More Writing</a>
+                <a href="../index.html#work" class="outro-link">See the Design Work →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ PORTFOLIO SITE FOOTER ============ -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column footer-about">
+                <h3 class="footer-heading">Francisco Designs</h3>
+                <p class="footer-text">
+                    Strategic partner, graphic designer, specializing in brand identity,<br>
+                    environmental design, and creative direction.
+                </p>
+                <p class="footer-text">
+                    <a href="mailto:jtkfrancisco@gmail.com" class="footer-email">jtkfrancisco@gmail.com</a>
+                </p>
+            </div>
+            <div class="footer-column footer-social">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jtkfrancisco/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/justinfranciscodesigns" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column footer-nav">
+                <h3 class="footer-heading">Navigation</h3>
+                <nav class="footer-nav-links">
+                    <a href="../index.html" class="footer-nav-link">Home</a>
+                    <a href="index.html" class="footer-nav-link">Writing</a>
+                    <a href="../About/about.html" class="footer-nav-link">About</a>
+                    <a href="../contact.html" class="footer-nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Francisco Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function(){
+        const root = document.querySelector('.melt-article');
+        if (!root) return;
+        const obs = new IntersectionObserver(es => es.forEach(en => {
+            if (en.isIntersecting) en.target.classList.add('in');
+        }), { threshold: 0.1 });
+        root.querySelectorAll('.body-copy .wrap > *, .end .wrap > *').forEach((el, i) => {
+            el.classList.add('reveal');
+            el.style.transitionDelay = (i % 5 * 40) + 'ms';
+            obs.observe(el);
+        });
+    })();
+    </script>
+</body>
+</html>
