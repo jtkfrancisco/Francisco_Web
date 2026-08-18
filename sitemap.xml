@@ -51,8 +51,13 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://francisco.design/writing/the-operation.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://francisco.design/writing/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>

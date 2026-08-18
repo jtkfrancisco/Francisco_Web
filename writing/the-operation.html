@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Operation. – Francisco Designs</title>
+    <meta name="description" content="One move, performed seven times since 1945: take something that could not be substituted and re-engineer it into a unit that can. An interactive ledger of fungibility across money, labour, land, people, kinship, time, and information.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Operation.">
+    <meta property="og:description" content="One move, performed seven times: taking what could not be substituted and re-engineering it into a unit that can.">
+    <meta property="og:image" content="https://francisco.design/writing/the-operation-cover.svg">
+    <meta property="og:url" content="https://francisco.design/writing/the-operation.html">
+    <meta property="og:type" content="article">
+    <meta property="article:author" content="Justin Francisco">
+    <meta property="article:published_time" content="2026-08-17">
+    <meta property="article:section" content="Essays">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Operation.">
+    <meta name="twitter:description" content="One move, performed seven times: taking what could not be substituted and re-engineering it into a unit that can.">
+    <meta name="twitter:image" content="https://francisco.design/writing/the-operation-cover.svg">
+
+    <link rel="canonical" href="https://francisco.design/writing/the-operation.html">
+
+    <!-- Portfolio chrome styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Article fonts (same family set as the rest of the writing series) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           Article-scoped identity — cream paper, ink type, gold and
+           blood accents. Matches the writing series. Everything is
+           prefixed .op-article so nothing leaks into portfolio chrome.
+           ========================================================= */
+
+        .op-article {
+            --ink:#0a0a0a;
+            --paper:#f4f0e8;
+            --paper-panel:#ece5d5;
+            --blood:#c1272d;
+            --rust:#8f4d16;
+            --gold:#caa14a;
+            --gold-ink:#9d7616;
+            --slate:#3f6156;
+            --mut:#6b6356;
+            --rule:rgba(10,10,10,0.16);
+            --rule-soft:rgba(10,10,10,0.10);
+
+            background:var(--paper);
+            color:var(--ink);
+            font-family:'Spectral',Georgia,serif;
+            -webkit-font-smoothing:antialiased;
+            background-image:
+                radial-gradient(circle at 18% 6%, rgba(193,39,45,.05), transparent 42%),
+                radial-gradient(circle at 84% 78%, rgba(181,101,29,.05), transparent 46%);
+            position:relative;
+            /* no overflow clipping here — it would kill position:sticky on .control */
+        }
+
+        .op-article * { box-sizing:border-box; margin:0; padding:0; }
+
+        .op-article .grain {
+            position:absolute; inset:0; pointer-events:none; z-index:1; opacity:.035;
+            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        .op-article .wrap { max-width:1040px; margin:0 auto; padding:0 28px; position:relative; z-index:2; }
+
+        /* ---------- masthead ---------- */
+        .op-article .op-cover { padding:6vh 0 5vh; border-bottom:3px solid var(--ink); }
+        .op-article .kicker {
+            font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.3em;
+            text-transform:uppercase; color:var(--blood); margin-bottom:24px;
+        }
+        .op-article h1 {
+            font-family:'Archivo Black',sans-serif; font-weight:400;
+            font-size:clamp(46px,11vw,104px); line-height:.9; letter-spacing:-.02em;
+            text-transform:uppercase; color:var(--ink);
+        }
+        .op-article h1 .g { color:var(--gold); }
+
+        .op-article .thesis {
+            margin:34px 0 0; max-width:62ch; font-size:19px; line-height:1.65; color:var(--ink);
+        }
+        .op-article .thesis + .thesis { margin-top:18px; }
+        .op-article .thesis b { font-weight:600; }
+        .op-article .thesis .quiet { color:var(--mut); }
+
+        /* ---------- ledger ---------- */
+        .op-article .ledger-head {
+            display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+            padding:4vh 0 14px; border-bottom:1px solid var(--rule);
+            font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.24em;
+            text-transform:uppercase; color:var(--mut);
+        }
+        .op-article .ledger-head .r { color:var(--gold-ink); }
+
+        .op-article .ledger { margin:0; padding:0; }
+        .op-article .row {
+            display:grid; grid-template-columns:150px 1fr 240px;
+            align-items:center; gap:24px;
+            padding:20px 0; border-bottom:1px solid var(--rule-soft);
+        }
+        .op-article .domain {
+            font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em;
+            text-transform:uppercase; color:var(--ink); font-weight:500;
+        }
+        .op-article .marks { width:100%; height:54px; display:block; overflow:visible; }
+        .op-article .state {
+            font-size:17px; line-height:1.4; text-align:right; font-style:italic;
+        }
+        .op-article .state .a { color:var(--rust); }
+        .op-article .state .b { color:var(--slate); }
+
+        /* ---------- readout ---------- */
+        .op-article .readout {
+            display:flex; flex-wrap:wrap; gap:44px; padding:34px 0 0;
+        }
+        .op-article .stat { min-width:130px; }
+        .op-article .stat .k {
+            font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.22em;
+            text-transform:uppercase; color:var(--mut);
+        }
+        .op-article .stat .v {
+            font-size:38px; line-height:1.1; margin-top:8px; font-weight:600;
+            font-variant-numeric:tabular-nums;
+        }
+        .op-article .stat .v.warm { color:var(--rust); }
+        .op-article .stat .v.cool { color:var(--slate); }
+
+        .op-article .verdict {
+            margin:36px 0 0; padding:24px 0 0; border-top:1px solid var(--rule);
+            font-size:clamp(19px,2.4vw,25px); line-height:1.55; max-width:56ch; min-height:4.6em;
+            color:var(--ink);
+        }
+
+        /* ---------- control ---------- */
+        .op-article .control {
+            position:sticky; bottom:0; z-index:20; margin-top:34px;
+            background:var(--paper);
+            padding:18px 0 22px;
+        }
+        /* soft fade above the control so the ledger scrolls out from under it */
+        .op-article .control::before {
+            content:''; position:absolute; left:0; right:0; bottom:100%; height:64px;
+            background:linear-gradient(to top, var(--paper), rgba(244,240,232,0));
+            pointer-events:none;
+        }
+        .op-article .control-inner { max-width:1040px; margin:0 auto; padding:0 28px; }
+        .op-article .control-labels {
+            display:flex; justify-content:space-between; align-items:center; gap:16px;
+            font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.22em;
+            text-transform:uppercase; margin-bottom:12px;
+        }
+        .op-article .control-labels .l { color:var(--rust); }
+        .op-article .control-labels .r { color:var(--slate); }
+
+        .op-article .playbtn {
+            font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em;
+            text-transform:uppercase; color:var(--ink); background:transparent;
+            border:1px solid var(--ink); border-radius:0; padding:7px 16px; cursor:pointer;
+            transition:background .2s ease, color .2s ease;
+        }
+        .op-article .playbtn:hover { background:var(--ink); color:var(--paper); }
+        .op-article .playbtn:focus-visible { outline:2px solid var(--blood); outline-offset:3px; }
+        .op-article .playbtn .ico { margin-right:8px; }
+
+        .op-article input[type=range]{
+            -webkit-appearance:none; appearance:none; width:100%; height:28px;
+            background:transparent; cursor:ew-resize; display:block;
+        }
+        .op-article input[type=range]::-webkit-slider-runnable-track{ height:1px; background:var(--ink); opacity:.35; }
+        .op-article input[type=range]::-moz-range-track{ height:1px; background:var(--ink); opacity:.35; }
+        .op-article input[type=range]::-webkit-slider-thumb{
+            -webkit-appearance:none; width:3px; height:28px; background:var(--ink);
+            margin-top:-14px; border-radius:0;
+        }
+        .op-article input[type=range]::-moz-range-thumb{
+            width:3px; height:28px; background:var(--ink); border:0; border-radius:0;
+        }
+        .op-article input[type=range]:focus-visible{ outline:2px solid var(--blood); outline-offset:6px; }
+
+        /* ---------- the turn ---------- */
+        .op-article .turn {
+            margin-top:7vh; padding:40px; border:1px solid var(--rule); background:var(--paper-panel);
+        }
+        .op-article .turn .k {
+            font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.24em;
+            text-transform:uppercase; color:var(--mut); margin-bottom:22px;
+        }
+        .op-article .turn dl { margin:0; display:grid; grid-template-columns:1fr; gap:2px; }
+        .op-article .turn .line {
+            display:flex; justify-content:space-between; align-items:baseline; gap:20px;
+            padding:13px 0; border-bottom:1px dotted var(--rule); font-size:17px;
+        }
+        .op-article .turn .line:last-child { border-bottom:0; }
+        .op-article .turn .name { color:var(--ink); }
+        .op-article .turn .pos {
+            font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em;
+            text-transform:uppercase; white-space:nowrap;
+        }
+        .op-article .pos.res { color:var(--slate); }
+        .op-article .pos.con { color:var(--blood); }
+        .op-article .turn .note {
+            margin:28px 0 0; font-size:19px; line-height:1.65; color:var(--ink); max-width:64ch;
+        }
+        .op-article .turn .note b { font-weight:600; font-style:italic; }
+
+        /* ---------- closer ---------- */
+        .op-article .end { padding:7vh 0 11vh; }
+        .op-article .end .closer {
+            font-family:'Archivo Black',sans-serif; font-weight:400;
+            font-size:clamp(22px,4.2vw,32px); line-height:1.12;
+            text-transform:uppercase; letter-spacing:-.01em; color:var(--ink);
+        }
+        .op-article .end .closer .g { color:var(--gold); }
+        .op-article .end .sig {
+            margin-top:26px; font-family:'JetBrains Mono',monospace; font-size:11px;
+            letter-spacing:.22em; text-transform:uppercase; color:var(--mut); line-height:2;
+        }
+
+        @media (max-width:860px){
+            .op-article .row { grid-template-columns:1fr; gap:10px; padding:18px 0; }
+            .op-article .state { text-align:left; font-size:16px; }
+            .op-article .marks { height:46px; }
+            .op-article .turn { padding:26px; }
+            .op-article .turn .line { flex-direction:column; align-items:flex-start; gap:5px; }
+            .op-article .thesis, .op-article .turn .note { font-size:18px; }
+            .op-article .readout { gap:28px; }
+            .op-article .stat .v { font-size:32px; }
+        }
+        @media (prefers-reduced-motion: reduce){
+            .op-article * { transition:none !important; }
+        }
+
+        /* =========================================================
+           Portfolio-system chrome around the article
+           ========================================================= */
+        .article-topbar {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: var(--space-md) var(--bleed-margin) 0;
+        }
+        .article-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: var(--font-size-sm); font-weight: 600;
+            letter-spacing: 0.05em; text-transform: uppercase;
+            color: var(--color-text-medium);
+            transition: color var(--transition-base);
+        }
+        .article-back:hover { color: var(--color-text); opacity: 1; }
+
+        .article-shell { margin-top: var(--space-md); }
+
+        .article-outro {
+            background-color: var(--color-bg);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding: var(--space-2xl) var(--space-md);
+            text-align: center;
+        }
+        .article-outro .outro-kicker {
+            font-size: var(--font-size-xs); font-weight: 600;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: var(--space-sm);
+        }
+        .article-outro h2 {
+            font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-3xl));
+            font-weight: 700; letter-spacing: -0.02em;
+            margin-bottom: var(--space-md); color: var(--color-text);
+        }
+        .article-outro .outro-links {
+            display: flex; gap: var(--space-lg); justify-content: center;
+            flex-wrap: wrap; margin-top: var(--space-md);
+        }
+        .article-outro .outro-link {
+            font-size: var(--font-size-sm); font-weight: 600;
+            letter-spacing: 0.05em; text-transform: uppercase;
+            color: var(--color-accent);
+            transition: transform var(--transition-base);
+            display: inline-block;
+        }
+        .article-outro .outro-link:hover { transform: translateX(4px); opacity: 1; }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ============ PORTFOLIO SITE HEADER ============ -->
+    <header class="main-header" role="banner">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../MainFranciscoLogo.png" alt="Francisco Designs" width="200" height="72">
+            </a>
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="../index.html#work" class="nav-link">WORK</a>
+                <a href="index.html" class="nav-link">WRITING</a>
+                <a href="../contact.html" class="nav-link">CONTACT</a>
+                <a href="../About/about.html" class="nav-link">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="project-detail" style="padding-top: 120px;">
+
+        <div class="article-topbar">
+            <a href="index.html" class="article-back">← Back to Writing</a>
+        </div>
+
+        <!-- ============ ARTICLE ============ -->
+        <article class="op-article article-shell" lang="en">
+            <div class="grain"></div>
+
+            <div class="op-cover">
+                <div class="wrap">
+                    <div class="kicker">One operation · Seven domains · 1945 →</div>
+                    <h1>The <span class="g">Operation.</span></h1>
+
+                    <p class="thesis">
+                        Everything the frame describes is a single move performed seven times: taking something
+                        that <b>could not be substituted</b> and re-engineering it into a unit that can.
+                        Fungible things can be priced, moved, and administered. Particular things resist.
+                    </p>
+                    <p class="thesis quiet">
+                        The ledger below runs the operation on its own. Watch it, or take the control at the
+                        bottom of the screen and run it by hand — all seven domains convert at once.
+                    </p>
+                </div>
+            </div>
+
+            <div class="wrap">
+
+                <div class="ledger-head">
+                    <span class="l">The Ledger</span>
+                    <span class="r">Seven domains, one move</span>
+                </div>
+
+                <div class="ledger" id="ledger"></div>
+
+                <div class="readout">
+                    <div class="stat">
+                        <div class="k">Distinct forms</div>
+                        <div class="v warm" id="distinct">63</div>
+                    </div>
+                    <div class="stat">
+                        <div class="k">Substitutable</div>
+                        <div class="v cool" id="sub">0%</div>
+                    </div>
+                    <div class="stat">
+                        <div class="k">Administrable</div>
+                        <div class="v cool" id="admin">Low</div>
+                    </div>
+                </div>
+
+                <p class="verdict" id="verdict"></p>
+            </div>
+
+            <!-- ============ THE ONE CONTROL ============ -->
+            <div class="control">
+                <div class="control-inner">
+                    <div class="control-labels">
+                        <span class="l">Particular</span>
+                        <button id="op-play" class="playbtn" type="button" aria-live="polite">
+                            <span class="ico" aria-hidden="true">❚❚</span><span class="txt">Pause</span>
+                        </button>
+                        <span class="r">Fungible</span>
+                    </div>
+                    <input id="op" type="range" min="0" max="1000" value="0" step="1"
+                           aria-label="The operation: drag from particular to fungible">
+                </div>
+            </div>
+
+            <div class="wrap">
+                <section class="turn">
+                    <div class="k">The same instrument, turned inward</div>
+                    <dl id="turnlist"></dl>
+                    <p class="note">
+                        Every object you have built sits at the left of this slider. One thing doesn't:
+                        the version of you that is currently on the market. It is priced as a unit because
+                        that is the only part anyone can see. <b>You wrote the thesis that explains your own career.</b>
+                    </p>
+                </section>
+            </div>
+
+            <div class="end">
+                <div class="wrap">
+                    <p class="closer">Nothing was destroyed.<br>Everything became <span class="g">substitutable.</span></p>
+                    <p class="sig">
+                        Built from the Inversion corpus · Fungibility as the deep pattern<br>
+                        Money · Labour · Land · People · Kinship · Time · Information
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============ PORTFOLIO-STYLE OUTRO STRIP ============ -->
+        <section class="article-outro">
+            <p class="outro-kicker">End of essay</p>
+            <h2>Thanks for reading.</h2>
+            <div class="outro-links">
+                <a href="index.html" class="outro-link">← More Writing</a>
+                <a href="../index.html#work" class="outro-link">See the Design Work →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ PORTFOLIO SITE FOOTER ============ -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column footer-about">
+                <h3 class="footer-heading">Francisco Designs</h3>
+                <p class="footer-text">
+                    Strategic partner, graphic designer, specializing in brand identity,<br>
+                    environmental design, and creative direction.
+                </p>
+                <p class="footer-text">
+                    <a href="mailto:jtkfrancisco@gmail.com" class="footer-email">jtkfrancisco@gmail.com</a>
+                </p>
+            </div>
+            <div class="footer-column footer-social">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jtkfrancisco/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/justinfranciscodesigns" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column footer-nav">
+                <h3 class="footer-heading">Navigation</h3>
+                <nav class="footer-nav-links">
+                    <a href="../index.html" class="footer-nav-link">Home</a>
+                    <a href="index.html" class="footer-nav-link">Writing</a>
+                    <a href="../About/about.html" class="footer-nav-link">About</a>
+                    <a href="../contact.html" class="footer-nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Francisco Designs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function(){
+        const NS='http://www.w3.org/2000/svg';
+        const N=9, PTS=14;
+
+        const ROWS=[
+            {d:'Money',       a:'a weight of metal',             b:'a unit of account'},
+            {d:'Labour',      a:'a trade held for life',         b:'a skill-set on open bid'},
+            {d:'Land',        a:'the place you are from',        b:'an asset priced by yield'},
+            {d:'People',      a:'a rooted population',           b:'a labour supply'},
+            {d:'Kinship',     a:'a line owed in both directions',b:'a household of choices'},
+            {d:'Time',        a:'feast, fast and Sabbath',       b:'undifferentiated hours'},
+            {d:'Information', a:'a paper the town could answer', b:'a feed tuned to attention'}
+        ];
+
+        const TURN=[
+            ['Anamnesis — self as magnitude','resists'],
+            ['SolTerra — vertical cosmology, Psalms-keyed','resists'],
+            ['Two birds with one wing each','resists'],
+            ['Hard assets — scarce by construction','resists'],
+            ['The Inversion — 391 KB, unpublished','resists'],
+            ['Senior Graphic Designer, 10 yrs exp.','converted']
+        ];
+
+        /* deterministic pseudo-random so the "particular" state is fixed, not noise */
+        function rnd(s){ let x=Math.sin(s*127.1)*43758.5453; return x-Math.floor(x); }
+        const lerp=(a,b,t)=>a+(b-a)*t;
+        const ease=t=>t*t*(3-2*t);
+        const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+
+        function hexToRgb(h){ return [parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)]; }
+        /* warm, particular marks — legible on cream */
+        const WARM=['#c1272d','#b5651d','#caa14a','#7a7f3e','#8a6b4a'].map(hexToRgb);
+        /* one cool, uniform colour on the fungible end */
+        const COOL=hexToRgb('#3f6156');
+
+        const ledger=document.getElementById('ledger');
+        const marks=[];
+
+        ROWS.forEach((row,ri)=>{
+            const el=document.createElement('div');
+            el.className='row';
+            el.innerHTML=
+                '<div class="domain">'+row.d+'</div>'+
+                '<svg class="marks" viewBox="0 0 600 54" preserveAspectRatio="none" aria-hidden="true"></svg>'+
+                '<div class="state"><span class="a">'+row.a+'</span><span class="b" style="display:none">'+row.b+'</span></div>';
+            ledger.appendChild(el);
+
+            const svg=el.querySelector('svg');
+            const rowMarks=[];
+            for(let i=0;i<N;i++){
+                const seed=ri*31+i*7+1;
+                /* particular: jittered position, varied scale, irregular outline, varied warm hue */
+                const px=(600/N)*(i+0.5)+(rnd(seed)-0.5)*30;
+                const py=27+(rnd(seed+1)-0.5)*22;
+                const pscale=6+rnd(seed+2)*11;
+                const prot=rnd(seed+3)*Math.PI*2;
+                const radii=[];
+                for(let k=0;k<PTS;k++) radii.push(0.45+rnd(seed+10+k)*0.9);
+                const col=WARM[Math.floor(rnd(seed+4)*WARM.length)];
+                /* fungible: exact grid, identical scale, perfect circle, one colour */
+                const fx=(600/N)*(i+0.5), fy=27, fscale=8.5;
+
+                const path=document.createElementNS(NS,'path');
+                path.setAttribute('stroke-width','1.1');
+                svg.appendChild(path);
+                rowMarks.push({path,px,py,pscale,prot,radii,col,fx,fy,fscale});
+            }
+            marks.push({el,rowMarks});
+        });
+
+        const elDistinct=document.getElementById('distinct');
+        const elSub=document.getElementById('sub');
+        const elAdmin=document.getElementById('admin');
+        const elVerdict=document.getElementById('verdict');
+
+        const V=[
+            [0.00,'Nothing on this line can be exchanged for anything else on it. Each thing must be dealt with on its own terms — which is slow, local, and impossible to administer at scale.'],
+            [0.25,'The edges begin to come off. Things that were answerable to a place start answering to a price.'],
+            [0.50,'Halfway. Each thing is now comparable to its neighbour. Comparison is the precondition of management.'],
+            [0.75,'Nearly uniform. What remains of the particular is styling — the unit underneath is already standard.'],
+            [0.94,'Sixty-three things have become one thing, counted sixty-three times. Nothing was destroyed. Everything became substitutable, which is the same outcome arrived at without anyone having to be a villain.']
+        ];
+
+        function draw(t){
+            const e=ease(t);
+            marks.forEach(({el,rowMarks})=>{
+                rowMarks.forEach(m=>{
+                    const cx=lerp(m.px,m.fx,e), cy=lerp(m.py,m.fy,e);
+                    const sc=lerp(m.pscale,m.fscale,e);
+                    const rot=lerp(m.prot,0,e);
+                    let d='';
+                    for(let k=0;k<PTS;k++){
+                        const ang=rot+(k/PTS)*Math.PI*2;
+                        const r=lerp(m.radii[k],1,e)*sc;
+                        d+=(k?'L':'M')+(cx+Math.cos(ang)*r).toFixed(2)+' '+(cy+Math.sin(ang)*r).toFixed(2);
+                    }
+                    d+='Z';
+                    m.path.setAttribute('d',d);
+                    const c=[0,1,2].map(j=>Math.round(lerp(m.col[j],COOL[j],e)));
+                    const rgb='rgb('+c.join(',')+')';
+                    m.path.setAttribute('stroke',rgb);
+                    m.path.setAttribute('fill',rgb);
+                    m.path.setAttribute('fill-opacity',(lerp(0.82,0.16,e)).toFixed(3));
+                });
+                const a=el.querySelector('.state .a'), b=el.querySelector('.state .b');
+                const flip=e>0.5;
+                a.style.display=flip?'none':'inline';
+                b.style.display=flip?'inline':'none';
+                /* short crossfade band around the midpoint — the label stays
+                   fully legible everywhere else, which matters on paper stock */
+                const fade=clamp(Math.abs(e-0.5)/0.08,0,1);
+                (flip?b:a).style.opacity=fade.toFixed(2);
+            });
+
+            elDistinct.textContent=Math.max(1,Math.round(lerp(63,1,e)));
+            elSub.textContent=Math.round(e*100)+'%';
+            elAdmin.textContent=e<0.2?'Low':e<0.5?'Rising':e<0.8?'High':'Total';
+
+            let txt=V[0][1];
+            for(const [th,s] of V) if(e>=th) txt=s;
+            if(elVerdict.textContent!==txt) elVerdict.textContent=txt;
+        }
+
+        /* the turn */
+        const tl=document.getElementById('turnlist');
+        TURN.forEach(([name,pos])=>{
+            const d=document.createElement('div');
+            d.className='line';
+            d.innerHTML='<span class="name">'+name+'</span><span class="pos '+(pos==='resists'?'res':'con')+'">'+pos+'</span>';
+            tl.appendChild(d);
+        });
+
+        /* =====================================================
+           Automated run: the operation performs itself, forward
+           slowly and back quickly, dwelling at each end. The
+           button pauses and resumes it; touching the slider
+           hands control over to the reader.
+           ===================================================== */
+        const slider=document.getElementById('op');
+        const btn=document.getElementById('op-play');
+        const btnIco=btn.querySelector('.ico');
+        const btnTxt=btn.querySelector('.txt');
+
+        const FORWARD_MS=16000;   /* particular → fungible */
+        const BACK_MS=5000;       /* fungible → particular */
+        const DWELL_END=3500;     /* hold at fungible */
+        const DWELL_START=1600;   /* hold at particular */
+
+        const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        let t=0, dir=1, dwell=0, playing=!reduced, last=null, raf=null;
+        /* the run only advances while the ledger is actually on screen */
+        let inView=true;
+
+        function setValue(v){
+            t=clamp(v,0,1);
+            slider.value=Math.round(t*1000);
+            draw(t);
+        }
+
+        function running(){ return playing && inView && !document.hidden; }
+
+        function kick(){
+            if(running() && !raf){ last=null; raf=requestAnimationFrame(tick); }
+        }
+
+        function setPlaying(on){
+            playing=on;
+            btnIco.textContent = on ? '❚❚' : '▶';
+            btnTxt.textContent = on ? 'Pause' : 'Play';
+            btn.setAttribute('aria-label', on ? 'Pause the automated run' : 'Play the automated run');
+            kick();
+        }
+
+        function tick(now){
+            raf=null;
+            if(!running()) return;
+            if(last===null) last=now;
+            let dt=Math.min(now-last,80); /* keep it sane after a background tab */
+            last=now;
+
+            if(dwell>0){
+                dwell-=dt;
+            } else if(dir>0){
+                t+=dt/FORWARD_MS;
+                if(t>=1){ t=1; dir=-1; dwell=DWELL_END; }
+            } else {
+                t-=dt/BACK_MS;
+                if(t<=0){ t=0; dir=1; dwell=DWELL_START; }
+            }
+
+            slider.value=Math.round(t*1000);
+            draw(t);
+            raf=requestAnimationFrame(tick);
+        }
+
+        btn.addEventListener('click',()=>setPlaying(!playing));
+
+        /* any manual input stops the automated run and leaves the reader in charge */
+        slider.addEventListener('input',()=>{
+            if(playing) setPlaying(false);
+            t=slider.value/1000;
+            dir=1; dwell=0;
+            draw(t);
+        });
+
+        /* don't burn frames in a hidden tab */
+        document.addEventListener('visibilitychange',()=>{
+            if(document.hidden){ if(raf){ cancelAnimationFrame(raf); raf=null; } }
+            else kick();
+        });
+
+        /* hold the run at the start until the ledger is scrolled into view */
+        if('IntersectionObserver' in window){
+            inView=false;
+            new IntersectionObserver(entries=>{
+                inView=entries[0].isIntersecting;
+                if(inView) kick();
+                else if(raf){ cancelAnimationFrame(raf); raf=null; }
+            },{ threshold:0.12 }).observe(ledger);
+        }
+
+        setValue(0);
+        setPlaying(playing);
+    })();
+    </script>
+</body>
+</html>
